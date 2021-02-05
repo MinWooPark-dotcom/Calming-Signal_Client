@@ -1,1 +1,1 @@
-# calming_signal_client
+# calming-signal-client
