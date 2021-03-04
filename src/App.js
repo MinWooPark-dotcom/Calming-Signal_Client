@@ -1,12 +1,22 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Landing from "./components/Landing.js";
+import About from "./components/About";
+import CalmingSignal from "./components/CalmingSignal";
+import Board from "./components/Board";
+import MyPage from "./components/MyPage";
+import SignIn from "./components/SignIn";
 // import "./App.css";
 
 const App = () => {
   return (
     <div>
-      <Route path="/" component={Landing} />
+      <Route path="/" component={Landing} exact />
+      <Route path="/about" component={About} exact />
+      <Route path="/calming-signal" component={CalmingSignal} exact />
+      <Route path="/board" component={Board} exact />
+      <Route path="/mypage" component={MyPage} exact />
+      <Route path="/sign-in" component={SignIn} exact />
     </div>
   );
 };
