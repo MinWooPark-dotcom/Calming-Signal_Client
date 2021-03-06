@@ -1,9 +1,11 @@
 import React from "react";
+import { Link, withRouter } from "react-router-dom";
 import Nav from "./Nav";
-import "./Landing.css";
+import Footer from "./Footer";
 import landing_top from "../img/landing_top.jpeg";
 import landing_middle from "../img/landing_middle.jpeg";
 import landing_bottom from "../img/landing_bottom.jpg";
+import "./Landing.css";
 
 const Landing = () => {
   return (
@@ -78,9 +80,14 @@ const Landing = () => {
             <div className="landing_bottom_left_text_box_content1">
               반려견의 목소리를 들을 준비 되셨다면 저를 따라오세요.
             </div>
-            <div className="landing_bottom_left_text_box_btn">
-              카밍시그널 보러가기
-            </div>
+            <Link
+              to="calming-signal"
+              className="landing_bottom_left_text_box_link"
+            >
+              <div className="landing_bottom_left_text_box_link_text">
+                카밍시그널 보러가기
+              </div>
+            </Link>
           </div>
         </div>
         <div className="landing_bottom_right">
@@ -93,6 +100,7 @@ const Landing = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

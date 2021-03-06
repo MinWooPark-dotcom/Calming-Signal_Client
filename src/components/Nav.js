@@ -8,9 +8,9 @@ const Nav = () => {
       <Link to="/" className="nav_link_logo">
         <div className="nav_logo">Calming Signal</div>
       </Link>
-      <Link to="about" className="nav_link_about">
-        <div className="nav_about">소개</div>
-      </Link>
+      {/* <Link to="about" className="nav_link_about"> */}
+      {/* <div className="nav_about">소개</div> */}
+      {/* </Link> */}
       <Link to="calming-signal" className="nav_link_calming_signal">
         <div className="nav_calming_signal">카밍 시그널</div>
       </Link>
