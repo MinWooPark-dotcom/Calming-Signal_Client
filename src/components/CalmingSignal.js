@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
 import Sidebar from "./Sidebar";
-import Footer from "./Footer";
 import "./CalmingSignal.css";
 import landing_top from "../img/landing_top.jpeg";
 

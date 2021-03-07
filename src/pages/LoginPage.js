@@ -1,7 +1,7 @@
-import React from "react";
-import "./SignIn.css";
+import React from 'react';
+import './LoginPage.css';
 
-const SignIn = () => {
+const LoginPage = () => {
   return (
     <div className="sign_in_container">
       {/*//! sign in box */}
@@ -18,4 +18,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default LoginPage;

@@ -1,31 +1,40 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import Landing from "./components/Landing.js";
-import About from "./components/About";
-import CalmingSignal from "./components/CalmingSignal";
-import Content from "./components/Content";
-import Board from "./components/Board";
-import MyPage from "./components/MyPage";
-import SignIn from "./components/SignIn";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import Landing from './components/Landing.js';
+import About from './components/About';
+import CalmingSignal from './components/CalmingSignal';
+import Content from './components/Content';
+import Board from './components/Board';
+import MyPage from './components/MyPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage.js';
+import PostListPage from './pages/PostListPage.js';
+import WritePage from './pages/WritePage.js';
+import PostPage from './pages/PostPage.js';
 // import "./App.css";
 
 const App = () => {
   return (
-    <div>
-      <Route path="/" component={Landing} exact />
-      <Route path="/about" component={About} exact />
-      <Route path="/calming-signal" component={CalmingSignal} exact />
-      <Route path="/calming-signal/1" component={Content} />
-      <Route path="/calming-signal/2" component={Content} />
-      <Route path="/calming-signal/3" component={Content} />
-      <Route path="/calming-signal/4" component={Content} />
-      <Route path="/calming-signal/5" component={Content} />
-      <Route path="/calming-signal/6" component={Content} />
-      <Route path="/calming-signal/7" component={Content} />
-      <Route path="/board" component={Board} exact />
-      <Route path="/mypage" component={MyPage} exact />
-      <Route path="/sign-in" component={SignIn} exact />
-    </div>
+    <>
+      <Route component={Landing} path="/" exact />
+      <Route component={About} path="/about" exact />
+      <Route component={CalmingSignal} path="/calming-signal" exact />
+      <Route component={Content} path="/calming-signal/1" exact />
+      <Route component={Content} path="/calming-signal/2" exact />
+      <Route component={Content} path="/calming-signal/3" exact />
+      <Route component={Content} path="/calming-signal/4" exact />
+      <Route component={Content} path="/calming-signal/5" exact />
+      <Route component={Content} path="/calming-signal/6" exact />
+      <Route component={Content} path="/calming-signal/7" exact />
+      <Route component={Board} path="/board" exact />
+      <Route component={MyPage} path="/mypage" exact />
+      {/* Page dir */}
+      <Route component={PostListPage} path="{['/@:username', '/']}" exact />
+      <Route component={LoginPage} path="/login" exact />
+      <Route component={RegisterPage} path="/register" />
+      <Route component={WritePage} path="/write" />
+      <Route component={PostPage} path="/@:username/:postId" />
+    </>
   );
 };
 
