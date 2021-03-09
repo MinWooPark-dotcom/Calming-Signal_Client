@@ -16,7 +16,7 @@ import PostPage from './pages/PostPage.js';
 const App = () => {
   return (
     <>
-      <Route component={Landing} path="/" exact />
+      {/* <Route component={Landing} path="/" exact /> */}
       <Route component={About} path="/about" exact />
       <Route component={CalmingSignal} path="/calming-signal" exact />
       <Route component={Content} path="/calming-signal/1" exact />
@@ -29,7 +29,8 @@ const App = () => {
       <Route component={Board} path="/board" exact />
       <Route component={MyPage} path="/mypage" exact />
       {/* Page dir */}
-      <Route component={PostListPage} path="{['/@:username', '/']}" exact />
+      <Route component={PostListPage} path={['/@:username', '/']} exact />
+      {/* <Route component={PostListPage} path="/" exact /> */}
       <Route component={LoginPage} path="/login" exact />
       <Route component={RegisterPage} path="/register" />
       <Route component={WritePage} path="/write" />
