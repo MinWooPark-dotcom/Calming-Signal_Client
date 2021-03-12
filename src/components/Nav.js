@@ -3,19 +3,19 @@ import { Link, withRouter } from "react-router-dom";
 import "./Nav.css";
 
 
-const Nav = () => {
-  const [isToggled, setToggled] = useState(false)
+const Nav = ({isToggeld, clickHamburger}) => {
 
   const handleOnClick = () => {
-    setToggled(!isToggled)
+    // setToggled(!isToggled)
+    clickHamburger()
   }
 
   return (
     <div className="nav_container">
-      <div className="nav_logo_line"></div>
-      <div className="nav_logo">Calming Signal</div>
-      <div className="nav_text">We're talking on the calming signal.</div>
-      <div className={isToggled? "nav_toggle":"nav_hamburger"} onClick={handleOnClick}>
+      {isToggeld? (null):(<div className="nav_logo_line"></div>)}
+      {isToggeld? (null):(<div className="nav_logo">Calming Signal</div>)}
+      {isToggeld? (null):(<div className="nav_text">We're talking on the calming signal.</div>)}
+      <div className={isToggeld? "nav_toggle":"nav_hamburger"} onClick={handleOnClick}>
       <div className="line1"></div>
       <div className="line2"></div>
       <div className="line3"></div>
