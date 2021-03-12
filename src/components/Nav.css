@@ -1,32 +1,63 @@
 .nav_container{
-    border: 1px solid gray;
-    /* background-color: black; */
     width: 100%;
-    height: 4%;
-    display: flex;
-    justify-content: space-around;
+    height: 10%;
+    /* border: 1px solid gray; */
 }
 
-.nav_link_logo,
-.nav_link_about,
-.nav_link_calming_signal,
-.nav_link_board,
-.nav_link_mypage,
-.nav_link_sign_in{
-    /* border: 1px solid red; */
-    /* background-color: black; */
-    width: 100%;
-    height: 100%;
-    font-size: 1.2vmax;
-    text-align: center;
+.nav_logo_line{
+    display: inline-block;
+    position: relative;
+    border-bottom: 0.1vmax solid lightcoral;
+    width: 5%;
+    margin-top: 2%;
 }
 
 .nav_logo{
-    
+    display: inline-block;
+    position: relative;
+    top: 3.5%;   
+    margin-left: 1%;
+    font-weight: 600;
+    font-size: 1.1vmax;
 }
 
-
-.nav_sign_in{
-    /* background-color: black; */
+.nav_text{
+    display: inline-block;
+    position: relative;
+    top: 3.5%;   
+    left: 40%;
+    color: gray;
+    font-size: 1.1vmax;
 }
 
+.nav_toggle,
+.nav_hamburger{
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin-top: 1%;
+    margin-right: 2%;
+    /* left: 60%; */
+
+}
+
+.nav_hamburger div,
+.nav_toggle div{
+    width: 25px;
+    height: 3px;
+    background-color: gray;
+    margin: 4px;
+    transition: all 0.4s ease;
+}
+
+.nav_toggle .line1{
+    transform: rotate(-45deg) translate(-4px, 6px);
+}
+
+.nav_toggle .line2{
+    opacity: 0;
+}
+
+.nav_toggle .line3{
+    transform: rotate(45deg) translate(-4px, -6px);
+}
