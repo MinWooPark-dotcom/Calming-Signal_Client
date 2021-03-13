@@ -45,7 +45,7 @@ html, body {
 .landing_contents_text1{
   display: inline;
   position: relative;
-  left: 35%;
+  left: 34%;
   top: 25%;
   font-size: 13vmax;
   color: white;
@@ -54,7 +54,7 @@ html, body {
 .landing_contents_text2{
   display: inline;
   position: relative;
-  left: 16%;
+  left: 17%;
   top: 25%;
   font-size: 13vmax;
   color: white;
@@ -72,7 +72,7 @@ html, body {
 .landing_contents_text4{
   display: inline;
   position: relative;
-  left: 37%;
+  left: 35%;
   top: 25%;
   font-size: 13vmax;
   color: white;
@@ -100,6 +100,11 @@ html, body {
   top: 45%;
   left: 4%;
   z-index: 10;
+  border: none;
+  outline: none;
+  height: 3%;
+  /* color: black; */
+  /* font-size: 1vmax; */
 }
 
 .landing_right_btn{
@@ -107,6 +112,9 @@ html, body {
   top: 45%;
   right: 4%;
   z-index: 10;
+  border: none;
+  outline: none;
+  height: 3%;
 }
 
 .test_img{
@@ -123,4 +131,36 @@ html, body {
   width: 100%;
   height: 100vh; 
   background-color: #536C9C
+}
+
+ul {
+  list-style: none;
+}
+
+.landing_toggled_list_box{
+  /* border: 1px solid red; */
+  /* text-align: left; */
+  margin-left: 5%;
+  margin-top: 6%;
+  color: white;
+  font-size: 2.5vmax;
+}
+
+
+
+.landing_toggled_ul{
+
+}
+
+.landing_toggled_list_Link{
+  text-decoration: none;
+  color: white;
+}
+
+.landing_toggled_list_2,
+.landing_toggled_list_3,
+.landing_toggled_list_4,
+.landing_toggled_list_5,
+.landing_toggled_list_6{
+  margin-top: 2.5%;
 }

@@ -1,22 +1,20 @@
 import React, {useCallback} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Nav from '../components/Nav'
-import {goHome, clickToggle, setFirst} from '../modules/landing'
+import { useSelector, useDispatch } from 'react-redux'
+import Hamburger from '../components/Hamburger'
+import {goHome, clickToggle,} from '../modules/landing'
 
-const NavContainer = () => {
+const HamburgerContainer = () => {
     const isToggled = useSelector(state => state.landing.isToggled)
     const dispatch = useDispatch()
     const clickGoHome = useCallback(() => dispatch(goHome()), [dispatch])
     const clickHamburger = useCallback(() => dispatch(clickToggle()), [dispatch])
-    const setFirstNum = useCallback(() => dispatch(setFirst()), [dispatch])
     return (
-        <Nav 
-            isToggeld={isToggled}
+        <Hamburger 
+            isToggled={isToggled}
             clickGoHome={clickGoHome}
             clickHamburger={clickHamburger}
-            setFirstNum={setFirstNum}
         />
     );
 };
 
-export default React.memo(NavContainer);
+export default HamburgerContainer;
