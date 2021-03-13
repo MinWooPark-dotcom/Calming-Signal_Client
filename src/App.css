@@ -6,9 +6,13 @@
   height: 100%;
 } */
 
-html, body {
+/* html, body {
   margin: 0;
   height: 100%;
-  /* overflow: hidden; */
-  /* border: 3px solid red; */
-}
+  overflow: hidden;
+} */
+
+/* .about_text_box{
+  border: 1px solid red;
+  width: 60%;
+} */

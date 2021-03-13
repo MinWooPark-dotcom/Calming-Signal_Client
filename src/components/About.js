@@ -1,13 +1,8 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import Nav from "./Nav";
 import NavContainer from '../container/NavContainer'
 import HamburgerContainer from '../container/HamburgerContainer'
-import Footer from "./Footer";
-import about_top from "../img/landing_top.jpeg";
-import about_middle from "../img/landing_middle.jpeg";
-import about_bottom from "../img/landing_bottom.jpg";
-import test from '../img/test.jpg'
+import about_img from "../img/about_img.jpg";
 import "./About.css";
 
 const About = ({isToggled}) => {
@@ -50,8 +45,10 @@ console.log("🚀 ~ file: About.js ~ line 13 ~ About ~ isToggled", isToggled)
       </div>
     </div>
     <div className="about_img_box">
-      <img className="about_img" src={test} alt="dog"></img>
+      {/* <img className="about_img" src={test} alt="dog"></img> */}
+      <img className="about_img" src={about_img} alt="dog"></img>
     </div>  
+    <div className="about_bottom"></div>
   </div>
 )}
 </div>

@@ -26,7 +26,7 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
   }
   
   return (
-    <div>
+    <div className="landing_page">
       {isToggled? 
       (<HamburgerContainer/>) 
       : 
@@ -36,7 +36,9 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
       <NavContainer />
         <button className="landing_left_btn" onClick={hadleOnClickLeft}>&#10094;</button>
         {/* Link 컴포넌트 같은 거 써서 클릭하면 행복한 감정 표현 카밍 시그널로 이동, 아래도 마찬가지 */}
+        <Link to="/calming-signal/happy">
         <div className="landing_contents_text1">Happy</div>
+        </Link>
         <button className="landing_right_btn" onClick={hadleOnClickRight}>&#10095;</button>
         <Footer/>
       </div>):(null)}
@@ -44,7 +46,9 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
       {number === 2? (<div className="landing_contents2">
       <NavContainer />
         <button className="landing_left_btn" onClick={hadleOnClickLeft}>&#10094;</button>
+        <Link to="/calming-signal/comfortable">
       <div className="landing_contents_text2">Comfortable</div>
+        </Link>
         <button className="landing_right_btn" onClick={hadleOnClickRight}>&#10095;</button>
         <Footer/>
       </div>):(null)}
@@ -52,7 +56,9 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
       {number === 3? (<div className="landing_contents3">
       <NavContainer />
         <button className="landing_left_btn" onClick={hadleOnClickLeft}>&#10094;</button>
+        <Link to="/calming-signal/nervous">
         <div className="landing_contents_text3">Nervous</div>
+        </Link>
         <button className="landing_right_btn" onClick={hadleOnClickRight}>&#10095;</button>
         <Footer/>
       </div>):(null)}
@@ -60,7 +66,9 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
       {number === 4? (<div className="landing_contents4">
       <NavContainer />
         <button className="landing_left_btn" onClick={hadleOnClickLeft}>&#10094;</button>
+        <Link to="/calming-signal/settle">
         <div className="landing_contents_text4">Settle</div>
+        </Link>
         <button className="landing_right_btn" onClick={hadleOnClickRight}>&#10095;</button>
         <Footer/>
       </div>):(null)}

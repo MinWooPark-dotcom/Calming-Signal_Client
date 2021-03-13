@@ -1,8 +1,8 @@
 import React from "react";
 import Nav from "./Nav";
 import Sidebar from "./Sidebar";
-import "./Content.css";
 import landing_top from "../img/landing_top.jpeg";
+import "./Content.css";
 
 const Content = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-import Landing from '../components/Landing'
+import { useSelector, useDispatch } from 'react-redux';
+import Landing from '../components/Landing';
 import {goHome, clickRight, clickLeft, clickToggle, setFirst, setLast} from '../modules/landing'
 
 const LandingContainer = () => {
