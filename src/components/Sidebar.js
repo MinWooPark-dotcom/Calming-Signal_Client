@@ -8,14 +8,14 @@ const Sidebar = () => {
       <Link to="/calming-signal/happy">
       <div className="sidebar_category_happy">Happy</div>
       </Link>
-      <Link to="/calming-signal/1">
-        <div className="sidebar_1">꼬리 말기</div>
+      <Link to="/calming-signal/wag">
+        <div className="sidebar_1">꼬리 흔들기</div>
       </Link>
       <Link to="/calming-signal/2">
-        <div className="sidebar_2">하품</div>
+        <div className="sidebar_2">표정</div>
       </Link>
       <Link to="/calming-signal/3">
-        <div className="sidebar_3">꼬리 흔들기</div>
+        <div className="sidebar_3">배 보이기</div>
       </Link>
       <Link to="/calming-signal/comfortable">
       <div className="sidebar_category_comfortable">Comfortable</div>

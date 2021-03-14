@@ -20,3 +20,15 @@
 .happy_text{
     font-size: 1.5vmax;
 }
+
+.happy_text_first{
+    font-size: 2vmax;
+}
+
+.happy_text_second,
+.happy_text_third,
+.happy_text_forth,
+.happy_text_fifth,
+.happy_text_sixth{
+    margin-top: 3%;
+}

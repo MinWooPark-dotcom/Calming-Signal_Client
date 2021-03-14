@@ -7,7 +7,10 @@ import Content from './components/Content';
 import Board from './components/Board';
 import MyPage from './components/MyPage';
 import HappyContainer from './container/HappyContainer';
+import wag from './components/calming-signal pages/happy/Wag';
 import "./App.css";
+import Smile from './components/calming-signal pages/happy/Smile';
+import Belly from './components/calming-signal pages/happy/Belly';
 
 const App = () => {
   return (
@@ -16,9 +19,9 @@ const App = () => {
       <Route component={AboutContainer} path="/about" exact />
       <Route component={CalmingSignalContainer} path="/calming-signal" exact />
       <Route component={HappyContainer} path="/calming-signal/happy" exact />
-      <Route component={Content} path="/calming-signal/1" exact />
-      <Route component={Content} path="/calming-signal/2" exact />
-      <Route component={Content} path="/calming-signal/3" exact />
+      <Route component={wag} path="/calming-signal/wag" exact />
+      <Route component={Smile} path="/calming-signal/2" exact />
+      <Route component={Belly} path="/calming-signal/3" exact />
       <Route component={Content} path="/calming-signal/4" exact />
       <Route component={Content} path="/calming-signal/5" exact />
       <Route component={Content} path="/calming-signal/6" exact />

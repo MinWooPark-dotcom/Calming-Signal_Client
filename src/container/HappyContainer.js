@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import Happy from '../components/calming-signal pages/Happy'
+import Happy from '../components/calming-signal pages/happy/Happy'
 
 const HappyContainer = () => {
     const isToggled = useSelector(state => state.landing.isToggled)
