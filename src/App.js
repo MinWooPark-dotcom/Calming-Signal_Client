@@ -20,8 +20,8 @@ const App = () => {
       <Route component={CalmingSignalContainer} path="/calming-signal" exact />
       <Route component={HappyContainer} path="/calming-signal/happy" exact />
       <Route component={wag} path="/calming-signal/wag" exact />
-      <Route component={Smile} path="/calming-signal/2" exact />
-      <Route component={Belly} path="/calming-signal/3" exact />
+      <Route component={Smile} path="/calming-signal/smile" exact />
+      <Route component={Belly} path="/calming-signal/belly" exact />
       <Route component={Content} path="/calming-signal/4" exact />
       <Route component={Content} path="/calming-signal/5" exact />
       <Route component={Content} path="/calming-signal/6" exact />

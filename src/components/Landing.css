@@ -17,73 +17,128 @@ html, body {
 .landing_contents1{
   width: 100%;
   height: 100%;
-  /* background-color: #FFDF3E; */
-  /* background-color: #f9d622;   */
-  background-color: #ffd954;  
+  background-color: #FF9127;
+
   overflow: hidden;
-  /* eac50e */
 }
 
 .landing_contents2{
   width: 100%;
   height: 100%;
-  background-color: #E3ECA6;
+  background-color: #ffd954;  
+  /* 아래가 좀 더 진함 */
+  /* background-color: #FFDF3E; */
+  overflow: hidden;
+  /* eac50e */
 }
 
 .landing_contents3{
   width: 100%;
   height: 100%;
-  background-color: #8B2664;
-  /* background-color: #390C17 */
+  /* background-color: #E3ECA6; */
+  background-color: #a2e5ec;
+  /* background-color: #89dfe5; */
+  
 }
 
 .landing_contents4{
   width: 100%;
   height: 100%;
+  /* background-color: #8B2664; */
+  background-color: #892644
+}
+
+.landing_contents5{
+  width: 100%;
+  height: 100%;
   background-color: #26396C;
 }
 
-.landing_contents{
-  /* border: 3px solid blue; */
-  background-color: #FFDF3E;
-  width: 100%;
-  height: 100%;
-}
 
 .landing_contents_text1{
   display: inline;
   position: relative;
-  left: 34%;
+  left: 10%;
   top: 30%;
   font-size: 13vmax;
   color: white;
-} 
+  z-index: 1;
+  /* border: 1px solid red; */
+}
+
+.landing_contents_landing_logo{
+  /* width: 40%;
+  height: 60%;
+  position: relative;
+  top: -15%;
+  left: 30%; */
+  width: 10%;
+  height: 20%;
+  position: relative;
+  top: -16%;
+  left: 55%;
+  /* left: 80%; */
+}
+
+.landing_contents_logo{
+  /* width: 40%;
+  height: 60%;
+  position: relative;
+  top: -15%;
+  left: 30%; */
+  width: 20%;
+  height: 30%;
+  position: relative;
+  top: -30%;
+  left: 40%;
+}
+
+.landing_contents_logo_img{
+  width: 100%;
+  height: 100%;
+}
 
 .landing_contents_text2{
+  display: inline;
+  position: relative;
+  left: 34%;
+  top: 30%;
+  /* top: 50%; */
+  font-size: 13vmax;
+  /* font-size: 15vmax; */
+  /* font-weight: 500; */
+  color: white;
+   z-index: 1;
+} 
+
+.landing_contents_text3{
   display: inline;
   position: relative;
   left: 17%;
   top: 30%;
   font-size: 13vmax;
   color: white;
+   z-index: 1;
 }
 
-.landing_contents_text3{
+.landing_contents_text4{
   display: inline;
   position: relative;
   left: 29%;
   top: 30%;
   font-size: 13vmax;
   color: white;
+   z-index: 1;
 }
 
-.landing_contents_text4{
+.landing_contents_text5{
   display: inline;
   position: relative;
   left: 35%;
   top: 30%;
   font-size: 13vmax;
   color: white;
+   z-index: 1;
 }
 
 .landing_contents_right{
@@ -105,24 +160,33 @@ html, body {
 
 .landing_left_btn{
   position: absolute;
-  top: 48%;
+  top: 45%;
   left: 4%;
   z-index: 10;
   border: none;
   outline: none;
   height: 3%;
   /* color: black; */
-  /* font-size: 1vmax; */
+  width: 3%;
+  height: 8%;
+  font-size: 1.3vmax;
+  /* border-radius: 1vmax; */
+  border-radius: 3vmax;
 }
 
 .landing_right_btn{
   position: absolute;
-  top: 48%;
+  top: 45%;
   right: 4%;
   z-index: 10;
   border: none;
   outline: none;
   height: 3%;
+  width: 3%;
+  height: 8%;
+  font-size: 1.3vmax;
+  /* border-radius: 1vmax; */
+  border-radius: 3vmax;
 }
 
 .test_img{

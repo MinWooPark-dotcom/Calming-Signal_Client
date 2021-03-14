@@ -29,7 +29,7 @@ const landing = handleActions(
         [CLICK_LEFT]: (state, action) => ({...state,  number: state.number - 1}),
         [CLICK_TOGGLE]: (state, action) => ({...state, isToggled: !state.isToggled}),
         [SET_FIRST]: (state, action) => ({...state, number: 1}),
-        [SET_LAST]: (state, action) => ({...state, number: 4})
+        [SET_LAST]: (state, action) => ({...state, number: 5})
     },
     initialState
 )

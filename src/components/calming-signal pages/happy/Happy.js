@@ -3,7 +3,6 @@ import HamburgerContainer from '../../../container/HamburgerContainer';
 import NavContainer from '../../../container/NavContainer';
 import Sidebar from '../../Sidebar';
 import './Happy.css'
-import img from '../../../img/happy.jpg'
 
 const Happy = ({isToggled}) => {
     return (

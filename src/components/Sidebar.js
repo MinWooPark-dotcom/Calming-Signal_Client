@@ -11,10 +11,10 @@ const Sidebar = () => {
       <Link to="/calming-signal/wag">
         <div className="sidebar_1">꼬리 흔들기</div>
       </Link>
-      <Link to="/calming-signal/2">
-        <div className="sidebar_2">표정</div>
+      <Link to="/calming-signal/smile">
+        <div className="sidebar_2">웃는 표정</div>
       </Link>
-      <Link to="/calming-signal/3">
+      <Link to="/calming-signal/belly">
         <div className="sidebar_3">배 보이기</div>
       </Link>
       <Link to="/calming-signal/comfortable">
