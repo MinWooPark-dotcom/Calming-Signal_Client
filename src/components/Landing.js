@@ -42,7 +42,7 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
       <NavContainer />
         <button className="landing_left_btn" onClick={hadleOnClickLeft}>&#10094;</button>
         {/* Link 컴포넌트 같은 거 써서 클릭하면 행복한 감정 표현 카밍 시그널로 이동, 아래도 마찬가지 */}
-        <Link to="/calming-signal/happy">
+        <Link to="/about">
         <div className="landing_contents_text1">Calming Signal</div>
         <div className="landing_contents_landing_logo"><img className="landing_contents_logo_img" src={landing_logo} alt="logo_img"></img></div>
         {/* <div className="landing_contents_logo"><img className="landing_contents_logo_img" src={landing_logo2} alt="logo_img"></img></div> */}

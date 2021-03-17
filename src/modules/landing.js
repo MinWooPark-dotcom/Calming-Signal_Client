@@ -5,7 +5,7 @@ const GO_HOME = 'landing/GO_HOME'
 const CLICK_RIGHT = 'landing/CLICK_RIGHT'
 const CLICK_LEFT = 'landing/CLICK_LEFT'
 const CLICK_TOGGLE = 'landing/CLICK_TOGGLE'
-const SET_FIRST = 'landing/SET_FIRST'
+const SET_FIRST = 'landing/SET_FIRST' 
 const SET_LAST = 'landing/SET_LAST'
 
 // action creator

@@ -12,15 +12,18 @@ a{
 .nav_logo_line{
     display: inline-block;
     position: relative;
-    border-bottom: 0.1vmax solid lightcoral;
+    /* border-bottom: 0.1vmax solid red; */
+    border-bottom: 0.1vmax solid #ff2323;
     width: 5%;
     margin-top: 2%;
 }
 
 .nav_logo{
     display: inline-block;
-    position: relative;
-    top: 3.5%;   
+    /* position: relative; */
+    position: absolute;
+    top: 2.5%;   
+    /* margin-top: 1%; */
     margin-left: 1%;
     font-weight: 600;
     font-size: 1.1vmax;

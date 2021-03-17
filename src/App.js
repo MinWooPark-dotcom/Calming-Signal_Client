@@ -11,12 +11,17 @@ import wag from './components/calming-signal pages/happy/Wag';
 import "./App.css";
 import Smile from './components/calming-signal pages/happy/Smile';
 import Belly from './components/calming-signal pages/happy/Belly';
+// import SignIn from './components/SignIn';
+import SignInContainer from './container/SignInContainer';
+import SignUp from './components/SignUp';
 
 const App = () => {
   return (
     <>
       <Route component={LandingContainer} path="/" exact />
       <Route component={AboutContainer} path="/about" exact />
+      <Route component={SignInContainer} path="/sign-in" exact />
+      <Route component={SignUp} path="/sign-up" exact />
       <Route component={CalmingSignalContainer} path="/calming-signal" exact />
       <Route component={HappyContainer} path="/calming-signal/happy" exact />
       <Route component={wag} path="/calming-signal/wag" exact />
