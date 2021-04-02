@@ -56,7 +56,7 @@ const SignUp = () => {
                   withCredentials: true,
               }
           );
-        //   console.log(signUp)
+          console.log('signUp.data.message>>>', signUp.data.message)
           // setErrorMessage(null)
         } 
         // else {
@@ -64,6 +64,8 @@ const SignUp = () => {
         // }
     } catch(err) {
       console.error(err)
+        //   setErrorMessage('아이디 또는 비밀번호를 확인해 주세요')
+        window.alert('이미 존재하는 아이디입니다.')
     }
   }
 

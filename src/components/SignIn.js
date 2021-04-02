@@ -76,7 +76,7 @@ const SignIn = ({
                     withCredentials: true,
                 }
             );
-            console.log(signIn)
+            console.log('signIn.data.message>>>>',signIn.data.message)
             // setErrorMessage(null)
             eraseSignInErrorMsg();
           } else {
