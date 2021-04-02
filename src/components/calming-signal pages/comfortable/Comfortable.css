@@ -1,0 +1,34 @@
+.comfortable_container{
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    width: 50%;
+    height: 50%;
+}
+
+.comfortable_img_div{
+    width: 50%;
+    height: 50%;
+}
+
+.comfortable_img {
+    width: 100%;
+    height: 100%;
+}
+
+.comfortable_text{
+    font-size: 1.5vmax;
+}
+
+.comfortable_text_first{
+    font-size: 2vmax;
+}
+
+.comfortable_text_second,
+.comfortable_text_third,
+.comfortable_text_forth,
+.comfortable_text_fifth,
+.comfortable_text_sixth{
+    margin-top: 3%;
+}

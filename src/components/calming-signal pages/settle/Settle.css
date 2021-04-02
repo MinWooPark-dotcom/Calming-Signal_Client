@@ -1,0 +1,34 @@
+.settle_container{
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    width: 50%;
+    height: 50%;
+}
+
+.settle_img_div{
+    width: 50%;
+    height: 50%;
+}
+
+.settle_img {
+    width: 100%;
+    height: 100%;
+}
+
+.settle_text{
+    font-size: 1.5vmax;
+}
+
+.settle_text_first{
+    font-size: 2vmax;
+}
+
+.settle_text_second,
+.settle_text_third,
+.settle_text_forth,
+.settle_text_fifth,
+.settle_text_sixth{
+    margin-top: 3%;
+}

@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import './SignUp.css'
 import axios from 'axios'
 
-const SignUp = () => {
+const SignUp = ({history}) => {
     const [isClickSignUpnBtn, setIsClickSignUpBtn] = useState(false)
     
     const [usernameInputValue, setUsernameInputValue] = useState(null);
@@ -56,16 +56,16 @@ const SignUp = () => {
                   withCredentials: true,
               }
           );
-          console.log('signUp.data.message>>>', signUp.data.message)
-          // setErrorMessage(null)
+          console.log("🚀 ~ file: SignUp.js ~ line 59 ~ handleOnClickSignUpBtn ~ signUp", signUp)
+          
+          if(signUp) {
+            window.alert('회원가입이 완료 되었습니다.')      
+            history.push('/sign-in')
+          } 
         } 
-        // else {
-        //   setErrorMessage('아이디 또는 비밀번호를 확인해 주세요')
-        // }
     } catch(err) {
       console.error(err)
-        //   setErrorMessage('아이디 또는 비밀번호를 확인해 주세요')
-        window.alert('이미 존재하는 아이디입니다.')
+      window.alert('이미 존재하는 아이디입니다.')   
     }
   }
 
@@ -106,4 +106,4 @@ const SignUp = () => {
     )
 };
 
-export default SignUp;
+export default withRouter(SignUp);

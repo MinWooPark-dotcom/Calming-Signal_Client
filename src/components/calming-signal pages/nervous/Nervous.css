@@ -1,0 +1,34 @@
+.nervous_container{
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    width: 50%;
+    height: 50%;
+}
+
+.nervous_img_div{
+    width: 50%;
+    height: 50%;
+}
+
+.nervous_img {
+    width: 100%;
+    height: 100%;
+}
+
+.nervous_text{
+    font-size: 1.5vmax;
+}
+
+.nervous_text_first{
+    font-size: 2vmax;
+}
+
+.nervous_text_second,
+.nervous_text_third,
+.nervous_text_forth,
+.nervous_text_fifth,
+.nervous_text_sixth{
+    margin-top: 3%;
+}

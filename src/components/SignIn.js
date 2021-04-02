@@ -20,6 +20,7 @@ const SignIn = ({
   eraseEmailErrorMsg,
   erasePasswordErrorMsg,
   eraseSignInErrorMsg,
+  history
   }) => {
     // const [isClickSignInBtn, setIsClickSignInBtn] = useState(false)
     
@@ -79,6 +80,7 @@ const SignIn = ({
             console.log('signIn.data.message>>>>',signIn.data.message)
             // setErrorMessage(null)
             eraseSignInErrorMsg();
+            history.goBack();
           } else {
             // setErrorMessage('아이디 또는 비밀번호를 확인해 주세요')
             setSignInErrorMsg('아이디 또는 비밀번호를 확인해 주세요');
@@ -128,4 +130,4 @@ const SignIn = ({
     );
 };
 
-export default SignIn;
+export default withRouter(SignIn);
