@@ -3,9 +3,15 @@ import NavContainer from '../../../container/NavContainer';
 import Sidebar from '../../Sidebar';
 import wag_gif from '../../../img/wag.gif'
 import './Wag.css'
+import HamburgerContainer from '../../../container/HamburgerContainer';
 
-const Wag = () => {
-    return (        
+const Wag = ({isToggled}) => {
+    return(
+      <div>    
+      {isToggled? 
+      (<HamburgerContainer />)
+      :
+     (        
     <div className="wag_container">
       <NavContainer />
       <Sidebar />
@@ -25,7 +31,9 @@ const Wag = () => {
         </div>
       </div>
     </div>
-    );
-};
-
+    )
+     }
+    </div>
+    )
+}
 export default Wag;

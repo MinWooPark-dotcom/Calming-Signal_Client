@@ -8,8 +8,8 @@ import Board from './components/Board';
 import MyPage from './components/MyPage';
 //! happy
 import HappyContainer from './container/HappyContainer';
-import wag from './components/calming-signal pages/happy/Wag';
-import "./App.css";
+import WagContainer from './container/WagContainer';
+
 import Smile from './components/calming-signal pages/happy/Smile';
 import Belly from './components/calming-signal pages/happy/Belly';
 // import SignIn from './components/SignIn';
@@ -27,8 +27,13 @@ import Yawn from './components/calming-signal pages/settle/Yawn';
 import Interrupting from './components/calming-signal pages/settle/Interrupting';
 import TurnHead from './components/calming-signal pages/settle/TurnHead';
 
+//! board
+import WritePage from './components/board/WirtePage'
+
 import SignInContainer from './container/SignInContainer';
 import SignUp from './components/SignUp';
+
+import "./App.css";
 
 const App = () => {
   return (
@@ -40,7 +45,7 @@ const App = () => {
       <Route component={CalmingSignalContainer} path="/calming-signal" exact />
       {/* happy */}
       <Route component={HappyContainer} path="/calming-signal/happy" exact />
-      <Route component={wag} path="/calming-signal/wag" exact />
+      <Route component={WagContainer} path="/calming-signal/wag" exact />
       <Route component={Smile} path="/calming-signal/smile" exact /> 
       <Route component={Belly} path="/calming-signal/belly" exact />
       {/* comfortable */}
@@ -61,9 +66,16 @@ const App = () => {
       <Route component={Content} path="/calming-signal/5" exact />
       <Route component={Content} path="/calming-signal/6" exact />
       <Route component={Content} path="/calming-signal/7" exact />
+      
+      {/* board */}
       <Route component={Board} path="/board" exact />
+      <Route component={WritePage} path="/write" exact />
+      
+      
       <Route component={MyPage} path="/mypage" exact />  
       
+
+
     </>
   );
 };

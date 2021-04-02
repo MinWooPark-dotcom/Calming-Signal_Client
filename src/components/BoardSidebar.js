@@ -1,0 +1,24 @@
+import React from "react";
+import { Link, withRouter } from "react-router-dom";
+import "./BoardSidebar.css";
+
+const BoardSidebar = () => {
+  return (
+    <div className="board_sidebar_container">
+      <Link to="/board/free">
+      <div className="board_sidebar_container_free">자유게시판</div>
+      </Link>
+      <Link to="/board/small">
+        <div className="board_sidebar_container_small">소형견</div>
+      </Link>
+      <Link to="/board/medium">
+        <div className="board_sidebar_container_medium">중형견</div>
+      </Link>
+      <Link to="/board/large">
+        <div className="board_sidebar_container_large">대형견</div>
+      </Link>
+    </div>
+  );
+};
+
+export default BoardSidebar;

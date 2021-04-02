@@ -1,0 +1,57 @@
+.board_sidebar_container{
+    float: left;
+    /* border: 1px solid red; */
+    /* background-color: red; */
+    width: 10%;
+    /* height: 100vh; */
+    position: absolute;
+    top: 15%;
+    /* left: 6% */
+    left: 3.5%
+}
+/* 
+.board_sidebar_1,
+.board_sidebar_2,
+.board_sidebar_3,
+.board_sidebar_4,
+.board_sidebar_5,
+.board_sidebar_6,
+.board_sidebar_7,
+.board_sidebar_8,
+.board_sidebar_9,
+.board_sidebar_10,
+.board_sidebar_11
+{
+    margin-top: 10%;
+    margin-left: 5%;
+    font-size: 1.1vmax;
+} */
+
+
+.board_sidebar_container_small,
+.board_sidebar_container_medium,
+.board_sidebar_container_large{
+    margin-top: 15%;
+}
+
+.board_sidebar_container_free {
+    font-size: 1.5vmax;
+    font-weight: 550;
+    /* color: #ffd954; */
+}
+.board_sidebar_container_small{
+    font-size: 1.5vmax;
+    font-weight: 550;
+    /* color: #E3ECA6; */
+}
+.board_sidebar_container_medium{
+    font-size: 1.5vmax;
+    font-weight: 550;
+    /* color: #8B2664; */
+}
+
+.board_sidebar_container_large{
+    font-size: 1.5vmax;
+    font-weight: 550;
+    /* color: #26396C; */
+}

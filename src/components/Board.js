@@ -1,7 +1,12 @@
 import React from "react";
+import BoardSidebar from "./BoardSidebar";
 
 const Board = () => {
-  return <div>board</div>;
+  return (
+  <div>
+    <BoardSidebar />
+  </div>
+  )
 };
 
 export default Board;
