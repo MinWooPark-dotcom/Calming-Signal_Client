@@ -1,11 +1,22 @@
 .editor_container{
-    margin-top: 3%;
+    margin-top: 2.5%;
     margin-left: 5%;
     width: 90%;
     height: 80vh;
     /* border: 1px solid red; */
     /* float: right; */
 
+}
+
+.editor_select_div{
+
+}
+
+.editor_select_box{
+    /* border: 1px solid red; */
+    /* font-size: 1vmax; */
+    /* width: 10%; */
+    /* height: 1.5vmax; */
 }
 
 .editor_hr {
@@ -15,6 +26,7 @@
 .editor_title{
     width: 100%;
     height: 5%;
+    margin-top: 2%;
     /* border: 1px solid red; */
 }
 
@@ -23,6 +35,11 @@
     height: 100%;
     border: none;
     outline: none;
+    font-size: 1.6vmax;
+}
+
+.editor_title_input::placeholder{
+    font-size: 1.6vmax;
 }
 
 .editor_content{
@@ -36,4 +53,9 @@
     height: 100%;   
     border: none;
     outline: none;
+    font-size: 1.3vmax;
+}
+
+.editor_content_textarea::placeholder{
+    font-size: 1.3vmax;
 }

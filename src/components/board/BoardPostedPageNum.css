@@ -1,0 +1,52 @@
+.board_posted_page_nums{
+    /* border: 1px solid red; */
+    width: 58%;
+    position: absolute;
+    bottom: 15%;
+    margin-left: 40%;
+}
+
+.board_posted_page_num_1{
+    display: inline-block;
+}
+
+.board_posted_page_num_2{
+    display: inline-block; 
+}
+
+.board_posted_page_num_3{
+    display: inline-block; 
+}
+
+.board_posted_page_num_4{
+    display: inline-block; 
+}
+
+.board_posted_page_num_5{
+    display: inline-block; 
+}
+
+.board_posted_page_prev_five{
+    display: inline-block;    
+}
+
+.board_posted_page_prev_one{
+    display: inline-block;    
+}
+
+.board_posted_page_next_one{
+    display: inline-block;    
+}
+
+.board_posted_page_next_five{
+    display: inline-block;    
+}
+
+.board_post_btn{
+    display: inline-block;
+    border: 1px solid red;
+    font-size: 1.3vmax;
+    width: 13%;
+    height: 3vh;
+    float: right;
+}

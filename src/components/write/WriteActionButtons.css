@@ -2,7 +2,7 @@
     /* border: 1px solid red; */
     background-color: #F5F5F5;
     width: 100%;
-    height: 9vh;
+    height: 8vh;
     position: absolute;
     bottom: 0%;
 }
@@ -16,10 +16,10 @@
     position: absolute;
     margin-top: 0.5%;
     right: 10%;
-    width: 10%;
-    height: 70%;
+    width: 7%;
+    height: 65%;
     border-radius: 1vmax;
-    font-size: 1vmax;
+    font-size: 0.9vmax;
 }
 
 .cancle_btn{
@@ -27,8 +27,8 @@
     position: absolute;
     margin-top: 0.5%;
     right: 3%;
-    width: 5%;
-    height: 70%;
+    width: 5.5%;
+    height: 65%;
     border-radius: 1vmax;
-    font-size: 1vmax;
+    font-size: 0.9vmax;
 }

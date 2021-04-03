@@ -17,8 +17,8 @@ const Editor = () => {
 
   return (
     <div className="editor_container">
-      {selectDefalutValue? (<div>
-        <select name="category">
+      {selectDefalutValue? (<div className="editor_select_div">
+        <select className="editor_select_box" name="category">
             <option>{selectDefalutValue[0]}</option>
             <option>{selectDefalutValue[1]}</option>
             <option>{selectDefalutValue[2]}</option>

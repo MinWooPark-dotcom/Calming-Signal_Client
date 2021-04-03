@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, withRouter } from "react-router-dom";
 import './WriteActionButtons.css'
 
 const WriteActionButtons = ({history}) => {
@@ -17,4 +18,4 @@ const WriteActionButtons = ({history}) => {
     );
 };
 
-export default WriteActionButtons;
+export default withRouter(WriteActionButtons);
