@@ -1,3 +1,5 @@
+/* eslint react/prop-types: 0 */
+
 import React from "react";
 import NavConatiner from "../../container/NavContainer";
 import HamburgerContainer from "../../container/HamburgerContainer";

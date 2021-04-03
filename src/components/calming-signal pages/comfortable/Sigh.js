@@ -1,3 +1,6 @@
+/* eslint react/prop-types: 0 */
+/* eslint react/no-unescaped-entities: 0 */
+
 import React from 'react';
 import NavContainer from '../../../container/NavContainer';
 import Sidebar from '../../Sidebar';

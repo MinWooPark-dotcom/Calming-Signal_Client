@@ -4,7 +4,8 @@ import LandingContainer from './container/LandingContainer'
 import AboutContainer from './container/AboutContainer'
 import CalmingSignalContainer from './container/CalmingSignalContainer'
 import Content from './components/Content';
-import FreeBulletinBoard from './components/board/FreeBulletinBoard';
+// import FreeBulletinBoard from './components/board/FreeBulletinBoard';
+import FreeBulletinBoardContainer from './container/FreeBulletinBoardContainer'
 import MyPage from './components/MyPage';
 //! happy
 import HappyContainer from './container/HappyContainer';
@@ -68,7 +69,7 @@ const App = () => {
       <Route component={Content} path="/calming-signal/7" exact />
       
       {/* board */}
-      <Route component={FreeBulletinBoard} path="/board" exact />
+      <Route component={FreeBulletinBoardContainer} path="/board" exact />
       <Route component={WritePage} path="/write" exact />
       
       

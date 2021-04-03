@@ -1,3 +1,5 @@
+/* eslint react/prop-types: 0 */
+
 import React, {useState} from 'react';
 import NavContainer from '../container/NavContainer';
 import './SignIn.css'
