@@ -1,0 +1,39 @@
+.editor_container{
+    margin-top: 3%;
+    margin-left: 5%;
+    width: 90%;
+    height: 80vh;
+    /* border: 1px solid red; */
+    /* float: right; */
+
+}
+
+.editor_hr {
+    width: 100%;
+}
+
+.editor_title{
+    width: 100%;
+    height: 5%;
+    /* border: 1px solid red; */
+}
+
+.editor_title_input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+
+.editor_content{
+    width: 100%;
+    height: 90%;
+    /* border: 1px solid red;    */
+}
+
+.editor_content_textarea{
+    width: 100%;
+    height: 100%;   
+    border: none;
+    outline: none;
+}

@@ -1,64 +1,40 @@
-import React, { useEffect, useRef } from 'react';
-import Quill from 'quill';
-import 'quill/dist/quill.bubble.css';
-import styled from 'styled-components';
-import palette from '../../lib/styles/palette';
-import Responsive from '../common/Responsive';
-
-const EditorBlock = styled(Responsive)`
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-`;
-
-const TitleInput = styled.input`
-    font-size: 3rem;
-    outline: none;
-    padding-bottom: 0.5rem;
-    border: none;
-    border-bottom: 1px solid ${palette.gray[4]};
-    margin-bottom: 2rem;
-    width: 100%;
-`;
-
-const QuillWrapper = styled.div`
-    .ql-editor {
-        padding: 0;
-        min-height: 320px;
-        font-size: 1.125rem;
-        line-height: 1.5;
-    }
-    .ql-editor.ql-blank::before {
-        left: 0px;
-    }
-`;
+import React, { useEffect, useState } from 'react';
+import './Editor.css'
 
 const Editor = () => {
-    const quillElement = useRef(null); 
-    const quillInstance = useRef(null);
 
-    useEffect(() => {
-        quillInstance.current = new Quill(quillElement.current, {
-            theme: 'bubble',
-            placeholder: '내용을 작성하세요...',
-            modules: {
-                toolbar: [
-                    [{ header: '1' }, { header: '2' }],
-                    ['bold', 'italic', 'underline', 'strike'],
-                    [{ list: 'ordered' }, { list: 'bullet' }],
-                    ['blockquote', 'code-block', 'link', 'image'],
-                ],
-            }
-        });
-    }, [])
+  const [selectDefalutValue, setSelectDefaultValue] = useState(null)
+  
+  useEffect(()=>{
+    // const url = window.location.href;
+    const url = window.location.pathname 
 
-    return (
-        <EditorBlock>
-            <TitleInput placeholder="제목을 입력하세요" />
-            <QuillWrapper>
-                <div ref={quillElement} />
-            </QuillWrapper>
-        </EditorBlock>
-    );
+    console.log('url',url, url === '/write')
+    if (url === '/write') {
+      setSelectDefaultValue(['자유게시판','소형견','중형견','대형견'])
+    }
+  },[])
+
+  return (
+    <div className="editor_container">
+      {selectDefalutValue? (<div>
+        <select name="category">
+            <option>{selectDefalutValue[0]}</option>
+            <option>{selectDefalutValue[1]}</option>
+            <option>{selectDefalutValue[2]}</option>
+            <option>{selectDefalutValue[3]}</option>
+        </select>
+      </div>
+          ):(null)}
+           <div className="editor_title">
+         <input className="editor_title_input" placeholder="제목을 입력하세요"></input>
+       </div>
+       <hr className="editor_hr"></hr>
+       <div className="editor_content">
+         <textarea className="editor_content_textarea" placeholder="내용을 작성하세요..."></textarea>
+       </div>
+    </div>
+  );
 };
 
 export default Editor;

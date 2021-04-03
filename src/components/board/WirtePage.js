@@ -1,10 +1,18 @@
 import React from 'react';
+import { Link, withRouter } from "react-router-dom";
+import BoardSidebar from '../BoardSidebar';
 import Editor from '../write/Editor';
+import TagBox from '../write/TagBox';
+import WriteActionButtons from '../write/WriteActionButtons';
 
-const WirtePage = () => {
+const WirtePage = ({history}) => {
+
     return (
         <div>
-            <Editor></Editor>
+            {/* <div>dd</div> */}
+            <Editor />
+            {/* <TagBox /> */}
+            <WriteActionButtons />
         </div>
     );
 };
