@@ -1,41 +1,54 @@
 .board_posted_page_nums{
     /* border: 1px solid red; */
-    width: 58%;
+    width: 40%;
+    text-align: center;
     position: absolute;
     bottom: 15%;
-    margin-left: 40%;
-}
-
-.board_posted_page_num_1{
-    display: inline-block;
-}
-
-.board_posted_page_num_2{
-    display: inline-block; 
-}
-
-.board_posted_page_num_3{
-    display: inline-block; 
-}
-
-.board_posted_page_num_4{
-    display: inline-block; 
-}
-
-.board_posted_page_num_5{
-    display: inline-block; 
+    left: 25%;
+    font-size: 1.2vmax;
+    /* margin-left: 40%; */
 }
 
 .board_posted_page_prev_five{
     display: inline-block;    
+    position: relative; 
+    /* left: 0%; */
+    margin-right: 3%;
 }
 
 .board_posted_page_prev_one{
     display: inline-block;    
+    margin-right: 3%;
+}
+
+.board_posted_page_num_1{
+    display: inline-block;
+    margin-right: 1%;
+}
+
+.board_posted_page_num_2{
+    display: inline-block; 
+    margin-right: 1%;
+}
+
+.board_posted_page_num_3{
+    display: inline-block; 
+    margin-right: 1%;
+}
+
+.board_posted_page_num_4{
+    display: inline-block; 
+    margin-right: 1%;
+}
+
+.board_posted_page_num_5{
+    display: inline-block; 
+    margin-right: 3%;
 }
 
 .board_posted_page_next_one{
     display: inline-block;    
+    margin-right: 3%;
 }
 
 .board_posted_page_next_five{
@@ -44,9 +57,10 @@
 
 .board_post_btn{
     display: inline-block;
-    border: 1px solid red;
-    font-size: 1.3vmax;
-    width: 13%;
+    /* border: 1px solid red; */
+    font-size: 1.2vmax;
     height: 3vh;
-    float: right;
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
 }

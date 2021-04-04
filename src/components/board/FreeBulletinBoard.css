@@ -25,7 +25,7 @@
 .free_board_posted_title{
     display: inline-block;
     border: 1px solid gray;
-    width: 61%;    
+    width: 55%;    
     text-align: center;
     height: 4vh
 }
@@ -33,7 +33,7 @@
 .free_board_posted_createdAt{
     display: inline-block;
     border: 1px solid gray;
-    width: 10%;
+    width: 15%;
     text-align: center;
     height: 4vh
 }

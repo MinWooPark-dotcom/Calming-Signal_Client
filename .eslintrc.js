@@ -20,7 +20,7 @@ module.exports = {
     "rules": {
     "no-unused-vars" :"off", 
     "no-console": "off", 
-    "react/prop-types": "0",
+    "react/prop-types": "off",
     "react/no-unescaped-entities": "off", 
   }
 };

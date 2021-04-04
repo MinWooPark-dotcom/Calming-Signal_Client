@@ -19,7 +19,7 @@ const Hamburger = ({isToggled, clickGoHome, clickHamburger}) => {
             <Link to="/calming-signal" className="landing_toggled_list_Link" onClick={clickHamburger}>
             <li className="landing_toggled_list_3">Calming Signal</li>
             </Link>
-            <Link to="/board" className="landing_toggled_list_Link" onClick={clickHamburger}>
+            <Link to="/board/free?page=1" className="landing_toggled_list_Link" onClick={clickHamburger}>
             <li className="landing_toggled_list_4">Board</li>
             </Link>
             {/* <li className="landing_toggled_list_5">Mypage</li> */}

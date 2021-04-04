@@ -4,34 +4,33 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './BoardPostedTemplate.css'
 
-const BoardPostedTemplate = ({boardData, getBoardPostedData}) => {
-    // const [boardData, setBoardData] = useState(null)
+const BoardPostedTemplate = ({boardData, getBoardPostedData, match, location}) => {
+// console.log("🚀 ~ file: BoardPostedTemplate.js ~ line 8 ~ BoardPostedTemplate ~ location", location)
+// console.log("🚀 ~ file: BoardPostedTemplate.js ~ line 8 ~ BoardPostedTemplate ~ match", match)
     const [postedList, setPostedList] = useState(null)
 
-    // console.log("🚀 ~ file: BoardPostedTemplate.js ~ line 7 ~ BoardPostedTemplate ~ boardData", boardData)
-
    useEffect(async () => {
-      const getBoardData = await axios('http://localhost:3002/board')
-    //   console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 12 ~ boardData ~ getBoardData", getBoardData.data)
-    //   setBoardData([getBoardData.data])
+      const getBoardData = await axios('http://localhost:3002/board/free?page=1')
       getBoardPostedData([getBoardData.data])
     },[])   
 
-    if (boardData) {
-        const getPostedList = boardData.map((posted) => (
-            <div key={posted.postNum}>
-                <div className="board_posted_template">
-                <div className="board_posted_template_num">{posted.postNum}</div>
-                <div className="board_posted_template_title">{posted.title}</div>
-                <div className="board_posted_template_createdAt">{posted.createdAt}</div>
-                <div className="board_posted_template_writer">김코딩</div>
-                <div className="board_posted_template_number_of_views">{posted.view}</div>
-                </div>
-            </div>    
-        ))
-        setPostedList(getPostedList)
-    }
-
+    useEffect(() => {
+        if (boardData) {
+            const getPostedList = boardData[0].data.map((posted) => (
+                <div key={posted.num}>
+                    <div className="board_posted_template">
+                    <div className="board_posted_template_num">{posted.num}</div>
+                    <div className="board_posted_template_title">{posted.title}</div>
+                    <div className="board_posted_template_createdAt">{posted.createdAt}</div>
+                    <div className="board_posted_template_writer">{posted.writer}</div>
+                    <div className="board_posted_template_number_of_views">{posted.numOfViews}</div>
+                    </div>
+                </div>    
+            ))
+            setPostedList(getPostedList)
+        }
+    },boardData)
+    
     return boardData?(
         // <div>
         //     <div className="board_posted_template">

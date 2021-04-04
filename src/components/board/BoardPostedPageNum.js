@@ -14,8 +14,8 @@ const BoardPostedPageNum = () => {
                 <div className="board_posted_page_num_5">5</div>
                 <div className="board_posted_page_next_one">&#62;</div>
                 <div className="board_posted_page_next_five">&#62;&#62;</div>
-                <div className="board_post_btn">등록</div>
             </div>
+                <div className="board_post_btn">등록</div>
         </div>
     );
 };

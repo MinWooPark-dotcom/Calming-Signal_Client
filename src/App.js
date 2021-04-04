@@ -36,7 +36,7 @@ import SignUp from './components/SignUp';
 
 import "./App.css";
 
-const App = () => {
+const App = ({ match }) => {
   return (
     <>
       <Route component={LandingContainer} path="/" exact />
@@ -69,7 +69,7 @@ const App = () => {
       <Route component={Content} path="/calming-signal/7" exact />
       
       {/* board */}
-      <Route component={FreeBulletinBoardContainer} path="/board" exact />
+      <Route component={FreeBulletinBoardContainer} path="/board/:category" exact />
       <Route component={WritePage} path="/write" exact />
       
       

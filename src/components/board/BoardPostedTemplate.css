@@ -16,7 +16,7 @@
 .board_posted_template_title{
     display: inline-block;
     border: 1px solid gray;
-    width: 61%;    
+    width: 55%;    
     /* text-align: center; */
     height: 5vh
 }
@@ -24,7 +24,7 @@
 .board_posted_template_createdAt{
     display: inline-block;
     border: 1px solid gray;
-    width: 10%;
+    width: 15%;
     text-align: center;
     height: 5vh
 }
