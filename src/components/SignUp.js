@@ -35,8 +35,10 @@ const SignUp = ({history}) => {
           }
         } else if (key === "password") {
           if (e.target.value.length < 8) {
+            console.log('e.target.value',e.target.value)
             setPasswordErrorMessage("8~15자리 사이로 입력해야 합니다");
           } else {
+            console.log('e.target.value',e.target.value)
             setPasswordErrorMessage(null);
             setPasswordInputValue(e.target.value);
             console.log("passwordInputValue값은?", passwordInputValue);
@@ -49,7 +51,7 @@ const SignUp = ({history}) => {
             setIsClickSignUpBtn(true)
         if (usernameErrorMessage === null && emailErrorMessage === null && passwordErrorMessage === null) {
           const signUp = await axios.post(
-              "http://localhost:3002/signup",
+              "https://localhost:3002/signup",
               {
                   name: usernameInputValue,
                   email: emailInputValue,

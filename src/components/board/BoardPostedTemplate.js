@@ -10,7 +10,7 @@ const BoardPostedTemplate = ({boardData, getBoardPostedData, match, location}) =
     const [postedList, setPostedList] = useState(null)
 
    useEffect(async () => {
-      const getBoardData = await axios('http://localhost:3002/board/free?page=1')
+      const getBoardData = await axios('https://localhost:3002/board/free?page=1')
       getBoardPostedData([getBoardData.data])
     },[])   
 

@@ -41,6 +41,7 @@ const App = ({ match }) => {
     <>
       <Route component={LandingContainer} path="/" exact />
       <Route component={AboutContainer} path="/about" exact />
+      {/* sing in */}
       <Route component={SignInContainer} path="/sign-in" exact />
       <Route component={SignUp} path="/sign-up" exact />
       <Route component={CalmingSignalContainer} path="/calming-signal" exact />

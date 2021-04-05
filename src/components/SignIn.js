@@ -22,6 +22,8 @@ const SignIn = ({
   eraseEmailErrorMsg,
   erasePasswordErrorMsg,
   eraseSignInErrorMsg,
+  isLoggedIn,
+  changeLoggedIn,
   history
   }) => {
     // const [isClickSignInBtn, setIsClickSignInBtn] = useState(false)
@@ -70,7 +72,7 @@ const SignIn = ({
           // if (emailErrorMessage === null && passwordErrorMessage === null) {
             if(emailErrorMsg === null && passwordErrorMsg === null ) {
             const signIn = await axios.post(
-                "http://localhost:3002/signin",
+                "https://localhost:3002/signin",
                 {
                     email,
                     password
@@ -82,7 +84,9 @@ const SignIn = ({
             console.log('signIn.data.message>>>>',signIn.data.message)
             // setErrorMessage(null)
             eraseSignInErrorMsg();
-            history.goBack();
+            // history.goBack();
+            // 임시 방편, 원래는 뒤로 가기 해야 하는데 회원가입에서 로그인 오면 회원가입으로 돌아가버림
+            history.push('/calming-signal');
           } else {
             // setErrorMessage('아이디 또는 비밀번호를 확인해 주세요')
             setSignInErrorMsg('아이디 또는 비밀번호를 확인해 주세요');

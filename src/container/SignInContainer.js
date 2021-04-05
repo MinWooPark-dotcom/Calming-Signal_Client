@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SignIn from '../components/SignIn';
-import { clickSignInBtn, setEmail, setPassword, setEmailError, setPasswordError, setSignInError, eraseEmailError, erasePasswordError, eraseSignInError } from '../modules/signIn';
+import { clickSignInBtn, setEmail, setPassword, setEmailError, setPasswordError, setSignInError, eraseEmailError, erasePasswordError, eraseSignInError, changeLoggedInState } from '../modules/signIn';
 
 const SignInContainer = () => {
     const isClickedSignInBtn = useSelector(state => state.signIn.isClickedSignInBtn);
@@ -10,6 +10,7 @@ const SignInContainer = () => {
     const emailErrorMsg = useSelector(state => state.signIn.emailErrorMsg);
     const passwordErrorMsg = useSelector(state => state.signIn.passwordErrorMsg);
     const signInErrorMsg = useSelector(state => state.signIn.signInErrorMsg);
+    const isLoggedIn = useSelector(state => state.signIn.isLoggedIn)
 
     const dispatch = useDispatch();
     const clickSignIn = useCallback(() => dispatch(clickSignInBtn()), [dispatch]);
@@ -23,6 +24,8 @@ const SignInContainer = () => {
     const eraseEmailErrorMsg = useCallback(() => dispatch(eraseEmailError()), [dispatch]);
     const erasePasswordErrorMsg = useCallback(() => dispatch(erasePasswordError()), [dispatch]);
     const eraseSignInErrorMsg = useCallback(() => dispatch(eraseSignInError()), [dispatch ]);
+    
+    const changeLoggedIn = useCallback(() => dispatch(changeLoggedInState()), [dispatch])
 
     return (
        <SignIn 
@@ -41,6 +44,8 @@ const SignInContainer = () => {
             eraseEmailErrorMsg={eraseEmailErrorMsg}
             erasePasswordErrorMsg={erasePasswordErrorMsg}
             eraseSignInErrorMsg={eraseSignInErrorMsg}
+            isLoggedIn={isLoggedIn}
+            changeLoggedIn={changeLoggedIn}
        />
     );
 };

@@ -1,19 +1,21 @@
 /* eslint react/prop-types: 0 */
 
 import React, { useState, useEffect } from 'react';
+import { Link, withRouter } from "react-router-dom";
 import axios from 'axios';
 import BoardSidebar from '../BoardSidebar';
 import BoardPostedPageNum from './BoardPostedPageNum';
 import BoardPostedTemplateContainer from '../../container/BoardPostedTemplateContainer'
 import './FreeBulletinBoard.css'
 
-const FreeBulletinBoard = ({boardData, getBoardPostedData,category, query}) => {
+const FreeBulletinBoard = ({boardData, getBoardPostedData,category, query, nowCategory}) => {
   const [postedList, setPostedList] = useState(null)
   
   useEffect(async () => {
-    const getBoardData = await axios(`http://localhost:3002/board/${category}?page=${query}`)
+    nowCategory(category)
+    const getBoardData = await axios(`https://localhost:3002/board/${category}?page=${query}`)
     getBoardPostedData([getBoardData.data])
-  },[])   
+  },boardData)   
 
   useEffect(() => {
     if (boardData) {
@@ -44,8 +46,24 @@ const FreeBulletinBoard = ({boardData, getBoardPostedData,category, query}) => {
               {/* <BoardPostedTemplateContainer /> */}
               <div>{postedList}</div>
             </div>
-          <BoardPostedPageNum />
+          {/* <BoardPostedPageNum /> */}
+           {/* <div> */}
+            <div className="board_posted_page_nums">
+                <div className="board_posted_page_prev_five">&#60;&#60;</div>
+                <div className="board_posted_page_prev_one">&#60;</div>
+                <div className="board_posted_page_num_1">1</div>
+                <div className="board_posted_page_num_2">2</div>
+                <div className="board_posted_page_num_3">3</div>
+                <div className="board_posted_page_num_4">4</div>
+                <div className="board_posted_page_num_5">5</div>
+                <div className="board_posted_page_next_one">&#62;</div>
+                <div className="board_posted_page_next_five">&#62;&#62;</div>
+            </div>
+                <Link to="/write">
+                <div className="board_post_btn">등록</div>
+                </Link>
         </div>
+        {/* </div> */}
       </div>):(<div>loading...</div>)
        
     

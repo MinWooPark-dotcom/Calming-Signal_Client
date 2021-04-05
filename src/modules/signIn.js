@@ -9,6 +9,7 @@ const SET_SIGN_IN_ERROR = 'signIN/SET_SIGN_IN_ERROR'
 const ERASE_EMAIL_ERROR = 'signIn/ERASE_EMAIL_ERROR';
 const ERASE_PASSWORD_ERROR = 'signIn/ERASEPASSWORD_ERROR';
 const ERASE_SIGN_IN_ERROR = 'signIN/ERASE_SIGN_IN_ERROR'
+const CHANGE_LOGGED_IN_STATE = 'signIn/CHANGE_LOGGED_IN_STATE'
 
 export const clickSignInBtn = createAction(CLICK_SIGN_IN_BTN);
 
@@ -23,6 +24,8 @@ export const eraseEmailError = createAction(ERASE_EMAIL_ERROR);
 export const erasePasswordError = createAction(ERASE_PASSWORD_ERROR);
 export const eraseSignInError = createAction(ERASE_SIGN_IN_ERROR)
 
+export const changeLoggedInState = createAction(CHANGE_LOGGED_IN_STATE)
+
 const initialState = {
     isClickedSignInBtn: false,
     email: null,
@@ -30,6 +33,7 @@ const initialState = {
     emailErrorMsg: '올바른 이메일 형식이 아닙니다',
     passwordErrorMsg: '8~15자리 사이로 입력해야 합니다',
     signInErrorMsg: '아이디 또는 비밀번호를 확인해 주세요',
+    isLoggedIn: false
 }
 
 const signIn = handleActions(
@@ -42,7 +46,8 @@ const signIn = handleActions(
         [SET_SIGN_IN_ERROR]: (state, {payload: signInErrorMsg}) => ({...state, signInErrorMsg }),
         [ERASE_EMAIL_ERROR]: (state, action) => ({...state, emailErrorMsg: null }),
         [ERASE_PASSWORD_ERROR]: (state, action) => ({...state, passwordErrorMsg: null }),
-        [ERASE_SIGN_IN_ERROR]: (state, action) => ({...state, signInErrorMsg: null })
+        [ERASE_SIGN_IN_ERROR]: (state, action) => ({...state, signInErrorMsg: null }),
+        [CHANGE_LOGGED_IN_STATE]: (state, action) => ({ ...state, isLoggedIn: !state.isLoggedIn})
     },
     initialState
 )

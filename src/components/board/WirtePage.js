@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Link, withRouter } from "react-router-dom";
+import EditorContainer from '../../container/EditorContainer';
 import BoardSidebar from '../BoardSidebar';
 import Editor from '../write/Editor';
 import TagBox from '../write/TagBox';
@@ -12,9 +13,9 @@ const WirtePage = ({history}) => {
     return (
         <div>
             {/* <div>dd</div> */}
-            <Editor />
+            <EditorContainer />
             {/* <TagBox /> */}
-            <WriteActionButtons />
+            {/* <WriteActionButtons /> */}
         </div>
     );
 };

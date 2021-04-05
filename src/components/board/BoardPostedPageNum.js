@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, withRouter } from "react-router-dom";
 import './BoardPostedPageNum.css'
 
 const BoardPostedPageNum = () => {
@@ -15,7 +16,9 @@ const BoardPostedPageNum = () => {
                 <div className="board_posted_page_next_one">&#62;</div>
                 <div className="board_posted_page_next_five">&#62;&#62;</div>
             </div>
+                <Link to="/write/">
                 <div className="board_post_btn">등록</div>
+                </Link>
         </div>
     );
 };
