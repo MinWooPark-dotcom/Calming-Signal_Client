@@ -9,7 +9,6 @@ console.log("🚀 ~ file: Editor.js ~ line 7 ~ Editor ~ nowCategory", nowCategor
   const [title, setTitle] = useState(null);
   const [content, setContent] = useState(null);
   const [selectDefalutValue, setSelectDefaultValue] = useState(null);
-  const [selectBoxValue, setSelectBoxValue] = useState(null);
 
   const handleGoBack = () => {
       history.goBack()
@@ -44,7 +43,15 @@ console.log("🚀 ~ file: Editor.js ~ line 7 ~ Editor ~ nowCategory", nowCategor
 
   const handleoOnChangeSelectBox = (e) => {
     console.log("🚀 ~ file: Editor.js ~ line 36 ~ handleoOnChangeSelectBox ~ e", e.target.value)
-    getNowCategory(e.target.value)
+    if (e.target.value === '자유게시판') {
+      getNowCategory('free')   
+    } else if (e.target.value === '소형견') {
+      getNowCategory('small')   
+    } else if (e.target.value === '중형견') {
+      getNowCategory('medium')   
+    } else {
+      getNowCategory('large')   
+    } 
   }
 
   useEffect(()=>{

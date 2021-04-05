@@ -9,17 +9,16 @@ import BoardPostedTemplateContainer from '../../container/BoardPostedTemplateCon
 import './FreeBulletinBoard.css'
 
 const FreeBulletinBoard = ({boardData, getBoardPostedData,category, query, nowCategory}) => {
+  console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 12 ~ FreeBulletinBoard ~ category", category)
+  console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 12 ~ FreeBulletinBoard ~ query", query)
   const [postedList, setPostedList] = useState(null)
   
   useEffect(async () => {
     nowCategory(category)
     const getBoardData = await axios(`https://localhost:3002/board/${category}?page=${query}`)
     getBoardPostedData([getBoardData.data])
-  },boardData)   
-
-  useEffect(() => {
-    if (boardData) {
-        const getPostedList = boardData[0].data.map((posted) => (
+    const testBoard = [getBoardData.data]
+    const getPostedList = testBoard[0].data.map((posted) => (
             <div key={posted.num}>
                 <div className="board_posted_template">
                 <div className="board_posted_template_num">{posted.num}</div>
@@ -31,8 +30,11 @@ const FreeBulletinBoard = ({boardData, getBoardPostedData,category, query, nowCa
             </div>    
         ))
         setPostedList(getPostedList)
-    }
-  },boardData)
+
+  },[category])   
+
+
+
 
     return boardData && postedList?(<div>
         <BoardSidebar />

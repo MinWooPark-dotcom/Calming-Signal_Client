@@ -26,6 +26,7 @@ const SignIn = ({
   changeLoggedIn,
   history
   }) => {
+  console.log("🚀 ~ file: SignIn.js ~ line 29 ~ isLoggedIn", isLoggedIn)
     // const [isClickSignInBtn, setIsClickSignInBtn] = useState(false)
     
     // const [emailInputValue, setEmailInputValue] = useState(null);
@@ -84,6 +85,7 @@ const SignIn = ({
             console.log('signIn.data.message>>>>',signIn.data.message)
             // setErrorMessage(null)
             eraseSignInErrorMsg();
+            changeLoggedIn()
             // history.goBack();
             // 임시 방편, 원래는 뒤로 가기 해야 하는데 회원가입에서 로그인 오면 회원가입으로 돌아가버림
             history.push('/calming-signal');
