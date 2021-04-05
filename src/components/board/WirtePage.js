@@ -8,7 +8,7 @@ import Editor from '../write/Editor';
 import TagBox from '../write/TagBox';
 import WriteActionButtons from '../write/WriteActionButtons';
 
-const WirtePage = ({history}) => {
+const WirtePage = () => {
 
     return (
         <div>

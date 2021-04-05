@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import LandingContainer from './container/LandingContainer'
 import AboutContainer from './container/AboutContainer'
 import CalmingSignalContainer from './container/CalmingSignalContainer'
-import Content from './components/Content';
+// import Content from './components/Content';
 // import FreeBulletinBoard from './components/board/FreeBulletinBoard';
 import FreeBulletinBoardContainer from './container/FreeBulletinBoardContainer'
 import MyPage from './components/MyPage';
@@ -35,6 +35,8 @@ import SignInContainer from './container/SignInContainer';
 import SignUp from './components/SignUp';
 
 import "./App.css";
+import ContentPage from './components/board/Content';
+import ContentContainer from './container/ContentContainer';
 
 const App = ({ match }) => {
   return (
@@ -64,14 +66,15 @@ const App = ({ match }) => {
       <Route component={Interrupting} path="/calming-signal/interrupting" exact />
       <Route component={TurnHead} path="/calming-signal/turn-head" exact />
       
-      <Route component={Content} path="/calming-signal/4" exact />
-      <Route component={Content} path="/calming-signal/5" exact />
-      <Route component={Content} path="/calming-signal/6" exact />
-      <Route component={Content} path="/calming-signal/7" exact />
+      {/* <Route component={Content} path="/calming-signal/4" exact /> */}
+      {/* <Route component={Content} path="/calming-signal/5" exact /> */}
+      {/* <Route component={Content} path="/calming-signal/6" exact /> */}
+      {/* <Route component={Content} path="/calming-signal/7" exact /> */}
       
       {/* board */}
       <Route component={FreeBulletinBoardContainer} path="/board/:category" exact />
       <Route component={WritePage} path="/write" exact />
+      <Route component={ContentContainer} path="/content/:title" exact />
       
       
       <Route component={MyPage} path="/mypage" exact />  

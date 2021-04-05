@@ -4,7 +4,7 @@ import axios from 'axios'
 import './Editor.css'
 
 const Editor = ({getNowCategory, nowCategory, history}) => {
-console.log("🚀 ~ file: Editor.js ~ line 7 ~ Editor ~ nowCategory", nowCategory)
+// console.log("🚀 ~ file: Editor.js ~ line 7 ~ Editor ~ nowCategory", nowCategory)
 
   const [title, setTitle] = useState(null);
   const [content, setContent] = useState(null);
@@ -25,9 +25,9 @@ console.log("🚀 ~ file: Editor.js ~ line 7 ~ Editor ~ nowCategory", nowCategor
   }
 
   const handlePost = async () => {
-    console.log('title', title)
-    console.log('content', content)
-    console.log('nowCategory',nowCategory)
+    // console.log('title', title)
+    // console.log('content', content)
+    // console.log('nowCategory',nowCategory)
     const postBoard = await axios.post('https://localhost:3002/board',
       {
           title,
@@ -39,6 +39,7 @@ console.log("🚀 ~ file: Editor.js ~ line 7 ~ Editor ~ nowCategory", nowCategor
       }
     )
     console.log("🚀 ~ file: Editor.js ~ line 42 ~ handlePost ~ postBoard", postBoard)
+    history.goBack();
   }
 
   const handleoOnChangeSelectBox = (e) => {

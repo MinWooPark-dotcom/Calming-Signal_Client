@@ -1,0 +1,51 @@
+.content_container{
+    width: 100%;
+    height: 100%;
+    border: 3px solid red;
+}
+
+.content_header{
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+.content_header_title_fix{
+    display: inline-block;
+}
+
+.content_header_title{
+    display: inline-block;
+}
+
+.content_header_writer_fix{
+    display: inline-block;
+}
+
+.content_header_writer{
+    display: inline-block;
+}
+
+.content_header_category_fix{
+    display: inline-block;
+}
+
+.content_header_category{
+    display: inline-block;
+}
+
+.content_header_numOfView_fix{
+    display: inline-block;
+}
+
+.content_header_numOfView{
+    display: inline-block;
+}
+
+.content_header_createdAt_fix{
+    display: inline-block;   
+}
+
+.content_header_createdAt{
+    display: inline-block;   
+}
