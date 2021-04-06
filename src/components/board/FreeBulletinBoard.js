@@ -11,9 +11,21 @@ import BoardPostedPageNum from './BoardPostedPageNum';
 import BoardPostedTemplateContainer from '../../container/BoardPostedTemplateContainer'
 import './FreeBulletinBoard.css'
 
-const FreeBulletinBoard = ({boardData, getBoardPostedData,category, query, nowCategory, getContentTitle, getContentBody, getContentCategory, getContentNumOfViews, getContentCreatedAt, getContentUserName, history }) => {
-  // console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 12 ~ FreeBulletinBoard ~ category", category)
-  // console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 12 ~ FreeBulletinBoard ~ query", query)
+const FreeBulletinBoard = ({
+  boardData, 
+  getBoardPostedData,
+  category,
+  query, 
+  nowCategory, 
+  getContentTitle, 
+  getContentBody, 
+  getContentCategory, 
+  getContentNumOfViews, 
+  getContentCreatedAt, 
+  getContentUserName, 
+  getContentComment,
+  history }) => {
+  
   
   const [postedList, setPostedList] = useState(null)
   const [pageNum, setPageNum] = useState([1,2,3,4,5])
@@ -68,13 +80,13 @@ const FreeBulletinBoard = ({boardData, getBoardPostedData,category, query, nowCa
     const title = e.target.innerText
     const pageId = e.target.attributes[1].value
     const getContent = await axios(`https://localhost:3002/content/${title}?id=${pageId}`)
-    console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 69 ~ handleOnClickTitle ~ getContent", getContent)
-    getContentTitle(getContent.data.title)
+    // getContentTitle(getContent.data.title)
     getContentBody(getContent.data.content)
     getContentCategory(getContent.data.category)
     getContentNumOfViews(getContent.data.numOfViews)
     getContentCreatedAt(getContent.data.createdAt)
     getContentUserName(getContent.data.userName)
+    getContentComment(getContent.data.commentUserArr)
     history.push(`/content/${title}?id=${pageId}`)
   }
 

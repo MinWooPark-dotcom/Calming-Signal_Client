@@ -10,6 +10,7 @@ const ContentContainer = () => {
     const contentNumOfViews = useSelector(state => state.content.contentNumOfViews);
     const contentCreatedAt = useSelector(state => state.content.contentCreatedAt);
     const contentUserName = useSelector(state => state.content.contentUserName);
+    const contentComment = useSelector(state => state.content.contentComment);
     
     return (
         <Content 
@@ -19,6 +20,7 @@ const ContentContainer = () => {
             contentNumOfViews={contentNumOfViews}
             contentCreatedAt={contentCreatedAt}
             contentUserName={contentUserName}
+            contentComment={contentComment}
         />
     );
 };
