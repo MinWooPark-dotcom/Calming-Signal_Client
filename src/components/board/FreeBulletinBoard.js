@@ -104,7 +104,7 @@ const FreeBulletinBoard = ({
                 <div className="board_posted_template">
                 <div className="board_posted_template_num">{posted.num}</div>
                 <div className="board_posted_template_title" onClick={handleOnClickTitle} value={posted.id}>{posted.title}</div>
-                <div className="board_posted_template_createdAt">{(posted.createdAt? ((posted.createdAt).split('T')[0]):(null))}</div>
+                <div className="board_posted_template_createdAt">{(posted.createdAt? ((posted.createdAt).split('T')[0]+ ' ' + (posted.createdAt).split('T')[1].slice(0,8)):(null))}</div>
                 <div className="board_posted_template_writer">{posted.writer}</div>
                 <div className="board_posted_template_number_of_views">{posted.numOfViews}</div>
                 </div>

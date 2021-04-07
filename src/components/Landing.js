@@ -35,13 +35,10 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
   
   return (
     <div className="landing_page">
-      {isToggled? 
-      (<HamburgerContainer/>) 
-      : 
-      (<div className="landing_container">
+      <div className="landing_container">
+      <NavContainer />
         {/* //! num1 */}
       {number === 1? (<div className="landing_contents1">
-      <NavContainer />
         <button className="landing_left_btn" onClick={hadleOnClickLeft}>&#10094;</button>
         {/* Link 컴포넌트 같은 거 써서 클릭하면 행복한 감정 표현 카밍 시그널로 이동, 아래도 마찬가지 */}
         <Link to="/about">
@@ -54,7 +51,7 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
       </div>):(null)}
       {/* //! num2 */}
       {number === 2? (<div className="landing_contents2">
-      <NavContainer />
+      {/* <NavContainer /> */}
         <button className="landing_left_btn" onClick={hadleOnClickLeft}>&#10094;</button>
         {/* Link 컴포넌트 같은 거 써서 클릭하면 행복한 감정 표현 카밍 시그널로 이동, 아래도 마찬가지 */}
         <Link to="/calming-signal/happy">
@@ -66,7 +63,7 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
       </div>):(null)}
       {/* //! num3 */}
       {number === 3? (<div className="landing_contents3">
-      <NavContainer />
+      {/* <NavContainer /> */}
         <button className="landing_left_btn" onClick={hadleOnClickLeft}>&#10094;</button>
         <Link to="/calming-signal/comfortable">
       <div className="landing_contents_text3">Comfortable</div>
@@ -77,7 +74,7 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
       </div>):(null)}
       {/* //! num4 */}
       {number === 4? (<div className="landing_contents4">
-      <NavContainer />
+      {/* <NavContainer /> */}
         <button className="landing_left_btn" onClick={hadleOnClickLeft}>&#10094;</button>
         <Link to="/calming-signal/nervous">
         <div className="landing_contents_text4">Nervous</div>
@@ -88,7 +85,7 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
       </div>):(null)}
       {/* //! num5 */}
       {number === 5? (<div className="landing_contents5">
-      <NavContainer />
+      {/* <NavContainer /> */}
         <button className="landing_left_btn" onClick={hadleOnClickLeft}>&#10094;</button>
         <Link to="/calming-signal/settle">
         <div className="landing_contents_text5">Settle</div>
@@ -97,8 +94,7 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
         <button className="landing_right_btn" onClick={hadleOnClickRight}>&#10095;</button>
         <Footer/>
       </div>):(null)}
-    </div>
-)}
+      </div>
     </div>
       );
 };

@@ -14,6 +14,9 @@ const ContentContainer = () => {
     const contentComment = useSelector(state => state.content.contentComment);
     const dispatch = useDispatch()
     const getContentComment = useCallback((comment) => dispatch(getComment(comment), [dispatch]));
+    const isLoggedIn = useSelector(state => state.signIn.isLoggedIn)
+    // const email = useSelector(state => state.signIn.email);
+    const userName = useSelector(state => state.signIn.userName);
 
     return (
         <Content 
@@ -26,6 +29,8 @@ const ContentContainer = () => {
             contentUserName={contentUserName}
             contentComment={contentComment}
             getContentComment={getContentComment}
+            isLoggedIn={isLoggedIn}
+            userName={userName}
         />
     );
 };

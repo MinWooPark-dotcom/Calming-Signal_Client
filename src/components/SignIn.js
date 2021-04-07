@@ -9,12 +9,14 @@ import { Link, withRouter } from "react-router-dom";
 const SignIn = ({
   isClickedSignInBtn,
   email,
+  userName,
   password,
   emailErrorMsg,
   passwordErrorMsg,
   signInErrorMsg,
   clickSignIn,
   setEmailValue,
+  setUserNameValue,
   setPasswordValue,
   setEmailErrorMsg,
   setPasswordErrorMsg,
@@ -26,8 +28,11 @@ const SignIn = ({
   changeLoggedIn,
   history
   }) => {
-  console.log("🚀 ~ file: SignIn.js ~ line 29 ~ isLoggedIn", isLoggedIn)
-    // const [isClickSignInBtn, setIsClickSignInBtn] = useState(false)
+  // console.log("🚀 ~ file: SignIn.js ~ line 29 ~ isLoggedIn", isLoggedIn)
+  // console.log("🚀 ~ file: SignIn.js ~ line 110 ~ handleOnClickSignInBtn ~ userName", userName)
+  // console.log("🚀 ~ file: SignIn.js ~ line 109 ~ handleOnClickSignInBtn ~ email", email)
+    
+  // const [isClickSignInBtn, setIsClickSignInBtn] = useState(false)
     
     // const [emailInputValue, setEmailInputValue] = useState(null);
     // const [passwordInputValue, setPasswordInputValue] = useState(null);
@@ -86,6 +91,16 @@ const SignIn = ({
             // setErrorMessage(null)
             eraseSignInErrorMsg();
             changeLoggedIn()
+            
+            // get user info
+            const userInfo = await axios(
+              'https://localhost:3002/userInfo',
+              {
+                withCredentials: true
+              }
+            )
+            console.log("🚀 ~ file: SignIn.js ~ line 99 ~ handleOnClickSignInBtn ~ userInfo", userInfo)
+            setUserNameValue(userInfo.data.name)
             // history.goBack();
             // 임시 방편, 원래는 뒤로 가기 해야 하는데 회원가입에서 로그인 오면 회원가입으로 돌아가버림
             history.push('/calming-signal');

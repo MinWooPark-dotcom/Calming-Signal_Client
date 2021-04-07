@@ -2,6 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 
 const CLICK_SIGN_IN_BTN = 'signIn/CLICK_SIGN_IN_BTN';
 const SET_EMAIL = 'signIn/SET_EMAIL';
+const SET_USER_NAME = 'signIn/SET_USER_NAME';
 const SET_PASSWORD = 'signIn/SET_PASSWORD';
 const SET_EMAIL_ERROR = 'signIn/SET_EMAIL_ERROR';
 const SET__PASSWORD_ERROR = 'signIn/SET_PASSWORD_ERROR';
@@ -14,6 +15,7 @@ const CHANGE_LOGGED_IN_STATE = 'signIn/CHANGE_LOGGED_IN_STATE'
 export const clickSignInBtn = createAction(CLICK_SIGN_IN_BTN);
 
 export const setEmail = createAction(SET_EMAIL, email => email);
+export const setUserName = createAction(SET_USER_NAME, userName => userName);
 export const setPassword = createAction(SET_PASSWORD, password => password);
 
 export const setEmailError = createAction(SET_EMAIL_ERROR, emailErrorMsg => emailErrorMsg);
@@ -29,6 +31,7 @@ export const changeLoggedInState = createAction(CHANGE_LOGGED_IN_STATE)
 const initialState = {
     isClickedSignInBtn: false,
     email: null,
+    userName: null,
     password: null,
     emailErrorMsg: '올바른 이메일 형식이 아닙니다',
     passwordErrorMsg: '8~15자리 사이로 입력해야 합니다',
@@ -40,6 +43,7 @@ const signIn = handleActions(
     {
         [CLICK_SIGN_IN_BTN]: (state, action) => ({...state, isClickedSignInBtn: true}),
         [SET_EMAIL]: (state, { payload: email}) => ({...state, email}),
+        [SET_USER_NAME]: (state, {payload: userName}) => ({...state, userName}),
         [SET_PASSWORD]: (state, {payload: password}) => ({...state, password}),
         [SET_EMAIL_ERROR]: (state, {payload: emailErrorMsg}) => ({...state, emailErrorMsg }),
         [SET__PASSWORD_ERROR]: (state, {payload: passwordErrorMsg}) => ({...state, passwordErrorMsg }),

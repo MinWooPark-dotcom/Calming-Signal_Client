@@ -11,8 +11,12 @@ const Content = ({
             contentCreatedAt,
             contentUserName,
             contentComment,
-            getContentComment
+            getContentComment,
+            isLoggedIn,
+            userName
         }) => {    
+            console.log("🚀 ~ file: Content.js ~ line 18 ~ userName", userName)
+            console.log("🚀 ~ file: Content.js ~ line 18 ~ isLoggedIn", isLoggedIn)
             console.log("🚀 ~ file: Content.js ~ line 16 ~ contentComment", contentComment)
     // ! 댓글 동적 셋팅하는 용도            
     const [commentTag, setCommentTag] = useState(null);
@@ -89,6 +93,11 @@ const Content = ({
         
     }
     
+    //! 게스트 댓글 입력창 클릭 시
+    const handleGuestComment = () => {
+        alert('로그인 후 이용해 주세요.')
+    }
+
 
     return commentTag?(
         <div className="content_container">
@@ -130,13 +139,22 @@ const Content = ({
             {/* 유저가 댓글 쓰는 곳 */}
             <div className="content_comment_write_box">
                 <div className="content_comment_writer">
-                    {contentUserName}
+                    {/* 로그인 유저 or 로그인 시 이용하세요. */}
+                    {isLoggedIn?(userName):'Guest'} 
                 </div>
                 <div className="content_comment_textarea">
-                    <textarea className="cotent_textarea" onChange={handleChangeComment} placeholder="댓글을 입력하세요."></textarea>
+                    {isLoggedIn?
+                    (<textarea className="cotent_textarea" onChange={handleChangeComment} placeholder="댓글을 입력하세요."></textarea>)
+                    :
+                    (<textarea className="cotent_textarea" readOnly onClick={handleGuestComment} placeholder="로그인 후 이용해 주세요."></textarea>)}
                 </div>
                 <div className="content_comment_register_btn">
-                    <button className="content_write_btn" onClick={handleRegisterComment}>등록</button>
+                    {isLoggedIn?
+                    (<button className="content_write_btn" onClick={handleRegisterComment}>등록</button>)
+                    :
+                    (<button className="content_write_btn" onClick={handleGuestComment}>등록</button>)
+                    }
+                    
                 </div>
             </div>
             <div className="content_comment_box">
