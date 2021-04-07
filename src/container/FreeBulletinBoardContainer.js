@@ -17,7 +17,7 @@ const FreeBulletinBoardContainer = ({match, location}) => {
     const getBoardPostedData = useCallback((data) => dispatch(getBoardData(data)), [dispatch])
     const nowCategory = useCallback((category) => dispatch(getBoardCategory(category), [dispatch]))
 
-    // const getContentTitle = useCallback((title) => dispatch(getTitle(title), [dispatch]));
+    const getContentTitle = useCallback((title) => dispatch(getTitle(title), [dispatch]));
     const getContentBody = useCallback((body) => dispatch(getContent(body), [dispatch]));
     const getContentCategory = useCallback((category) => dispatch(getCategory(category), [dispatch]));
     const getContentNumOfViews = useCallback((num) => dispatch(getNumOfViews(num), [dispatch]));
@@ -32,7 +32,7 @@ const FreeBulletinBoardContainer = ({match, location}) => {
             boardData={boardData}
             getBoardPostedData={getBoardPostedData}
             nowCategory={nowCategory}
-            // getContentTitle={getContentTitle}
+            getContentTitle={getContentTitle}
             getContentBody={getContentBody}
             getContentCategory={getContentCategory}
             getContentNumOfViews={getContentNumOfViews}

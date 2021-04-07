@@ -27,7 +27,7 @@ const FreeBulletinBoard = ({
   history }) => {
   
   
-  const [postedList, setPostedList] = useState(null)
+  const [postedList, setPostedList] = useState(null) 
   const [pageNum, setPageNum] = useState([1,2,3,4,5])
   const [numOfPages, setNumOfPages] = useState(null)
   
@@ -80,13 +80,14 @@ const FreeBulletinBoard = ({
     const title = e.target.innerText
     const pageId = e.target.attributes[1].value
     const getContent = await axios(`https://localhost:3002/content/${title}?id=${pageId}`)
-    // getContentTitle(getContent.data.title)
+    console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 83 ~ handleOnClickTitle ~ getContent", getContent)
+    getContentTitle(getContent.data.title)
     getContentBody(getContent.data.content)
     getContentCategory(getContent.data.category)
     getContentNumOfViews(getContent.data.numOfViews)
     getContentCreatedAt(getContent.data.createdAt)
     getContentUserName(getContent.data.userName)
-    getContentComment(getContent.data.commentUserArr)
+    getContentComment(getContent.data.commentData)
     history.push(`/content/${title}?id=${pageId}`)
   }
 
