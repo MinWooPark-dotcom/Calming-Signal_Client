@@ -17,6 +17,7 @@ const FreeBulletinBoard = ({
   category,
   query, 
   nowCategory, 
+  getContentPostId,
   getContentTitle, 
   getContentBody, 
   getContentCategory, 
@@ -75,12 +76,12 @@ const FreeBulletinBoard = ({
 
   // ! 제목 클릭 시 본문으로 이동
   const handleOnClickTitle = async (e) => {
-    console.log(e.target.attributes[1].value)
-    console.log(e.target.innerText)
+    // console.log(e.target.attributes[1].value)
+    // console.log(e.target.innerText)
     const title = e.target.innerText
     const pageId = e.target.attributes[1].value
     const getContent = await axios(`https://localhost:3002/content/${title}?id=${pageId}`)
-    console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 83 ~ handleOnClickTitle ~ getContent", getContent)
+    getContentPostId(getContent.data.postId)
     getContentTitle(getContent.data.title)
     getContentBody(getContent.data.content)
     getContentCategory(getContent.data.category)
@@ -95,7 +96,6 @@ const FreeBulletinBoard = ({
   useEffect(async () => {
     nowCategory(category)
     const getBoardData = await axios(`https://localhost:3002/board/${category}?page=${query}`)
-    // console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 54 ~ useEffect ~ getBoardData", getBoardData)
     getBoardPostedData([getBoardData.data])
     const testBoard = [getBoardData.data]
     setNumOfPages(getBoardData.data.numOfPages)
@@ -122,12 +122,9 @@ const FreeBulletinBoard = ({
             <div className="free_board_posted_title">제목</div>
             <div className="free_board_posted_createdAt">작성일</div>
             <div className="free_board_posted_writer">작성자</div>
-            <div className="free_board_posted_number_of_views">조회수</div>
-              {/* <BoardPostedTemplateContainer /> */}
+            <div className="free_board_posted_number_of_views">조회수</div> 
               <div>{postedList}</div>
             </div>
-          {/* <BoardPostedPageNum /> */}
-           {/* <div> */}
             <div className="board_posted_page_nums">
                 <div className="board_posted_page_prev_five" onClick={handleFirstClick}>&#60;&#60;</div>
                 <div className="board_posted_page_prev_one" onClick={handlePrevPageClick}>&#60;</div>          
@@ -143,7 +140,6 @@ const FreeBulletinBoard = ({
                 <div className="board_post_btn">등록</div>
                 </Link>
         </div>
-        {/* </div> */}
       </div>):(<div>loading...</div>)
        
     

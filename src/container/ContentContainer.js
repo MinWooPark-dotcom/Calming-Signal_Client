@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Content from '../components/board/Content';
-import { getTitle, getContent, getCategory, getNumOfViews, getCreatedAt, getUserName } from '../modules/content';
+import { getPostId, getTitle, getContent, getCategory, getNumOfViews, getCreatedAt, getUserName, getComment } from '../modules/content';
 
 const ContentContainer = () => {
+    const postId = useSelector(state => state.content.postId)
     const contentTitle = useSelector(state => state.content.contentTitle);
     const contentBody = useSelector(state => state.content.contentBody);
     const contentCategory = useSelector(state => state.content.contentCategory);
@@ -11,9 +12,12 @@ const ContentContainer = () => {
     const contentCreatedAt = useSelector(state => state.content.contentCreatedAt);
     const contentUserName = useSelector(state => state.content.contentUserName);
     const contentComment = useSelector(state => state.content.contentComment);
-    
+    const dispatch = useDispatch()
+    const getContentComment = useCallback((comment) => dispatch(getComment(comment), [dispatch]));
+
     return (
         <Content 
+            postId={postId}
             contentTitle={contentTitle}
             contentBody={contentBody}
             contentCategory={contentCategory}
@@ -21,6 +25,7 @@ const ContentContainer = () => {
             contentCreatedAt={contentCreatedAt}
             contentUserName={contentUserName}
             contentComment={contentComment}
+            getContentComment={getContentComment}
         />
     );
 };

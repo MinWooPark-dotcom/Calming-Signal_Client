@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getBoardData, getBoardCategory } from '../modules/boardPostedTemplate'
 import FreeBulletinBoard from '../components/board/FreeBulletinBoard'
-import { getTitle, getContent, getCategory, getNumOfViews, getCreatedAt, getUserName, getComment } from '../modules/content';
+import { getPostId, getTitle, getContent, getCategory, getNumOfViews, getCreatedAt, getUserName, getComment } from '../modules/content';
 
 const FreeBulletinBoardContainer = ({match, location}) => {
     const category = match.params.category
@@ -13,10 +13,12 @@ const FreeBulletinBoardContainer = ({match, location}) => {
     }
 
     const boardData = useSelector(state => state.boardPostedTemplate.freeBulletinBoard)
+    const postId = useSelector(state => state.content.postId)
     const dispatch = useDispatch()
     const getBoardPostedData = useCallback((data) => dispatch(getBoardData(data)), [dispatch])
     const nowCategory = useCallback((category) => dispatch(getBoardCategory(category), [dispatch]))
 
+    const getContentPostId = useCallback((postId) => dispatch(getPostId(postId), [dispatch]));
     const getContentTitle = useCallback((title) => dispatch(getTitle(title), [dispatch]));
     const getContentBody = useCallback((body) => dispatch(getContent(body), [dispatch]));
     const getContentCategory = useCallback((category) => dispatch(getCategory(category), [dispatch]));
@@ -27,9 +29,11 @@ const FreeBulletinBoardContainer = ({match, location}) => {
 
     return (
         <FreeBulletinBoard  
+            postId={postId}
             category={category}
             query={query}
             boardData={boardData}
+            getContentPostId={getContentPostId}
             getBoardPostedData={getBoardPostedData}
             nowCategory={nowCategory}
             getContentTitle={getContentTitle}
