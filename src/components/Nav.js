@@ -9,6 +9,10 @@ import nav_logo from '../img/landing_logo2.png'
 const Nav = ({isLoggedIn, clickGoHome, handleLogIn, setEmailValue, setUserNameValue}) => {
 console.log("🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn", isLoggedIn)
 
+  const handleScroll = () => {
+    window.scrollTo(0,0)
+  }
+  
   const handleLogout = async () => {
     const logout = await axios.post('https://localhost:3002/logout',null,{
       withCredentials: true
@@ -18,25 +22,27 @@ console.log("🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn", isLoggedIn)
       handleLogIn()
       setEmailValue(null)
       setUserNameValue(null)
+      handleScroll()
     }
   }
+
 
   return (
     <div className="nav_container">
       <hr className="nav_logo_line"></hr>
       <Link to="/" onClick={clickGoHome}>
-        <div className="nav_logo_text">Calming Signal</div>
+        <div className="nav_logo_text" onClick={handleScroll}>Calming Signal</div>
         {/* <div className="nav_logo_div_img"><img className="nav_logo_div_img" src={nav_logo}></img></div> */}
       </Link>
       {isLoggedIn?(
         <>
           <Link to="/calming-signal">
-            <div className="nav_calming_signal_user">
+            <div className="nav_calming_signal_user" onClick={handleScroll}>
               카밍 시그널
             </div>
           </Link>
           <Link to="/board/free?page=1">
-            <div className="nav_board_user">
+            <div className="nav_board_user" onClick={handleScroll}>
               게시판
             </div>
           </Link>
@@ -46,12 +52,12 @@ console.log("🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn", isLoggedIn)
       (
         <>
           <Link to="/calming-signal">
-            <div className="nav_calming_signal_guest">
+            <div className="nav_calming_signal_guest" onClick={handleScroll}>
               카밍 시그널
             </div>
           </Link>
           <Link to="/board/free?page=1">
-            <div className="nav_board_guest">
+            <div className="nav_board_guest" onClick={handleScroll}> 
               게시판
             </div>
           </Link>
@@ -60,7 +66,7 @@ console.log("🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn", isLoggedIn)
       {isLoggedIn?(
         <>
         <Link to="/mypage">
-          <div className="nav_mypage">
+          <div className="nav_mypage" onClick={handleScroll}>
             마이 페이지
           </div>
         </Link>
@@ -73,12 +79,12 @@ console.log("🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn", isLoggedIn)
       (
         <>
       <Link to="/sign-in">
-        <div className="nav_login">
+        <div className="nav_login" onClick={handleScroll}>
           로그인
         </div>
       </Link>
       <Link to="/sign-up">
-        <div className="nav_sign_up">
+        <div className="nav_sign_up" onClick={handleScroll}>
           회원가입
         </div>
       </Link>

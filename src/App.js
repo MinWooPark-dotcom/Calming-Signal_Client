@@ -6,7 +6,7 @@ import CalmingSignalContainer from './container/CalmingSignalContainer'
 // import Content from './components/Content';
 // import FreeBulletinBoard from './components/board/FreeBulletinBoard';
 import FreeBulletinBoardContainer from './container/FreeBulletinBoardContainer'
-import MyPage from './components/MyPage';
+import Mypage from './components/Mypage';
 //! happy
 import HappyContainer from './container/HappyContainer';
 import WagContainer from './container/WagContainer';
@@ -38,6 +38,7 @@ import "./App.css";
 import ContentPage from './components/board/Content';
 import ContentContainer from './container/ContentContainer';
 import WritePageContainer from './container/WritePageContainer';
+import MypageContainer from './container/MypageContainer';
 
 const App = ({ match }) => {
   return (
@@ -78,7 +79,7 @@ const App = ({ match }) => {
       <Route component={ContentContainer} path="/content/:title" exact />
       
       
-      <Route component={MyPage} path="/mypage" exact />  
+      <Route component={MypageContainer} path="/mypage" exact />  
       
 
 

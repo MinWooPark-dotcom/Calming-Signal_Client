@@ -1,7 +1,21 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SignIn from '../components/SignIn';
-import { clickSignInBtn, setEmail, setUserName, setPassword, setEmailError, setPasswordError, setSignInError, eraseEmailError, erasePasswordError, eraseSignInError, changeLoggedInState } from '../modules/signIn';
+import {
+     clickSignInBtn, 
+     setEmail, 
+     setUserName, 
+     setPassword, 
+     setEmailError, 
+     setPasswordError, 
+     setSignInError, 
+     eraseEmailError, 
+     erasePasswordError, 
+     eraseSignInError, 
+     changeLoggedInState, 
+     setPetName, 
+     setPetBreed 
+    } from '../modules/signIn';
 
 const SignInContainer = () => {
     const isClickedSignInBtn = useSelector(state => state.signIn.isClickedSignInBtn);
@@ -12,6 +26,8 @@ const SignInContainer = () => {
     const passwordErrorMsg = useSelector(state => state.signIn.passwordErrorMsg);
     const signInErrorMsg = useSelector(state => state.signIn.signInErrorMsg);
     const isLoggedIn = useSelector(state => state.signIn.isLoggedIn)
+    const petName = useSelector(state => state.signIn.petName)
+    const petBreed = useSelector(state => state.signIn.petBreed)
 
     const dispatch = useDispatch();
     const clickSignIn = useCallback(() => dispatch(clickSignInBtn()), [dispatch]);
@@ -27,7 +43,10 @@ const SignInContainer = () => {
     const erasePasswordErrorMsg = useCallback(() => dispatch(erasePasswordError()), [dispatch]);
     const eraseSignInErrorMsg = useCallback(() => dispatch(eraseSignInError()), [dispatch ]);
     
-    const changeLoggedIn = useCallback(() => dispatch(changeLoggedInState()), [dispatch])
+    const changeLoggedIn = useCallback(() => dispatch(changeLoggedInState()), [dispatch]);
+    const setPetNameValue = useCallback((petName) => dispatch(setPetName(petName)), [dispatch]);
+    const setPetBreedValue = useCallback((petBreed) => dispatch(setPetBreed(petBreed)), [dispatch]);
+
 
     return (
        <SignIn 
@@ -38,6 +57,8 @@ const SignInContainer = () => {
             emailErrorMsg={emailErrorMsg}
             passwordErrorMsg={passwordErrorMsg}
             signInErrorMsg={signInErrorMsg}
+            petName={petName}
+            petBreed={petBreed}
             clickSignIn={clickSignIn}
             setEmailValue={setEmailValue}
             setUserNameValue={setUserNameValue}
@@ -50,6 +71,8 @@ const SignInContainer = () => {
             eraseSignInErrorMsg={eraseSignInErrorMsg}
             isLoggedIn={isLoggedIn}
             changeLoggedIn={changeLoggedIn}
+            setPetNameValue={setPetNameValue}
+            setPetBreedValue={setPetBreedValue}
        />
     );
 };

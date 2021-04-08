@@ -15,25 +15,13 @@ import settle from '../img/settle.png'
 import landing_page_calming_signal from '../img/landing_page.jpeg'
 
 const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn, clickLeftBtn, setFirstNum, setLastNum}) => {
-  const hadleOnClickRight = () => {
-    if (number < 5) {
-      // setNum(number + 1)
-      clickRightBtn()
-    } else {
-      // setNum(1)
-      setFirstNum()
-    }
+  const handleScroll = () => {
+    window.scrollTo(0,0)
   }
-  const hadleOnClickLeft = () => {
-    if (number === 1) {
-      // setNum(4)
-      setLastNum()
-    } else {
-      // setNum(number -1)
-      clickLeftBtn()
-    }
-  }
-  
+
+
+
+
   return (
     <div className="landing_page">      
       <NavContainer />
@@ -53,12 +41,13 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
         <div className="landing_contents1_body_2">
           세상에서 가장 아름다운 반려견의 몸짓 언어를 이해하고 소통해 보세요.
         </div>
-        
-        <div className="landing_contents1_div_btn">
-          <button className="landing_contents1_btn">
-            카밍 시그널 알아보기
-          </button>
-        </div>
+        <Link to="/calming-signal">
+          <div className="landing_contents1_div_btn" onClick={handleScroll}>
+            {/* <button className="landing_contents1_btn"> */}
+              카밍 시그널 알아보기
+            {/* </button> */}
+          </div>
+        </Link>
       </div>
       {/*//! 2칸 */}
       <div className="landing_contents2">
@@ -134,7 +123,7 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
       <div className="landing_contents3">
         <div>
           <Link to="/calming-signal">
-            <div className="landing_contents3_btn">카밍 시그널 알아보기</div>
+            <div className="landing_contents3_btn" onClick={handleScroll}>카밍 시그널 알아보기</div>
             {/* <div className="landing_contents3_div_logo">
               <img className="landing_contents3_logo" src={landing_logo} alt="logo_img"></img>
               </div> */}

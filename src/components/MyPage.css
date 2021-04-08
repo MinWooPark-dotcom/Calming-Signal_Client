@@ -1,18 +1,26 @@
 .mypage_container{
  width: 100%;
- height: 100%;   
+ height: 90vh;  
+ margin-top: 4%;
+ border: 1px solid red;
+ overflow: hidden;
 }
 
 .mypage_profile_title{
-    border: 3px solid blue;
-    width: 80%;
-    margin-left: 10%;
-
+    /* border: 3px solid blue; */
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    /* width: 80%; */
+    height: 5%;
+    font-size: 1.3vmax;
 }
 
 .mypage_profile_box{
     width: 80%;
-    height: 80%;      
+    height: 70%;      
+    position: relative;
+    top: 15%;
     margin-top: 3%;
     margin-left: 10%;
     border: 3px solid blue;
@@ -22,8 +30,10 @@
 .mypage_profile_ID_box_value,
 .mypage_profile_PW_box_title,
 .mypage_profile_PW_box_value,
+.mypage_profile_PW_box_change,
 .mypage_profile_name_box_title,
 .mypage_profile_name_box_value,
+.mypage_profile_name_box_change,
 .mypage_profile_pet_box_title,
 .mypage_profile_pet_box_value{
     display: inline-block;
@@ -32,21 +42,27 @@
 
 /*! ID */
 .mypage_profile_ID_box{
-    border: 1px solid red;
+    border: 3px solid red;
+    width: 100%;
+    height: 10%;
 }
 
 .mypage_profile_ID_box_title{
     border: 1px solid black;
+    font-size: 1vmax;
 }
 
 .mypage_profile_ID_box_value{
     border: 1px solid black;
+    font-size: 1vmax;
     margin-left: 3%;
 }
 
 /*! PW */
 .mypage_profile_PW_box{
     border: 1px solid red;
+    width: 100%;
+    height: 10%;
 }
 
 .mypage_profile_PW_box_title{
@@ -61,6 +77,8 @@
 /*! name */
 .mypage_profile_name_box{
     border: 1px solid red;
+    width: 100%;
+    height: 10%;
 }
 
 .mypage_profile_name_box_title{
