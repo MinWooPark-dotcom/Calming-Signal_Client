@@ -5,38 +5,41 @@ a{
 
 .nav_container{
     width: 100%;
-    height: 10%;
-    border: 1px solid gray;
+    height: 7%;
+    border-bottom: 1px solid gray;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
 
 .nav_logo_line{
     display: inline-block;
-    position: absolute;
     border-bottom: 0.1vmax solid red;
-    /* border: 0.1vmax solid #ff2323; */
-    top: 2.5%;
     width: 5%;
+    margin-top: 2%;
+    /* border: 0.1vmax solid #ff2323; */
+    /* position: absolute; */
+    /* top: 2.5%; */
     /* color: #ff2323; */
     /* background-color: #ff2323; */
 }
 
-.nav_logo{
+.nav_logo_text{
     display: inline-block;
-    /* position: relative; */
     position: absolute;
-    top: 2.5%;   
-    left: 7%;
-    /* margin-top: 1%; */
-    /* margin-left: 1%; */
+    left: 6%;
+    margin-top: 1.2%;
     font-weight: 600;
     font-size: 1.1vmax;
-    /* color: white */
 }
 
 .nav_calming_signal_guest{
     display: inline-block;
     position: absolute;
-    top: 2.5%;   
+    margin-top: 1%;
     right: 16%;
     font-size: 1vmax;
 }
@@ -44,7 +47,7 @@ a{
 .nav_board_guest{
     display: inline-block;
     position: absolute;
-    top: 2.5%;   
+    margin-top: 1%;
     right: 12%;
     font-size: 1vmax;
 }
@@ -52,7 +55,7 @@ a{
 .nav_login{
     display: inline-block;
     position: absolute;
-    top: 2.5%;   
+    margin-top: 1%;
     right: 8%;
     font-size: 1vmax;
 }
@@ -60,7 +63,7 @@ a{
 .nav_sign_up{
     display: inline-block;
     position: absolute;
-    top: 2.5%;   
+    margin-top: 1%;
     right: 3%;
     font-size: 1vmax;
 }
@@ -70,7 +73,7 @@ a{
 .nav_calming_signal_user{
     display: inline-block;
     position: absolute;
-    top: 2.5%;   
+    margin-top: 1%;
     right: 20%;
     font-size: 1vmax;
 }
@@ -78,7 +81,7 @@ a{
 .nav_board_user{
     display: inline-block;
     position: absolute;
-    top: 2.5%;   
+    margin-top: 1%;
     right: 15%;
     font-size: 1vmax;
 }
@@ -86,7 +89,7 @@ a{
 .nav_mypage{
     display: inline-block;
     position: absolute;
-    top: 2.5%;   
+    margin-top: 1%;
     right: 8%;
     font-size: 1vmax;
 }
@@ -94,7 +97,7 @@ a{
 .nav_logout{
    display: inline-block;
     position: absolute;
-    top: 2.5%;   
+    margin-top: 1%;
     right: 3%;
     font-size: 1vmax;
 }

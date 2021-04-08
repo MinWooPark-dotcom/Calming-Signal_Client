@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import axios from 'axios'
 import "./Nav.css";
-
+import nav_logo from '../img/landing_logo2.png'
 
 const Nav = ({isLoggedIn, clickGoHome, handleLogIn, setEmailValue, setUserNameValue}) => {
 console.log("🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn", isLoggedIn)
@@ -25,7 +25,8 @@ console.log("🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn", isLoggedIn)
     <div className="nav_container">
       <hr className="nav_logo_line"></hr>
       <Link to="/" onClick={clickGoHome}>
-        <div className="nav_logo">Calming Signal</div>
+        <div className="nav_logo_text">Calming Signal</div>
+        {/* <div className="nav_logo_div_img"><img className="nav_logo_div_img" src={nav_logo}></img></div> */}
       </Link>
       {isLoggedIn?(
         <>
