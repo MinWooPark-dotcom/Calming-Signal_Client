@@ -33,16 +33,15 @@ a{
     /* color: white */
 }
 
-.nav_calming_signal{
+.nav_calming_signal_guest{
     display: inline-block;
     position: absolute;
     top: 2.5%;   
     right: 16%;
     font-size: 1vmax;
-
 }
 
-.nav_board{
+.nav_board_guest{
     display: inline-block;
     position: absolute;
     top: 2.5%;   
@@ -60,6 +59,40 @@ a{
 
 .nav_sign_up{
     display: inline-block;
+    position: absolute;
+    top: 2.5%;   
+    right: 3%;
+    font-size: 1vmax;
+}
+
+/*!  로그인 시 */
+
+.nav_calming_signal_user{
+    display: inline-block;
+    position: absolute;
+    top: 2.5%;   
+    right: 20%;
+    font-size: 1vmax;
+}
+
+.nav_board_user{
+    display: inline-block;
+    position: absolute;
+    top: 2.5%;   
+    right: 15%;
+    font-size: 1vmax;
+}
+
+.nav_mypage{
+    display: inline-block;
+    position: absolute;
+    top: 2.5%;   
+    right: 8%;
+    font-size: 1vmax;
+}
+
+.nav_logout{
+   display: inline-block;
     position: absolute;
     top: 2.5%;   
     right: 3%;

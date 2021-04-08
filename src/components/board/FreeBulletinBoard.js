@@ -1,17 +1,16 @@
 /* eslint react/prop-types: 0 */
 
-    
-
-
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from "react-router-dom";
 import axios from 'axios';
 import BoardSidebar from '../BoardSidebar';
 import BoardPostedPageNum from './BoardPostedPageNum';
 import BoardPostedTemplateContainer from '../../container/BoardPostedTemplateContainer'
+import NavContainer from '../../container/NavContainer';
 import './FreeBulletinBoard.css'
 
 const FreeBulletinBoard = ({
+  isLoggedIn,
   boardData, 
   getBoardPostedData,
   category,
@@ -26,6 +25,7 @@ const FreeBulletinBoard = ({
   getContentUserName, 
   getContentComment,
   history }) => {
+  console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 28 ~ boardData", boardData)
   
   
   const [postedList, setPostedList] = useState(null) 
@@ -94,13 +94,16 @@ const FreeBulletinBoard = ({
 
   // ! 카테고리에 맞는 게시판 데이터 가져오기
   useEffect(async () => {
-    nowCategory(category)
-    const getBoardData = await axios(`https://localhost:3002/board/${category}?page=${query}`)
-    getBoardPostedData([getBoardData.data])
-    const testBoard = [getBoardData.data]
-    setNumOfPages(getBoardData.data.numOfPages)
-    const getPostedList = testBoard[0].data.map((posted) => (        
-            <div key={posted.num}>
+    try{
+
+      nowCategory(category)
+      const getBoardData = await axios(`https://localhost:3002/board/${category}?page=${query}`)
+      console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 99 ~ useEffect ~ getBoardData", getBoardData)
+      getBoardPostedData([getBoardData.data])
+      const testBoard = [getBoardData.data]
+      setNumOfPages(getBoardData.data.numOfPages)
+      const getPostedList = testBoard[0].data.map((posted) => (        
+        <div key={posted.num}>
                 <div className="board_posted_template">
                 <div className="board_posted_template_num">{posted.num}</div>
                 <div className="board_posted_template_title" onClick={handleOnClickTitle} value={posted.id}>{posted.title}</div>
@@ -111,10 +114,22 @@ const FreeBulletinBoard = ({
             </div>    
         ))
         setPostedList(getPostedList)
-
+        
+      } catch(err) {
+        console.error('err>>>',err)
+        getBoardPostedData(null)
+        setPostedList(null)
+      }
   },[category,query])   
 
-    return boardData && postedList?(<div>
+  // ! 비회원 게시글 등록 버튼 클릭 시
+  const handleRegister = () => {
+    alert('로그인 후 이용 가능합니다.')
+  }
+
+    return (
+      <div>
+        <NavContainer />
         <BoardSidebar />
         <div className="free_board_container">
           <div className="free_board_posted">
@@ -136,13 +151,16 @@ const FreeBulletinBoard = ({
                 <div className="board_posted_page_next_one" onClick={handleNextPageClick}>&#62;</div>
                 <div className="board_posted_page_next_five" onClick={handleLastPageClick}>&#62;&#62;</div>
             </div>
-                <Link to="/write">
-                <div className="board_post_btn">등록</div>
-                </Link>
+                {isLoggedIn?(
+                  <Link to="/write">
+                  <div className="board_post_btn">등록</div>
+                  </Link>
+                  ):(
+                  <div className="board_post_btn" onClick={handleRegister}>등록</div>
+                )}
         </div>
-      </div>):(<div>loading...</div>)
-       
-    
+      </div>
+      )
 };
 
 export default withRouter(FreeBulletinBoard);

@@ -11,7 +11,8 @@ const FreeBulletinBoardContainer = ({match, location}) => {
     if(location.search.length > 0){
          query = location.search.split('?')[1].split('=')[1]
     }
-
+    
+    const isLoggedIn = useSelector(state => state.signIn.isLoggedIn)
     const boardData = useSelector(state => state.boardPostedTemplate.freeBulletinBoard)
     const postId = useSelector(state => state.content.postId)
     const dispatch = useDispatch()
@@ -28,7 +29,8 @@ const FreeBulletinBoardContainer = ({match, location}) => {
     const getContentComment = useCallback((comment) => dispatch(getComment(comment), [dispatch]));
 
     return (
-        <FreeBulletinBoard  
+        <FreeBulletinBoard 
+            isLoggedIn={isLoggedIn} 
             postId={postId}
             category={category}
             query={query}

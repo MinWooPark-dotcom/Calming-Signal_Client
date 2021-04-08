@@ -4,16 +4,15 @@ import React from "react";
 import NavConatiner from "../../container/NavContainer";
 import HamburgerContainer from "../../container/HamburgerContainer";
 import Sidebar from "../../components/Sidebar";
+import AboutContainer from "../../container/AboutContainer";
+import './CalmingSignal.css'
 
-const CalmingSignal = ({isToggled}) => {
-console.log("🚀 ~ file: CalmingSignal.js ~ line 7 ~ CalmingSignal ~ isToggled", isToggled)
+const CalmingSignal = () => {
   return (
-    <div>
-      {isToggled? (<HamburgerContainer />):(
-      <div>
+    <div className="calming_signal_container">
       <NavConatiner />
       <Sidebar />
-      </div>)}
+      <AboutContainer />
     </div>
   );
 };

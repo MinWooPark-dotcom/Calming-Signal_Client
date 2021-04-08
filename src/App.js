@@ -37,6 +37,7 @@ import SignUp from './components/SignUp';
 import "./App.css";
 import ContentPage from './components/board/Content';
 import ContentContainer from './container/ContentContainer';
+import WritePageContainer from './container/WritePageContainer';
 
 const App = ({ match }) => {
   return (
@@ -73,7 +74,7 @@ const App = ({ match }) => {
       
       {/* board */}
       <Route component={FreeBulletinBoardContainer} path="/board/:category" exact />
-      <Route component={WritePage} path="/write" exact />
+      <Route component={WritePageContainer} path="/write" exact />
       <Route component={ContentContainer} path="/content/:title" exact />
       
       

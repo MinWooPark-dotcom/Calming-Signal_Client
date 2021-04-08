@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../../../node_modules/axios/index';
+import NavContainer from '../../container/NavContainer';
 import './Content.css'
 
 const Content = ({
@@ -100,65 +101,68 @@ const Content = ({
 
 
     return commentTag?(
-        <div className="content_container">
-            <div className="content_header">    
-                <div className="content_header_title_fix">
-                    제목:
+        <div>
+            <NavContainer />
+            <div className="content_container">
+                <div className="content_header">    
+                    <div className="content_header_title_fix">
+                        제목:
+                    </div>
+                    <div className="content_header_title">
+                        {contentTitle}
+                    </div>
+                    <div className="content_header_writer_fix">
+                        작성자:
+                    </div>
+                    <div className="content_header_writer">    
+                    {contentUserName}
+                    </div>
+                    <div className="content_header_category_fix">
+                        카테고리:
+                    </div>
+                    <div className="content_header_category">    
+                        {contentCategory}
+                    </div>
+                    <div className="content_header_numOfView_fix">
+                        조회수: 
+                    </div>
+                    <div className="content_header_numOfView">    
+                        {contentNumOfViews}
+                    </div>
+                    <div className="content_header_createdAt_fix">
+                        작성일: 
+                    </div>
+                    <div className="content_header_createdAt">    
+                        {contentCreatedAt}
+                    </div>
                 </div>
-                <div className="content_header_title">
-                    {contentTitle}
+                <div className="content_body">    
+                    {contentBody}
                 </div>
-                <div className="content_header_writer_fix">
-                    작성자:
+                {/* 유저가 댓글 쓰는 곳 */}
+                <div className="content_comment_write_box">
+                    <div className="content_comment_writer">
+                        {/* 로그인 유저 or 로그인 시 이용하세요. */}
+                        {isLoggedIn?(userName):'Guest'} 
+                    </div>
+                    <div className="content_comment_textarea">
+                        {isLoggedIn?
+                        (<textarea className="cotent_textarea" onChange={handleChangeComment} placeholder="댓글을 입력하세요."></textarea>)
+                        :
+                        (<textarea className="cotent_textarea" readOnly onClick={handleGuestComment} placeholder="로그인 후 이용해 주세요."></textarea>)}
+                    </div>
+                    <div className="content_comment_register_btn">
+                        {isLoggedIn?
+                        (<button className="content_write_btn" onClick={handleRegisterComment}>등록</button>)
+                        :
+                        (<button className="content_write_btn" onClick={handleGuestComment}>등록</button>)
+                        }
+                        
+                    </div>
                 </div>
-                 <div className="content_header_writer">    
-                {contentUserName}
+                <div className="content_comment_box">
+                {commentTag}      
                 </div>
-                <div className="content_header_category_fix">
-                    카테고리:
-                </div>
-                <div className="content_header_category">    
-                    {contentCategory}
-                </div>
-                <div className="content_header_numOfView_fix">
-                    조회수: 
-                </div>
-                <div className="content_header_numOfView">    
-                    {contentNumOfViews}
-                </div>
-                <div className="content_header_createdAt_fix">
-                    작성일: 
-                </div>
-                <div className="content_header_createdAt">    
-                    {contentCreatedAt}
-                </div>
-            </div>
-            <div className="content_body">    
-                {contentBody}
-            </div>
-            {/* 유저가 댓글 쓰는 곳 */}
-            <div className="content_comment_write_box">
-                <div className="content_comment_writer">
-                    {/* 로그인 유저 or 로그인 시 이용하세요. */}
-                    {isLoggedIn?(userName):'Guest'} 
-                </div>
-                <div className="content_comment_textarea">
-                    {isLoggedIn?
-                    (<textarea className="cotent_textarea" onChange={handleChangeComment} placeholder="댓글을 입력하세요."></textarea>)
-                    :
-                    (<textarea className="cotent_textarea" readOnly onClick={handleGuestComment} placeholder="로그인 후 이용해 주세요."></textarea>)}
-                </div>
-                <div className="content_comment_register_btn">
-                    {isLoggedIn?
-                    (<button className="content_write_btn" onClick={handleRegisterComment}>등록</button>)
-                    :
-                    (<button className="content_write_btn" onClick={handleGuestComment}>등록</button>)
-                    }
-                    
-                </div>
-            </div>
-            <div className="content_comment_box">
-              {commentTag}      
             </div>
         </div>
     ):(<div>loading...</div>)

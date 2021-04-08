@@ -101,6 +101,7 @@ const SignIn = ({
             )
             console.log("🚀 ~ file: SignIn.js ~ line 99 ~ handleOnClickSignInBtn ~ userInfo", userInfo)
             setUserNameValue(userInfo.data.name)
+            setPasswordValue(null)
             // history.goBack();
             // 임시 방편, 원래는 뒤로 가기 해야 하는데 회원가입에서 로그인 오면 회원가입으로 돌아가버림
             history.push('/calming-signal');
