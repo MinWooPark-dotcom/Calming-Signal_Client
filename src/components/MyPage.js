@@ -16,6 +16,7 @@ const MyPage = ({
   setPetNameValue,
   setPetBreedValue,
 }) => {
+  console.log("🚀 ~ file: MyPage.js ~ line 19 ~ petBreed", petBreed)
   return isLoggedIn?(
     <div className="mypage_container">
       <NavContainer />
@@ -37,16 +38,35 @@ const MyPage = ({
           <div className="mypage_profile_name_box_change">이름 변경하기</div>
         </div>
         {/* 반려견 이름 */}
-        <div className="mypage_profile_pet_box">
-          <div className="mypage_profile_pet_box_title">반려견 이름</div>
-          <div className="mypage_profile_pet_box_value">{petName}</div>
-          <div>반려견 이름 변경하기</div>
+        <div className="mypage_profile_pet_name_box">
+          <div className="mypage_profile_pet_name_title">반려견 이름</div>
+          {petName?(
+            <div className="mypage_profile_pet_name_value_box">
+              <div className="mypage_profile_pet_name_value">{petName}</div>
+              <button className="mypage_profile_pet_name_change_btn">반려견 이름 변경하기</button>
+            </div>
+          ):(
+            <div className="mypage_profile_pet_name_input_box">
+              <input className="mypage_profile_pet_name_input"></input>
+              <button className="mypage_profile_pet_name_register">반려견 이름 등록하기</button>
+            </div>
+          )}
         </div>
         {/* 반려견종 */}
-        <div>
-          <div>반려견종</div>
-          <div>{petBreed}</div>
-          <div>반려견종 변경</div>
+        <div className="mypage_profile_pet_breed_box">
+          <div className="mypage_profile_pet_breed_title">반려견종</div>
+          {petBreed? (
+            <div className="mypage_profile_pet_breed_value_box">
+              <div className="mypage_profile_pet_breed_value">{petBreed}</div>
+              <button className="">반려견종 변경</button>
+            </div>
+          ):(
+            <div className="mypage_profile_pet_breed_input_box">
+              <input className="mypage_profile_pet_name_input"></input>
+              <button className="mypage_profile_pet_name_register">반려견종 등록하기</button>
+            </div>
+          )}
+          
         </div>
       </div>
     </div>

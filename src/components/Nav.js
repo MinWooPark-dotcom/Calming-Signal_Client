@@ -6,7 +6,7 @@ import axios from 'axios'
 import "./Nav.css";
 import nav_logo from '../img/landing_logo2.png'
 
-const Nav = ({isLoggedIn, clickGoHome, handleLogIn, setEmailValue, setUserNameValue}) => {
+const Nav = ({isLoggedIn, clickGoHome, handleLogIn, setEmailValue, setUserNameValue, history}) => {
 console.log("🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn", isLoggedIn)
 
   const handleScroll = () => {
@@ -23,6 +23,7 @@ console.log("🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn", isLoggedIn)
       setEmailValue(null)
       setUserNameValue(null)
       handleScroll()
+      history.push('/')
     }
   }
 
@@ -94,4 +95,4 @@ console.log("🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn", isLoggedIn)
   );
 };
 
-export default Nav;
+export default withRouter(Nav);

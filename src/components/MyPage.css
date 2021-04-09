@@ -34,8 +34,15 @@
 .mypage_profile_name_box_title,
 .mypage_profile_name_box_value,
 .mypage_profile_name_box_change,
-.mypage_profile_pet_box_title,
-.mypage_profile_pet_box_value{
+.mypage_profile_pet_name_title,
+.mypage_profile_pet_name_value_box,
+.mypage_profile_pet_name_value,
+.mypage_profile_pet_name_input_box,
+.mypage_profile_pet_breed_title,
+.mypage_profile_pet_breed_value_box,
+.mypage_profile_pet_breed_value,
+.mypage_profile_pet_breed_input_box
+{
     display: inline-block;
 }
 
@@ -90,16 +97,35 @@
     margin-left: 3%;
 }
 
-/*! pet */
-.mypage_profile_pet_box{
+/*! pet name*/
+.mypage_profile_pet_name_box{
     border: 1px solid red;
 }
 
-.mypage_profile_pet_box_title{
+.mypage_profile_pet_name_title{
     border: 1px solid black;
 }
 
-.mypage_profile_pet_box_value{
+.mypage_profile_pet_name_value{
     border: 1px solid black;
     margin-left: 3%;
+}
+
+.mypage_profile_pet_name_value_box{
+    border: 1px solid red;
+    width: 50%;
+}
+
+/*! pet breed */
+.mypage_profile_pet_breed_box{
+    border: 1px solid red;   
+}
+
+.mypage_profile_pet_breed_title{
+    border: 1px solid black;   
+}
+
+.mypage_profile_pet_breed_value_box{
+    border: 1px solid red;
+    width: 50%;
 }

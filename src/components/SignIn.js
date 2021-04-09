@@ -105,7 +105,7 @@ const SignIn = ({
                 withCredentials: true
               }
             )
-            console.log("🚀 ~ file: SignIn.js ~ line 99 ~ handleOnClickSignInBtn ~ userInfo", userInfo)
+            console.log("🚀 ~ file: SignIn.js ~ line 99 ~ handleOnClickSignInBtn ~ userInfo>>>>", userInfo)
             setUserNameValue(userInfo.data.name)
             setPasswordValue(null)
             setPetNameValue(userInfo.data.petName)

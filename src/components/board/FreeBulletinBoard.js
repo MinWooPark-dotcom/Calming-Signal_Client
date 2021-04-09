@@ -98,7 +98,7 @@ const FreeBulletinBoard = ({
 
       nowCategory(category)
       const getBoardData = await axios(`https://localhost:3002/board/${category}?page=${query}`)
-      console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 99 ~ useEffect ~ getBoardData", getBoardData)
+      console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 99 ~ useEffect ~ getBoardData>>>>>", getBoardData.data)
       getBoardPostedData([getBoardData.data])
       const testBoard = [getBoardData.data]
       setNumOfPages(getBoardData.data.numOfPages)
