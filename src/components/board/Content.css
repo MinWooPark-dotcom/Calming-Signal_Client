@@ -1,117 +1,134 @@
 .content_container{
     /* position: absolute; */
-    /* top: 10%; */
-    margin-top: 3.5%;
     width: 100%;
-    height: 90%;
-    /* margin-left: 5%; */
-    border-top: 1px solid gray;
+    height: 100%;
+    /* border-top: 1px solid gray; */
 }
 
 .content_header{
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 9%;
+    left: 1%;
+    width: 90%;
+    /* margin-top: 0.5%; */
+    height: 5%;
     font-size: 1vmax;
-    margin: 1%;
-    /* border: 1px solid red; */
+    /* margin: 1%; */
+    /* border-bottom: 1px solid red; */
 }
+
+
 
 .content_header_title_fix{
     display: inline-block;
 } 
 
 .content_header_title{
-    margin-left: 0.5%;
     display: inline-block;
+    position: relative;
+    left: 0.5%;
 }
 
 .content_header_writer_fix{
     display: inline-block;
     position: relative;
-    left: 59%;
+    left: 65.5%;
 }
 
 .content_header_writer{
     display: inline-block;
     position: relative;
-    left: 59.5%;
+    left: 66%;
 }
 
 .content_header_category_fix{
     display: inline-block;
     position: relative;
-    left: 60.5%;
+    left: 67.5%;
 }
 
 .content_header_category{
     display: inline-block;
     position: relative;
-    left: 61%;
+    left: 68%;
 }
 
 .content_header_numOfView_fix{
     display: inline-block;
     position: relative;
-    left: 62%;
+    left: 69.5%;
 }
 
 .content_header_numOfView{
     display: inline-block;
     position: relative;
-    left: 62.5%;
+    left: 70%;
 }
 
 .content_header_createdAt_fix{
     display: inline-block;   
     position: relative;
-    left: 63.5%;
+    left: 71.5%;
 }
 
 .content_header_createdAt{
     display: inline-block;   
     position: relative;
-    left: 64%;
+    left: 72%;
 }
 
 .content_body{
+    position: absolute;
     width: 100%;
-    height: 80vh;
+    /* height: 75%; */
+    top: 14%;
     padding: 1%;
     border: 1px solid blue;
 }
 
 .content_comment_write_box{
-    border: 1px solid red;   
+    position: absolute;
+    top: 100%;
+    border-top: 1px solid red;   
     /* margin-left: 1%; */
     width: 100%;
-    /* height: 20%; */
+    height: 5%;
 }
 
 .content_comment_writer{
     display: inline-block;
-    border: 1px solid red;
-    width: 5%;
-    height: 20%;
+    /* border: 1px solid red; */
+    font-size: 1.3vmax;
+    position: absolute;
+    top: 15%;
+    left: 2%;
+    /* width: 5%; */
+    /* height: 30%; */
 }
 
 .content_comment_textarea{
     display: inline-block;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 85%;
-    margin-left: 3%;
+    height: 100%;
+    position: absolute;
+    left: 7%;
+    /* margin-left: 3%; */
 }
 
 .cotent_textarea{
     width: 100%;
-    height: 10%;
+    height: 100%;
+    font-size: 1.3vmax;
 }
 
 .content_comment_register_btn{
     display: inline-block;
+    position: absolute;
     width: 5%;
-    margin-left: 1%;
-    /* height: 10%; */
-    /* border: 1px solid red; */
+    height: 80%;
+    top: 10%;
+    right: 1%;
 }
 
 .content_write_btn{
@@ -119,27 +136,49 @@
     height: 100%;
 }
 
+.content_comment_container{
+    position: absolute;
+    width: 100%;
+    top: 105%;
+    border: 1px solid blue;
+}
+
 .content_comment_box{
     border: 1px solid blue;
+    /* height: 10%; */
 }
 
 .content_comments_user_name{
     display: inline-block;
     border: 1px solid red;
-    width: 5%;
-    height: 20%;
+    font-size: 1.3vmax;
+    position: relative;
+    /* top: 15%; */
+    left: 2%;
+    /* width: 5%; */
+    /* height: 30%; */
 }
 
 .content_comments_body{
-    display: inline-block;
-    border: 1px solid red;
-    width: 75%;
-    margin-left: 3%;
+     display: inline-block;
+     font-size: 1.3vmax;
+    /* border: 1px solid red; */
+    /* width: 85%; */
+    height: 100%;
+    position: relative;
+    left: 5%;
+    /* margin-left: 3%; */
 }
 
 .content_comments_created_At{
- display: inline-block;
     border: 1px solid red;
-    width: 15%;
-    /* margin-left: 3%;    */
+    display: inline-block;
+    position: relative;
+    top: 3%;
+    right: 0.5%; 
+    float: right;
+    font-size: 1vmax;
+    /* width: 5%; */
+    /* height: 80%; */
+    /* top: 10%; */
 }

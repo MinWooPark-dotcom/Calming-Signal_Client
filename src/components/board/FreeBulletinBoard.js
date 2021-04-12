@@ -81,6 +81,14 @@ const FreeBulletinBoard = ({
     const title = e.target.innerText
     const pageId = e.target.attributes[1].value
     const getContent = await axios(`https://localhost:3002/content/${title}?id=${pageId}`)
+    console.log("🚀 ~ file: FreeBulletinBoard.js ~ line 84 ~ handleOnClickTitle ~ getContent", getContent)
+    // category: "free"
+    // content: "나다"
+    // createdAt: "2021-04-09T09:18:47.000Z"
+    // numOfViews: 0
+    // postId: 6
+    // title: "나다"
+    // userName: "pmw"
     getContentPostId(getContent.data.postId)
     getContentTitle(getContent.data.title)
     getContentBody(getContent.data.content)

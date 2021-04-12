@@ -71,28 +71,28 @@ const Editor = ({getNowCategory, nowCategory, history}) => {
 
   return (
     <div className="editor_container">
-      {selectDefalutValue? (<div className="editor_select_div">
-        <select className="editor_select_box" name="category" onChange={handleoOnChangeSelectBox}>
-            <option>{selectDefalutValue[0]}</option>
-            <option>{selectDefalutValue[1]}</option>
-            <option>{selectDefalutValue[2]}</option>
-            <option>{selectDefalutValue[3]}</option>
-        </select>
+      {selectDefalutValue? (
+        <div className="editor_select_div">
+          <select className="editor_select_box" name="category" onChange={handleoOnChangeSelectBox}>
+              <option>{selectDefalutValue[0]}</option>
+              <option>{selectDefalutValue[1]}</option>
+              <option>{selectDefalutValue[2]}</option>
+              <option>{selectDefalutValue[3]}</option>
+          </select>
+        </div>
+        ):(
+          null
+        )}
+      <div className="editor_title">
+        <input className="editor_title_input" placeholder="제목을 입력하세요" onChange={handleOnChangeTitle}></input>
       </div>
-          ):(null)}
-           <div className="editor_title">
-         <input className="editor_title_input" placeholder="제목을 입력하세요" onChange={handleOnChangeTitle}></input>
-       </div>
-       <hr className="editor_hr"></hr>
-       <div className="editor_content">
-         <textarea className="editor_content_textarea" placeholder="내용을 작성하세요..." onChange={handleOnChangeContent}></textarea>
-       </div>
-            <div className="write_action_btn_container">
-            {/* <div className="div_go_back" onClick={handleGoBack}>
-                뒤로가기
-            </div> */}
-            <button className="post_btn" onClick={handlePost}>포스트 등록</button>
-            <button className="cancle_btn" onClick={handleGoBack}>취소</button>
+      <hr className="editor_hr"></hr>
+        <div className="editor_content">
+          <textarea className="editor_content_textarea" placeholder="내용을 작성하세요..." onChange={handleOnChangeContent}></textarea>
+        </div>
+        <div className="write_action_btn_container">
+          <button className="post_btn" onClick={handlePost}>포스트 등록</button>
+          <button className="cancle_btn" onClick={handleGoBack}>취소</button>
         </div>
     </div>
   );

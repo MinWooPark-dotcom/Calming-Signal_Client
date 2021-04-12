@@ -9,20 +9,19 @@ a{
     border-bottom: 1px solid gray;
     background-color: white;
     position: fixed;
-    top: 0;
+    /* top: 0;
     left: 0;
-    right: 0;
+    right: 0; */
     z-index: 999;
 }
 
 .nav_logo_line{
     display: inline-block;
-    border-bottom: 0.1vmax solid red;
+    /* border-bottom: 0.1vmax solid red; */
+    border-bottom: 1px solid red;
     width: 5%;
-    margin-top: 2%;
+    margin-top: 1.8%;
     /* border: 0.1vmax solid #ff2323; */
-    /* position: absolute; */
-    /* top: 2.5%; */
     /* color: #ff2323; */
     /* background-color: #ff2323; */
 }

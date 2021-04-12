@@ -5,8 +5,9 @@
 }
 
 .landing_contents1{
+    position: absolute;
     width: 100%;
-    height: 75vh;
+    height: 80%;
     margin-top: 4%;
     /* border: 1px solid red; */
 }
@@ -17,9 +18,8 @@
   border: 1px solid red;
   top: 30%;
   left: 10%;
-  width: 30%;
+  /* width: 30%; */
   font-size: 2.3vmax;
-  /* height: 100%; */ 
 }
 
 .landing_contents1_div_img{
@@ -44,18 +44,17 @@
   border: 1px solid red;
   top: 40%;
   left: 10%;
-  width: 40%;
+  /* width: 40%; */
   /* height: 100%; */
 }
 
 .landing_contents1_body_2{
   font-size: 1.5vmax;
   position: absolute;
-  /* border: 1px solid red; */
+  border: 1px solid red;
   top: 46%;
   left: 10%;
   /* width: 100%; */
-  /* height: 100%; */
 }
 
 .landing_contents1_div_btn{
@@ -64,7 +63,7 @@
   border: 1px solid red;
   top: 60%;
   left: 10%;
-  width: 13%;
+  /* width: 13%; */
   height: 6%;
 }
 
@@ -76,8 +75,10 @@
 /*! 2칸 */
 
 .landing_contents2{
+  position: absolute;
+  top: 80%;
   width: 100%;
-  height: 120vh;
+  height: 120%;
   border: 1px solid red;
   /* background-color: #ffd954;   */
   /* 아래가 좀 더 진함 */
@@ -206,7 +207,7 @@
 
 .landing_contents3{
    width: 100%;
-  height: 80vh;
+  height: 80%;
   /* border: 1px solid red; */
   position: relative;
 }
@@ -232,7 +233,9 @@
   /* font-size: 2.3vmax; */
 }
 
-.landing_contents3_logo{
+.landing_contents3{
+  position: absolute;
+  top: 200%;
   width: 100%;
   height: 100%;
 }

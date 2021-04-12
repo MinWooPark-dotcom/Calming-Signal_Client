@@ -1,4 +1,5 @@
 /* eslint react/prop-types: 0 */
+import './WirtePage.css'
 
 import React from 'react';
 import { Link, withRouter } from "react-router-dom";
@@ -12,7 +13,7 @@ import WriteActionButtons from '../write/WriteActionButtons';
 const WirtePage = ({isLoggedIn, history}) => {
 
     return (
-        <div>
+        <div className="wirte_page_container">
             <NavContainer />
             {isLoggedIn?(
                 <EditorContainer />

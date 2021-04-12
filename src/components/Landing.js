@@ -19,9 +19,6 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
     window.scrollTo(0,0)
   }
 
-
-
-
   return (
     <div className="landing_page">      
       <NavContainer />
@@ -120,6 +117,7 @@ const Landing = ({number, isToggled, clickGoHome, clickHamburger, clickRightBtn,
           </div>
         </div>
       </div>
+      {/* 3번째  */}
       <div className="landing_contents3">
         <div>
           <Link to="/calming-signal">
