@@ -169,16 +169,33 @@ const MyPage = ({
 
   // ! 반려견 이름 변경 관련
   const [isClickedPetNameBtn, setIsClickedPetNameBtn] = useState(false);
+  // 반려견 이름 변경
   const handleOnClickPetNameBtn = () => {
     setIsClickedPetNameBtn(!isClickedPetNameBtn);
   };
   const [petNameInputValue, setPetNameInputValue] = useState('');
   const handleChangePetName = async () => {
+    console.log('petNameInputValue>>>', petNameInputValue);
     const changePetName = await axios.patch(
       'https://localhost:3002/mypage/petname',
       { newPetName: petNameInputValue },
       { withCredentials: true }
     );
+
+    if (changePetName.data.message === 'OK') {
+      setPetNameValue(petNameInputValue);
+      handleOnClickPetNameBtn();
+    }
+  };
+  // 반려견 이름 등록
+  const handleRegistePetName = async () => {
+    console.log('petNameInputValue>>>', petNameInputValue);
+    const changePetName = await axios.post(
+      'https://localhost:3002/mypage/petname',
+      { newPetName: petNameInputValue },
+      { withCredentials: true }
+    );
+
     if (changePetName.data.message === 'OK') {
       setPetNameValue(petNameInputValue);
       handleOnClickPetNameBtn();
@@ -197,6 +214,7 @@ const MyPage = ({
       { newPetBreed: petBreedInputValue },
       { withCredentials: true }
     );
+
     if (changePetBreed.data.message === 'OK') {
       setPetBreedValue(petBreedInputValue);
       handleOnClickPetBreedBtn();
@@ -220,7 +238,7 @@ const MyPage = ({
             className="mypage_profile_PW_box_change"
             onClick={hadleOnClickPwBtn}
           >
-            비밀번호 변경하기
+            비밀번호 변경
           </div>
         </div>
         <div className="mypage_profile_name_box">
@@ -230,32 +248,32 @@ const MyPage = ({
             className="mypage_profile_name_box_change"
             onClick={handleOnClickNameBtn}
           >
-            이름 변경하기
+            이름 변경
           </div>
         </div>
         {/* 반려견 이름 */}
         <div className="mypage_profile_pet_name_box">
           <div className="mypage_profile_pet_name_title">반려견 이름</div>
           {petName ? (
-            <div className="mypage_profile_pet_name_value_box">
-              <div className="mypage_profile_pet_name_value">{petName}</div>
-              {/* <input
-                className="mypage_profile_pet_name_input"
-                placeholder={petName}
-              ></input> */}
-              <button
-                className="mypage_profile_pet_name_change_btn"
-                onClick={handleOnClickPetNameBtn}
-              >
-                반려견 이름 변경하기
-              </button>
+            <div className="mypage_profile_pet_name_value">{petName}</div>
+          ) : (
+            <div className="mypage_profile_pet_name_value">
+              반려견 정보를 등록해 주세요
+            </div>
+          )}
+          {petName ? (
+            <div
+              className="mypage_profile_pet_name_change"
+              onClick={handleOnClickPetNameBtn}
+            >
+              반려견 이름 변경
             </div>
           ) : (
-            <div className="mypage_profile_pet_name_input_box">
-              <input className="mypage_profile_pet_name_input"></input>
-              <button className="mypage_profile_pet_name_register">
-                반려견 이름 등록하기
-              </button>
+            <div
+              className="mypage_profile_pet_name_change"
+              onClick={handleOnClickPetNameBtn}
+            >
+              반려견 이름 등록
             </div>
           )}
         </div>
@@ -263,136 +281,231 @@ const MyPage = ({
         <div className="mypage_profile_pet_breed_box">
           <div className="mypage_profile_pet_breed_title">반려견종</div>
           {petBreed ? (
-            <div className="mypage_profile_pet_breed_input_box">
-              <div>{petBreed}</div>
-              <button
-                className="mypage_profile_pet_name_register"
-                onClick={handleOnClickPetBreedBtn}
-              >
-                반려견종 변경
-              </button>
+            <div className="mypage_profile_pet_breed_value">{petBreed}</div>
+          ) : (
+            <div className="mypage_profile_pet_breed_value">
+              반려견 정보를 등록해 주세요
+            </div>
+          )}
+
+          {petBreed ? (
+            <div
+              className="mypage_profile_pet_breed_change"
+              onClick={handleOnClickPetBreedBtn}
+            >
+              반려견종 변경
             </div>
           ) : (
-            <div className="mypage_profile_pet_breed_input_box">
-              <input
-                className="mypage_profile_pet_name_input"
-                list="choices"
-                placeholder="breed"
-                onChange={handleInputValue('petBreed')}
-              />
-              <datalist id="choices">
-                <option value="말티즈">말티즈</option>
-                <option value="요크셔테리어">요크셔테리어</option>
-                <option value="푸들">푸들</option>
-                <option value="포메라니안">포메라니안</option>
-                <option value="치와와">치와와</option>
-                <option value="닥스훈트">닥스훈트</option>
-                <option value="시츄">시츄</option>
-                {/* 중형견 */}
-                <option value="슈나우저">슈나우저</option>
-                <option value="웰시코기">웰시코기</option>
-                <option value="비글">비글</option>
-                <option value="보더콜리">보더콜리</option>
-                {/* 대형견 */}
-                <option value="진돗개">진돗개</option>
-                <option value="시베리안 허스키">시베리안 허스키</option>
-                <option value="리트리버">리트리버</option>
-                <option value="셰퍼드">셰퍼드</option>
-                <option value="말라뮤트">말라뮤트</option>
-                <option value="그레이 하운드">그레이 하운드</option>
-              </datalist>
-              <button
-                className="mypage_profile_pet_name_register"
-                onClick={handleOnClickPetBreedBtn}
-              >
-                반려견종 등록하기
-              </button>
+            <div
+              className="mypage_profile_pet_breed_change"
+              onClick={handleOnClickPetBreedBtn}
+            >
+              반려견종 등록
             </div>
           )}
         </div>
       </div>
-      {/* 변경 모달 */}
+      {/*//! 변경 모달 */}
       {/* 비밀번호 */}
       {isClickedPasswordBtn ? (
         <div className="mypage_profile_modal_password">
           {/* prev */}
-          <div>이전 비밀번호</div>
-          <input onChange={handleInputValue('prevPassword')}></input>
+          <div className="mypage_profile_modal_password_prev">
+            이전 비밀번호
+          </div>
+          <input
+            className="mypage_profile_modal_password_prev_input"
+            onChange={handleInputValue('prevPassword')}
+          ></input>
           {/* {prevPasswordErrorMessage} */}
           {/* new */}
-          <div>변경할 비밀번호</div>
-          <input onChange={handleInputValue('newPassword')}></input>
+          <div className="mypage_profile_modal_password_new">
+            변경할 비밀번호
+          </div>
+          <input
+            className="mypage_profile_modal_password_new"
+            onChange={handleInputValue('newPassword')}
+          ></input>
           {newPasswordErrorMessage}
           {/* confirm */}
-          <div>변경할 비밀번호 확인</div>
-          <input onChange={handleInputValue('newConfirmPassword')}></input>
-          <button onClick={handleChangePassword}>비밀번호 변경</button>
+          <div className="mypage_profile_modal_password_confirm">
+            변경할 비밀번호 확인
+          </div>
+          <input
+            className="mypage_profile_modal_password_confirm"
+            onChange={handleInputValue('newConfirmPassword')}
+          ></input>
+          <button
+            className="mypage_profile_modal_password_btn"
+            onClick={handleChangePassword}
+          >
+            비밀번호 변경
+          </button>
           {newPasswordConfirmErrorMessage}
         </div>
       ) : null}
       {/* 이름 */}
       {isClickedNameBtn ? (
         <div className="mypage_profile_modal_name">
-          <div>현재 이름</div>
-          <div>{userName}</div>
-          <div>변경할 이름</div>
-          <input onChange={handleInputValue('userName')}></input>
-          <button onClick={handleChangeName}>이름 변경</button>
+          <div className="mypage_profile_modal_name_now_box">
+            <div className="mypage_profile_modal_name_title">현재 이름</div>
+            <div className="mypage_profile_modal_name_value">{userName}</div>
+          </div>
+          <div className="mypage_profile_modal_new_name_box">
+            <div className="mypage_profile_modal_new_name">변경할 이름</div>
+            <input
+              className="mypage_profile_modal_new_name_input"
+              onChange={handleInputValue('userName')}
+            ></input>
+            <button
+              className="mypage_profile_modal_btn"
+              onClick={handleChangeName}
+            >
+              이름 변경
+            </button>
+          </div>
         </div>
       ) : null}
-      {/* 반려견 이름 */}
+      {/* //! 반려견 이름 */}
       {isClickedPetNameBtn ? (
-        <div className="mypage_profile_modal_name">
-          <div>현재 반려견 이름</div>
-          <div>{userName}</div>
-          <div>변경할 반려견 이름</div>
-          <input onChange={handleInputValue('petName')}></input>
-          <button onClick={handleChangePetName}>이름 변경</button>
-        </div>
-      ) : null}
-      {/* 반려견종 */}
-      {isClickedPetBreedBtn ? (
-        <div className="mypage_profile_modal_name">
-          {petBreed ? (
-            <div>
-              <div>현재 반려견종</div>
-              <div>{petBreed}</div>
-              <div>변경할 반려견종</div>
+        <div className="mypage_profile_modal_petname">
+          {petName ? (
+            <div className="mypage_profile_modal_petname_now_box">
+              <div className="mypage_profile_modal_petname_title">
+                현재 반려견 이름
+              </div>
+              <div className="mypage_profile_modal_petname_value">
+                {petName}
+              </div>
+            </div>
+          ) : null}
+          {petName ? (
+            <div className="mypage_profile_modal_petname_new_box">
+              <div className="mypage_profile_modal_petname_new">
+                변경할 반려견 이름
+                <input
+                  className="mypage_profile_modal_petname_new_input"
+                  onChange={handleInputValue('petName')}
+                ></input>
+              </div>
+              <button
+                className="mypage_profile_modal_petname_btn"
+                onClick={handleChangePetName}
+              >
+                이름 변경
+              </button>
             </div>
           ) : (
-            <div>
-              <div>추가할 반려견종</div>
+            <div className="mypage_profile_modal_petname_new_box">
+              <div className="mypage_profile_modal_petname_new">
+                등록할 반려견 이름
+                <input
+                  className="mypage_profile_modal_petname_new_input"
+                  onChange={handleInputValue('petName')}
+                ></input>
+              </div>
+              <button
+                className="mypage_profile_modal_petname_btn"
+                onClick={handleRegistePetName}
+              >
+                이름 등록
+              </button>
             </div>
           )}
+        </div>
+      ) : null}
+      {/* //! 반려견종 */}
+      {isClickedPetBreedBtn ? (
+        <div className="mypage_profile_modal_pet_breed">
+          {petBreed ? (
+            <div className="mypage_profile_modal_pet_breed_now_box">
+              <div className="mypage_profile_modal_pet_breed_title">
+                현재 반려견종
+              </div>
+              <div className="mypage_profile_modal_pet_breed_value">
+                {petBreed}
+              </div>
+            </div>
+          ) : null}
+          {petBreed ? (
+            <div className="mypage_profile_modal_pet_breed_new_box">
+              <div className="mypage_profile_modal_pet_breed_new">
+                변경할 반려견종
+                <input
+                  className="mypage_profile_modal_pet_breed_new_input"
+                  list="choices"
+                  placeholder="breed"
+                  onChange={handleInputValue('petBreed')}
+                />
+                <datalist id="choices">
+                  <option value="말티즈">말티즈</option>
+                  <option value="요크셔테리어">요크셔테리어</option>
+                  <option value="푸들">푸들</option>
+                  <option value="포메라니안">포메라니안</option>
+                  <option value="치와와">치와와</option>
+                  <option value="닥스훈트">닥스훈트</option>
+                  <option value="시츄">시츄</option>
 
-          <input
-            className="mypage_profile_pet_name_input"
-            list="choices"
-            placeholder="breed"
-            onChange={handleInputValue('petBreed')}
-          />
-          <datalist id="choices">
-            <option value="말티즈">말티즈</option>
-            <option value="요크셔테리어">요크셔테리어</option>
-            <option value="푸들">푸들</option>
-            <option value="포메라니안">포메라니안</option>
-            <option value="치와와">치와와</option>
-            <option value="닥스훈트">닥스훈트</option>
-            <option value="시츄">시츄</option>
-            {/* 중형견 */}
-            <option value="슈나우저">슈나우저</option>
-            <option value="웰시코기">웰시코기</option>
-            <option value="비글">비글</option>
-            <option value="보더콜리">보더콜리</option>
-            {/* 대형견 */}
-            <option value="진돗개">진돗개</option>
-            <option value="시베리안 허스키">시베리안 허스키</option>
-            <option value="리트리버">리트리버</option>
-            <option value="셰퍼드">셰퍼드</option>
-            <option value="말라뮤트">말라뮤트</option>
-            <option value="그레이 하운드">그레이 하운드</option>
-          </datalist>
-          <button onClick={handleChangePetBreed}>반려견종 변경</button>
+                  <option value="슈나우저">슈나우저</option>
+                  <option value="웰시코기">웰시코기</option>
+                  <option value="비글">비글</option>
+                  <option value="보더콜리">보더콜리</option>
+
+                  <option value="진돗개">진돗개</option>
+                  <option value="시베리안 허스키">시베리안 허스키</option>
+                  <option value="리트리버">리트리버</option>
+                  <option value="셰퍼드">셰퍼드</option>
+                  <option value="말라뮤트">말라뮤트</option>
+                  <option value="그레이 하운드">그레이 하운드</option>
+                </datalist>
+              </div>
+              <button
+                className="mypage_profile_modal_pet_breed_btn"
+                onClick={handleChangePetBreed}
+              >
+                견종 변경
+              </button>
+            </div>
+          ) : (
+            <div className="mypage_profile_modal_pet_breed_new_box">
+              <div className="mypage_profile_modal_pet_breed_new">
+                등록할 반려견종
+                <input
+                  className="mypage_profile_modal_pet_breed_new_input"
+                  list="choices"
+                  placeholder="breed"
+                  onChange={handleInputValue('petBreed')}
+                />
+                <datalist id="choices">
+                  <option value="말티즈">말티즈</option>
+                  <option value="요크셔테리어">요크셔테리어</option>
+                  <option value="푸들">푸들</option>
+                  <option value="포메라니안">포메라니안</option>
+                  <option value="치와와">치와와</option>
+                  <option value="닥스훈트">닥스훈트</option>
+                  <option value="시츄">시츄</option>
+
+                  <option value="슈나우저">슈나우저</option>
+                  <option value="웰시코기">웰시코기</option>
+                  <option value="비글">비글</option>
+                  <option value="보더콜리">보더콜리</option>
+
+                  <option value="진돗개">진돗개</option>
+                  <option value="시베리안 허스키">시베리안 허스키</option>
+                  <option value="리트리버">리트리버</option>
+                  <option value="셰퍼드">셰퍼드</option>
+                  <option value="말라뮤트">말라뮤트</option>
+                  <option value="그레이 하운드">그레이 하운드</option>
+                </datalist>
+              </div>
+              <button
+                className="mypage_profile_modal_pet_breed_btn"
+                onClick={handleChangePetBreed}
+              >
+                견종 등록
+              </button>
+            </div>
+          )}
         </div>
       ) : null}
     </div>
