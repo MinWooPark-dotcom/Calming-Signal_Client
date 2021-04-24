@@ -1,11 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import LandingContainer from './container/LandingContainer'
-import AboutContainer from './container/AboutContainer'
-import CalmingSignalContainer from './container/CalmingSignalContainer'
+import LandingContainer from './container/LandingContainer';
+import AboutContainer from './container/AboutContainer';
+import CalmingSignalContainer from './container/CalmingSignalContainer';
 // import Content from './components/Content';
-// import FreeBulletinBoard from './components/board/FreeBulletinBoard';
-import FreeBulletinBoardContainer from './container/FreeBulletinBoardContainer'
 import Mypage from './components/Mypage';
 //! happy
 import HappyContainer from './container/HappyContainer';
@@ -29,12 +27,13 @@ import Interrupting from './components/calming-signal pages/settle/Interrupting'
 import TurnHead from './components/calming-signal pages/settle/TurnHead';
 
 //! board
-import WritePage from './components/board/WirtePage'
+import WritePage from './components/board/WirtePage';
+import BoardContainer from './container/BoardContainer';
 
 import SignInContainer from './container/SignInContainer';
 import SignUp from './components/SignUp';
 
-import "./App.css";
+import './App.css';
 import ContentPage from './components/board/Content';
 import ContentContainer from './container/ContentContainer';
 import WritePageContainer from './container/WritePageContainer';
@@ -52,37 +51,49 @@ const App = ({ match }) => {
       {/* happy */}
       <Route component={HappyContainer} path="/calming-signal/happy" exact />
       <Route component={WagContainer} path="/calming-signal/wag" exact />
-      <Route component={Smile} path="/calming-signal/smile" exact /> 
+      <Route component={Smile} path="/calming-signal/smile" exact />
       <Route component={Belly} path="/calming-signal/belly" exact />
       {/* comfortable */}
-      <Route component={ComfortableContainer} path="/calming-signal/comfortable" exact />
-      <Route component={NaturalTail} path="/calming-signal/natural-tail" exact />
+      <Route
+        component={ComfortableContainer}
+        path="/calming-signal/comfortable"
+        exact
+      />
+      <Route
+        component={NaturalTail}
+        path="/calming-signal/natural-tail"
+        exact
+      />
       <Route component={Sigh} path="/calming-signal/sigh" exact />
       {/* Nervous */}
-      <Route component={NervousContainer} path="/calming-signal/nervous" exact />
+      <Route
+        component={NervousContainer}
+        path="/calming-signal/nervous"
+        exact
+      />
       <Route component={Licking} path="/calming-signal/licking" exact />
       <Route component={RollTail} path="/calming-signal/roll-tail" exact />
       {/* settle */}
       <Route component={SettleContainer} path="/calming-signal/settle" exact />
       <Route component={Yawn} path="/calming-signal/yawn" exact />
-      <Route component={Interrupting} path="/calming-signal/interrupting" exact />
+      <Route
+        component={Interrupting}
+        path="/calming-signal/interrupting"
+        exact
+      />
       <Route component={TurnHead} path="/calming-signal/turn-head" exact />
-      
+
       {/* <Route component={Content} path="/calming-signal/4" exact /> */}
       {/* <Route component={Content} path="/calming-signal/5" exact /> */}
       {/* <Route component={Content} path="/calming-signal/6" exact /> */}
       {/* <Route component={Content} path="/calming-signal/7" exact /> */}
-      
+
       {/* board */}
-      <Route component={FreeBulletinBoardContainer} path="/board/:category" exact />
+      <Route component={BoardContainer} path="/board/:category" exact />
       <Route component={WritePageContainer} path="/write" exact />
       <Route component={ContentContainer} path="/content/:title" exact />
-      
-      
-      <Route component={MypageContainer} path="/mypage" exact />  
-      
 
-
+      <Route component={MypageContainer} path="/mypage" exact />
     </>
   );
 };
