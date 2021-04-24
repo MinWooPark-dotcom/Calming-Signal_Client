@@ -1,16 +1,17 @@
 .mypage_container {
+  position: absolute;
   width: 100%;
-  height: 90vh;
-  margin-top: 4%;
+  height: 100%;
+  /* margin-top: 4%; */
   border: 1px solid red;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .mypage_profile_title {
   /* border: 3px solid blue; */
   position: absolute;
-  top: 20%;
-  left: 10%;
+  top: 14%;
+  left: 11%;
   /* width: 80%; */
   height: 5%;
   font-size: 1.3vmax;
@@ -23,123 +24,431 @@
   top: 15%;
   margin-top: 3%;
   margin-left: 10%;
-  border: 3px solid blue;
-}
-
-.mypage_profile_ID_box_title,
-.mypage_profile_ID_box_value,
-.mypage_profile_PW_box_title,
-.mypage_profile_PW_box_value,
-.mypage_profile_PW_box_change,
-.mypage_profile_name_box_title,
-.mypage_profile_name_box_value,
-.mypage_profile_name_box_change,
-.mypage_profile_pet_name_title,
-.mypage_profile_pet_name_value_box,
-.mypage_profile_pet_name_value,
-.mypage_profile_pet_name_input_box,
-.mypage_profile_pet_breed_title,
-.mypage_profile_pet_breed_value_box,
-.mypage_profile_pet_breed_value,
-.mypage_profile_pet_breed_input_box {
-  display: inline-block;
+  border: 2px solid gray;
+  border-radius: 10px;
 }
 
 /*! ID */
 .mypage_profile_ID_box {
-  border: 3px solid red;
+  border-bottom: 1px solid gray;
   width: 100%;
-  height: 10%;
+  height: 7%;
+  font-size: 1.3vmax;
+  position: relative;
+  top: 3%;
 }
 
 .mypage_profile_ID_box_title {
+  display: inline-block;
+
   border: 1px solid black;
-  font-size: 1vmax;
+  width: 8%;
+  /* font-size: 1vmax; */
+  position: relative;
+  /* top: 20%; */
+  left: 3%;
 }
 
 .mypage_profile_ID_box_value {
-  border: 1px solid black;
-  font-size: 1vmax;
-  margin-left: 3%;
+  display: inline-block;
+
+  /* border: 1px solid black; */
+  /* font-size: 1vmax; */
+  position: relative;
+  /* top: 20%; */
+  left: 5%;
 }
 
 /*! PW */
 .mypage_profile_PW_box {
-  border: 1px solid red;
+  border-bottom: 1px solid gray;
   width: 100%;
-  height: 10%;
+  height: 7%;
+  font-size: 1.3vmax;
+  position: relative;
+  top: 6%;
 }
 
 .mypage_profile_PW_box_title {
+  display: inline-block;
   border: 1px solid black;
+  width: 8%;
+  position: relative;
+  /* top: 20%; */
+  left: 3%;
 }
 
 .mypage_profile_PW_box_value {
-  border: 1px solid black;
-  margin-left: 3%;
+  display: inline-block;
+
+  /* border: 1px solid black; */
+  /* margin-left: 3%; */
+  position: relative;
+  /* top: 20%; */
+  left: 5%;
+}
+
+.mypage_profile_PW_box_change {
+  display: inline-block;
+
+  position: relative;
+  /* top: 20%; */
+  /* left: 65%; */
+  right: 5%;
+  float: right;
 }
 
 /*! name */
 .mypage_profile_name_box {
-  border: 1px solid red;
+  border-bottom: 1px solid gray;
   width: 100%;
-  height: 10%;
+  height: 7%;
+  font-size: 1.3vmax;
+  position: relative;
+  top: 9%;
 }
 
 .mypage_profile_name_box_title {
+  display: inline-block;
+
   border: 1px solid black;
+  width: 8%;
+  position: relative;
+  /* top: 20%; */
+  left: 3%;
 }
 
 .mypage_profile_name_box_value {
-  border: 1px solid black;
-  margin-left: 3%;
+  display: inline-block;
+
+  /* border: 1px solid black; */
+  position: relative;
+  /* top: 20%; */
+  left: 5%;
+}
+
+.mypage_profile_name_box_change {
+  display: inline-block;
+
+  position: relative;
+  /* top: 20%; */
+  /* left: 65%; */
+  right: 5%;
+  float: right;
 }
 
 /*! pet name*/
 .mypage_profile_pet_name_box {
-  border: 1px solid red;
+  border-bottom: 1px solid gray;
+  width: 100%;
+  height: 7%;
+  font-size: 1.3vmax;
+  position: relative;
+  top: 12%;
 }
 
 .mypage_profile_pet_name_title {
+  display: inline-block;
+
   border: 1px solid black;
+  width: 8%;
+  position: relative;
+  /* top: 20%; */
+  left: 3%;
 }
 
 .mypage_profile_pet_name_value {
-  border: 1px solid black;
-  margin-left: 3%;
+  display: inline-block;
+
+  /* border: 1px solid black; */
+  /* margin-left: 3%; */
+  position: relative;
+  /* top: 20%; */
+  left: 5%;
 }
 
-.mypage_profile_pet_name_value_box {
-  border: 1px solid red;
-  width: 50%;
+.mypage_profile_pet_name_change {
+  display: inline-block;
+
+  position: relative;
+  /* top: 20%; */
+  /* left: 65%; */
+  right: 5%;
+  float: right;
 }
 
 /*! pet breed */
 .mypage_profile_pet_breed_box {
-  border: 1px solid red;
+  border-bottom: 1px solid gray;
+  width: 100%;
+  height: 7%;
+  font-size: 1.3vmax;
+  position: relative;
+  top: 15%;
 }
 
 .mypage_profile_pet_breed_title {
+  display: inline-block;
+
   border: 1px solid black;
+  width: 8%;
+  position: relative;
+  /* top: 20%; */
+  left: 3%;
 }
 
-.mypage_profile_pet_breed_value_box {
-  border: 1px solid red;
-  width: 50%;
+.mypage_profile_pet_breed_value {
+  display: inline-block;
+
+  /* border: 1px solid black; */
+  /* margin-left: 3%; */
+  position: relative;
+  /* top: 20%; */
+  left: 5%;
 }
 
-/* 모달 */
+.mypage_profile_pet_breed_change {
+  display: inline-block;
+
+  position: relative;
+  /* top: 20%; */
+  /* left: 65%; */
+  right: 5%;
+  float: right;
+}
+
+/* 모달창 공통 사이즈*/
 
 .mypage_profile_modal_password,
 .mypage_profile_modal_name,
-.mypage_profile_modal_location_one,
-.mypage_profile_modal_location_two {
+.mypage_profile_modal_petname,
+.mypage_profile_modal_pet_breed {
   position: absolute;
   top: 25%;
   left: 35%;
-  border: 3px solid red;
+  border: 2px solid gray;
   width: 30%;
   height: 60%;
   z-index: 999;
   background-color: white;
+}
+
+/* 비밀번호 */
+
+.mypage_profile_modal_password_prev {
+  /* border: 1px solid red; */
+  position: relative;
+  top: 3%;
+  left: 3%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_password_prev_input {
+  position: relative;
+  top: 3%;
+  left: 3%;
+  /* border: 1px solid red; */
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_password_new {
+  position: relative;
+  top: 6%;
+  left: 3%;
+  /* border: 1px solid red; */
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_password_new_input {
+  position: relative;
+  top: 3%;
+  left: 3%;
+  /* border: 1px solid red; */
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_password_confirm {
+  position: relative;
+  top: 9%;
+  left: 3%;
+  /* border: 1px solid red; */
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_password_confirm_input {
+  position: relative;
+  top: 3%;
+  left: 3%;
+  /* border: 1px solid red; */
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_password_btn {
+  position: relative;
+  top: 9%;
+  left: 4%;
+  /* border: 1px solid red; */
+  font-size: 1.2vmax;
+}
+
+/* ! 이름 */
+
+.mypage_profile_modal_name_now_box {
+  /* border: 1px solid red; */
+  position: relative;
+  top: 3%;
+}
+
+.mypage_profile_modal_name_title {
+  /* border: 1px solid red; */
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  left: 3%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_name_value {
+  display: inline-block;
+  position: relative;
+  left: 6%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_new_name_box {
+  /* border: 1px solid red; */
+  position: relative;
+  top: 6%;
+}
+
+.mypage_profile_modal_new_name {
+  /* border: 1px solid red; */
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  left: 3%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_new_name_input {
+  display: inline-block;
+  position: relative;
+  left: 6%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_btn {
+  position: relative;
+  left: 7%;
+  font-size: 1.2vmax;
+}
+
+/*! 반려견 이름 */
+
+.mypage_profile_modal_petname_now_box {
+  /* border: 1px solid red; */
+  position: relative;
+  top: 3%;
+}
+
+.mypage_profile_modal_petname_title {
+  /* border: 1px solid red; */
+  width: 33%;
+  display: inline-block;
+  position: relative;
+  left: 3%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_petname_value {
+  display: inline-block;
+  position: relative;
+  left: 4%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_petname_new_box {
+  /* border: 1px solid red; */
+  position: relative;
+  top: 6%;
+}
+
+.mypage_profile_modal_petname_new {
+  /* border: 1px solid red; */
+  /* width: 35%; */
+  /* height: 10%; */
+  display: inline-block;
+  position: relative;
+  left: 3%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_petname_new_input {
+  display: inline-block;
+  position: relative;
+  /* top: 3%; */
+  left: 4%;
+  width: 50%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_petname_btn {
+  position: relative;
+  left: 1%;
+  font-size: 1.2vmax;
+}
+
+/* ! 반려견종 */
+
+.mypage_profile_modal_pet_breed_now_box {
+  /* border: 1px solid red; */
+  position: relative;
+  top: 3%;
+}
+
+.mypage_profile_modal_pet_breed_title {
+  /* border: 1px solid red; */
+  width: 28%;
+  display: inline-block;
+  position: relative;
+  left: 3%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_pet_breed_value {
+  display: inline-block;
+  position: relative;
+  left: 4%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_pet_breed_new_box {
+  /* border: 1px solid red; */
+  position: relative;
+  top: 6%;
+}
+
+.mypage_profile_modal_pet_breed_new {
+  /* border: 1px solid red; */
+  /* width: 35%; */
+  /* height: 10%; */
+  display: inline-block;
+  position: relative;
+  left: 3%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_pet_breed_new_input {
+  display: inline-block;
+  position: relative;
+  /* top: 3%; */
+  left: 4%;
+  width: 50%;
+  font-size: 1.2vmax;
+}
+
+.mypage_profile_modal_pet_breed_btn {
+  position: relative;
+  /* left: 1%; */
+  font-size: 1.2vmax;
 }
