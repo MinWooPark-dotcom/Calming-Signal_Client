@@ -1,0 +1,259 @@
+.Weather_pet_containter {
+  border: 2px solid #ff8627;
+  width: 50%;
+  height: 15%;
+  position: absolute;
+  top: 25%;
+  right: 20%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.Weather_pet_title {
+  text-align: center;
+  width: 100%;
+  height: 30%;
+  position: relative;
+  top: 4%;
+  /* padding-top: 0.5%; */
+  font-size: 1.3vmax;
+  font-weight: 500;
+}
+
+.Weather_pet_small_box {
+  position: absolute;
+  width: 33.3%;
+  height: 70%;
+  border-top: 2px solid #ff8627;
+  text-align: center;
+}
+
+.Weather_pet_small,
+.Weather_pet_middle,
+.Weather_pet_large {
+  font-size: 1.2vmax;
+  position: relative;
+  top: 5%;
+}
+
+.Weather_pet_small_weather_right,
+.Weather_pet_middle_weather_right,
+.Weather_pet_large_weather_right {
+  font-size: 1.2vmax;
+  position: relative;
+  top: 15%;
+}
+
+.Weather_pet_middle_box {
+  position: absolute;
+  left: 33.3%;
+  width: 33.4%;
+  height: 70%;
+  /* border: 1px solid black; */
+  border: 2px solid #ff8627;
+  border-bottom: none;
+  text-align: center;
+}
+
+.Weather_pet_large_box {
+  position: absolute;
+  left: 66.7%;
+  width: 33.3%;
+  height: 70%;
+  /* border-top: 1px solid black; */
+  border-top: 2px solid #ff8627;
+  text-align: center;
+}
+
+.Weather_container {
+  /* border: 1px solid black; */
+  border: 2px solid #ff8627;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 50%;
+  height: 35%;
+  position: absolute;
+  top: 40%;
+  right: 20%;
+}
+
+.Weather_date {
+  /* border: 1px solid black; */
+  /* width: %; */
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  font-size: 1vmax;
+}
+
+.Weather_weather_box {
+  /* border: 1px solid black; */
+  width: 15%;
+  height: 40%;
+  position: absolute;
+  top: 5%;
+  left: 18%;
+  font-size: 1vmax;
+}
+
+.Weather_city {
+  /* border: 1px solid black; */
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  left: -90%;
+  font-size: 2vmax;
+  text-align: center;
+  /* width: 100%; */
+  /* height: 100%; */
+}
+
+.Weather_div_weather_icon {
+  /* display: inline-block; */
+  width: 80%;
+  height: 80%;
+  align-items: center;
+  /* border: 1px solid black;     */
+  margin-left: 25%;
+}
+
+.Weather_weather_icon {
+  width: 100%;
+  height: 100%;
+}
+
+.Weather_weather_description {
+  /* border: 1px solid black;     */
+  width: 80%;
+  text-align: center;
+  margin-left: 25%;
+  font-size: 1.2vmax;
+  position: relative;
+  top: -8%;
+}
+
+.Weather_temp_box {
+  /* border: 1px solid black; */
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  top: 10%;
+  left: 35%;
+  text-align: center;
+}
+
+.Weather_temp {
+  display: inline-block;
+  /* width: 100%; */
+  /* height: 10%; */
+  font-size: 3vmax;
+}
+
+.Weather_temp_celsius_icon {
+  display: inline-block;
+  position: relative;
+  top: -10%;
+  font-size: 1.3vmax;
+}
+
+.Weather_feel_like {
+  display: inline-block;
+  margin-left: 4%;
+  font-size: 1.5vmax;
+}
+
+.Weather_yesterday_temp {
+  /* border: 1px solid black; */
+  margin-top: 2%;
+  font-size: 1.4vmax;
+}
+
+.Weather_hr {
+  position: relative;
+  top: 57%;
+  width: 90%;
+  border: 1px solid #ff8627;
+}
+
+.Weather_max_min_box {
+  display: inline-block;
+  width: 20%;
+  height: 30%;
+  /* border: 1px solid black; */
+  position: absolute;
+  top: 68%;
+  left: 10%;
+  font-size: 1.2vmax;
+  text-align: center;
+}
+
+.Weather_max {
+  /* border: 1px solid black; */
+}
+
+.Weather_min {
+  /* border: 1px solid black; */
+  margin-top: 10%;
+}
+
+.Weather_humidity_box {
+  display: inline-block;
+  width: 20%;
+  height: 30%;
+  /* border: 1px solid black; */
+  position: absolute;
+  top: 68%;
+  left: 40%;
+  font-size: 1.2vmax;
+  text-align: center;
+}
+
+.Weather_humidity_value {
+  margin-top: 10%;
+}
+
+.Weather_wind_box {
+  display: inline-block;
+  width: 30%;
+  height: 30%;
+  /* border: 1px solid black; */
+  position: absolute;
+  top: 68%;
+  right: 6%;
+  font-size: 1.2vmax;
+  text-align: center;
+}
+
+.Weather_wind {
+  text-align: center;
+}
+
+.Weather_wind_speeed {
+  display: inline-block;
+  margin-top: 5%;
+  /* margin-left: 3%; */
+}
+
+.Weather_wind_line {
+  display: inline-block;
+  margin-left: 4%;
+  color: black;
+}
+
+.Weather_wind_deg {
+  display: inline-block;
+  margin-top: 5%;
+  margin-left: 4%;
+}
+
+.Weather_loading {
+  /* border: 1px solid black; */
+  /* width: 15%; */
+  /* height: 40%; */
+  position: absolute;
+  top: 45%;
+  left: 38%;
+  font-size: 2.5vmax;
+}
