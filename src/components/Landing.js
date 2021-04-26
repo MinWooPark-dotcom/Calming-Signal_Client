@@ -69,9 +69,6 @@ const Landing = ({
               함께 있는 동안 반려견의 행복 시그널을 이해하고<br></br>더 큰
               행복을 나눠보세요.
             </div>
-            <div className="landing_contents2_happy_text_4">
-              {/* 더 큰 행복을 나눠보세요. */}
-            </div>
           </div>
           <div className="landing_contents2_happy_div_img">
             <img className="landing_contents2_happy_img" src={happy} />
@@ -88,7 +85,6 @@ const Landing = ({
               일상 속에서 편안함을 느끼고 있는지 관찰하고<br></br>
               안정감을 느낄 수 있도록 도와주세요.
             </div>
-            <div className="landing_contents2_comfortable_text_4"></div>
           </div>
           <div className="landing_contents2_comfortable_div_img">
             <img
