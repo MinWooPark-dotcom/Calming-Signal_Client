@@ -4,10 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import BoardSidebar from '../BoardSidebar';
-// import BoardPostedPageNum from './BoardPostedPageNum';
-import './BoardPostedPageNum.css';
-// import BoardPostedTemplateContainer from '../../container/BoardPostedTemplateContainer';
-import './BoardPostedTemplate.css';
 import NavContainer from '../../container/NavContainer';
 import './Board.css';
 
@@ -167,13 +163,13 @@ const Board = ({
     <div>
       <NavContainer />
       <BoardSidebar />
-      <div className="free_board_container">
-        <div className="free_board_posted">
-          <div className="free_board_posted_num">번호</div>
-          <div className="free_board_posted_title">제목</div>
-          <div className="free_board_posted_createdAt">작성일</div>
-          <div className="free_board_posted_writer">작성자</div>
-          <div className="free_board_posted_number_of_views">조회수</div>
+      <div className="board_container">
+        <div className="board_posted">
+          <div className="board_posted_num">번호</div>
+          <div className="board_posted_title">제목</div>
+          <div className="board_posted_createdAt">작성일</div>
+          <div className="board_posted_writer">작성자</div>
+          <div className="board_posted_number_of_views">조회수</div>
           <div>{postedList}</div>
         </div>
         <div className="board_posted_page_nums">
