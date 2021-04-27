@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import './Editor.css';
-import './WriteActionButtons.css';
 
 const Editor = ({ getNowCategory, nowCategory, history }) => {
   // console.log("🚀 ~ file: Editor.js ~ line 7 ~ Editor ~ nowCategory", nowCategory)
@@ -52,30 +51,65 @@ const Editor = ({ getNowCategory, nowCategory, history }) => {
       '🚀 ~ file: Editor.js ~ line 36 ~ handleoOnChangeSelectBox ~ e',
       e.target.value
     );
-    if (e.target.value === '자유게시판') {
+    if (e.target.value === '자유 게시판') {
       getNowCategory('free');
     } else if (e.target.value === '소형견') {
       getNowCategory('small');
     } else if (e.target.value === '중형견') {
       getNowCategory('medium');
-    } else {
+    } else if (e.target.value === '대형견') {
       getNowCategory('large');
+    } else if (e.target.value === '요청 게시판') {
+      getNowCategory('request');
     }
   };
 
   useEffect(() => {
     if (nowCategory === 'free') {
-      setSelectDefaultValue(['자유게시판', '소형견', '중형견', '대형견']);
+      setSelectDefaultValue([
+        '자유 게시판',
+        '요청 게시판',
+        '소형견',
+        '중형견',
+        '대형견',
+      ]);
     } else if (nowCategory === 'small') {
-      setSelectDefaultValue(['소형견', '중형견', '대형견', '자유게시판']);
+      setSelectDefaultValue([
+        '소형견',
+        '중형견',
+        '대형견',
+        '자유게시판',
+        '요청 게시판',
+      ]);
     } else if (nowCategory === 'medium') {
-      setSelectDefaultValue(['중형견', '소형견', '대형견', '자유게시판']);
+      setSelectDefaultValue([
+        '중형견',
+        '대형견',
+        '자유게시판',
+        '요청 게시판',
+        '소형견',
+      ]);
     } else if (nowCategory === 'large') {
-      setSelectDefaultValue(['대형견', '소형견', '대형견', '자유게시판']);
+      setSelectDefaultValue([
+        '대형견',
+        '자유게시판',
+        '요청 게시판',
+        '소형견',
+        '중형견',
+      ]);
+    } else if (nowCategory === 'request') {
+      setSelectDefaultValue([
+        '요청게시판',
+        '소형견',
+        '중형견',
+        '대형견',
+        '자유 게시판',
+      ]);
     } else {
       setSelectDefaultValue([
         '게시판을 선택하세요',
-        '자유게시판',
+        '자유 게시판',
+        '요청 게시판',
         '소형견',
         '중형견',
         '대형견',

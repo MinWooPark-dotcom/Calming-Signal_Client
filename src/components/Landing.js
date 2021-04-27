@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavContainer from '../container/NavContainer';
-import HamburgerContainer from '../container/HamburgerContainer';
 import Footer from './Footer';
 import './Landing.css';
 import landing_logo from '../img/landing_logo.png';
@@ -14,16 +13,7 @@ import nervous from '../img/nervous.png';
 import settle from '../img/settle.png';
 import landing_page_calming_signal from '../img/landing_page.jpeg';
 
-const Landing = ({
-  number,
-  isToggled,
-  clickGoHome,
-  clickHamburger,
-  clickRightBtn,
-  clickLeftBtn,
-  setFirstNum,
-  setLastNum,
-}) => {
+const Landing = () => {
   const handleScroll = () => {
     window.scrollTo(0, 0);
   };

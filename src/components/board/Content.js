@@ -16,13 +16,6 @@ const Content = ({
   isLoggedIn,
   userName,
 }) => {
-  console.log(
-    '🚀 ~ file: Content.js ~ line 19 ~ contentComment',
-    contentComment
-  );
-  console.log('🚀 ~ file: Content.js ~ line 18 ~ userName', userName);
-  console.log('🚀 ~ file: Content.js ~ line 18 ~ isLoggedIn', isLoggedIn);
-
   // ! 댓글 동적 셋팅하는 용도
   const [commentTag, setCommentTag] = useState(null);
   const [isCommentUpdated, setIsCommentUpdated] = useState(false);
@@ -62,7 +55,6 @@ const Content = ({
         commentBody,
         commentCreatedAt
       );
-      // console.log("🚀 ~ file: Content.js ~ line 25 ~ commentArr", commentArr) // ["test1 111 0", "test2 222 1", "test1 3333 2"]
 
       const getCommentTag = commentArr.map((el) => (
         <div className="content_comment_box" key={el.split('forSplit')[0]}>
@@ -104,18 +96,6 @@ const Content = ({
         withCredentials: true,
       }
     );
-    console.log(
-      '🚀 ~ file: Content.js ~ line 66 ~ handleRegisterComment ~ postComment',
-      postComment
-    );
-    // postComment.data.commentWriter, commentBody, commentCreatedAt
-    // setIsCommentUpdated(true)
-
-    // const newComments = {}
-    // contentComment.writer.push(postComment.data.commentWriter)
-    // contentComment.content.push(postComment.data.commentBody)
-    // contentComment.createdAt.push(postComment.data.commentCreatedAt)
-    // getContentComment()
 
     const getContent = await axios(
       `https://localhost:3002/content/${contentTitle}?id=${postId}`

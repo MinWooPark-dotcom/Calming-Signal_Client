@@ -8,10 +8,9 @@ import nav_logo from '../img/landing_logo2.png';
 
 const Nav = ({
   isLoggedIn,
-  clickGoHome,
-  handleLogIn,
   setEmailValue,
   setUserNameValue,
+  changeLoggedInStateAction,
   history,
 }) => {
   console.log('🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn', isLoggedIn);
@@ -26,7 +25,7 @@ const Nav = ({
     });
     console.log('🚀 ~ file: Nav.js ~ line 15 ~ handleLogout ~ logout', logout);
     if (logout.data.message === 'Logout completed') {
-      handleLogIn();
+      changeLoggedInStateAction();
       setEmailValue(null);
       setUserNameValue(null);
       handleScroll();
@@ -37,7 +36,7 @@ const Nav = ({
   return (
     <div className="nav_container">
       <hr className="nav_logo_line"></hr>
-      <Link to="/" onClick={clickGoHome}>
+      <Link to="/" onClick={handleScroll}>
         <div className="nav_logo_text" onClick={handleScroll}>
           Calming Signal
         </div>

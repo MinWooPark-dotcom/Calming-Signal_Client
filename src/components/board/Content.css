@@ -1,20 +1,14 @@
 .content_container {
-  /* position: absolute; */
   width: 100%;
   height: 100%;
-  /* border-top: 1px solid gray; */
 }
 
 .content_header {
   position: absolute;
   top: 9%;
-  /* left: 1%; */
   width: 100%;
-  /* margin-top: 0.5%; */
   height: 5%;
   font-size: 1vmax;
-  /* margin: 1%; */
-  /* border: 1px solid red; */
 }
 
 .content_header_title_fix {
@@ -80,43 +74,34 @@
 .content_body {
   position: absolute;
   width: 100%;
-  /* height: 75%; */
   top: 14%;
   padding: 1%;
-  /* border-top: 1px solid black; */
   border-top: 1px solid #ff8627;
 }
 
 .content_comment_write_box {
   position: absolute;
   top: 100%;
-  /* border-top: 1px solid black; */
   border-top: 2px solid #ff8627;
-  /* margin-left: 1%; */
   width: 100%;
   height: 5%;
 }
 
 .content_comment_writer {
   display: inline-block;
-  /* border: 1px solid red; */
   font-size: 1.3vmax;
   position: absolute;
   top: 15%;
   left: 2%;
-  /* width: 5%; */
-  /* height: 30%; */
 }
 
 .content_comment_textarea {
   display: inline-block;
-  /* border: 1px solid red; */
   border: 1px solid #ffd954;
   width: 85%;
   height: 100%;
   position: absolute;
   left: 7%;
-  /* margin-left: 3%; */
 }
 
 .cotent_textarea {
@@ -148,47 +133,32 @@
   position: absolute;
   width: 100%;
   top: 105%;
-  /* border: 1px solid gray; */
-  /* border: 1px solid #ff8627; */
 }
 
 .content_comment_box {
-  /* border: 1px solid gray; */
   border: 1px solid #ff8627;
-  /* height: 10%; */
 }
 
 .content_comments_user_name {
   display: inline-block;
-  /* border: 1px solid red; */
   font-size: 1.3vmax;
   position: relative;
-  /* top: 15%; */
   left: 2%;
-  /* width: 5%; */
-  /* height: 30%; */
 }
 
 .content_comments_body {
   display: inline-block;
   font-size: 1.3vmax;
-  /* border-left: 1px solid red; */
-  /* width: 85%; */
   height: 100%;
   position: relative;
   left: 5%;
-  /* margin-left: 3%; */
 }
 
 .content_comments_created_At {
-  /* border: 1px solid red; */
   display: inline-block;
   position: relative;
   top: 3%;
   right: 1%;
   float: right;
   font-size: 1vmax;
-  /* width: 5%; */
-  /* height: 80%; */
-  /* top: 10%; */
 }

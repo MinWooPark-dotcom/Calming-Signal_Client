@@ -1,5 +1,3 @@
-/* eslint react/prop-types: 0 */
-
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
@@ -9,7 +7,7 @@ import './Board.css';
 
 const Board = ({
   isLoggedIn,
-  boardData,
+  // boardData,
   getBoardPostedData,
   category,
   query,
@@ -24,15 +22,12 @@ const Board = ({
   getContentComment,
   history,
 }) => {
-  console.log('🚀 ~ file: Board.js ~ line 28 ~ boardData', boardData);
-
   const [postedList, setPostedList] = useState(null);
   const [pageNum, setPageNum] = useState([1, 2, 3, 4, 5]);
   const [numOfPages, setNumOfPages] = useState(null);
 
   // ! 특정 숫자 클릭 시 이동
   const handleSpecificPageClick = (e) => {
-    // console.log(e.target.innerText)
     history.push(`/board/${category}?page=${e.target.innerText}`);
   };
 
@@ -53,7 +48,7 @@ const Board = ({
   // ! '>>' 맨 뒤 페이지로 이동
   const handleLastPageClick = () => {
     if (numOfPages > 5) {
-      const numOfShowPages = numOfPages % 5; // 7 % 5 = 2
+      const numOfShowPages = numOfPages % 5;
       let pagesArr = [];
       for (let i = numOfPages - numOfShowPages + 1; i < numOfPages; i++) {
         pagesArr.push(i);
@@ -89,13 +84,6 @@ const Board = ({
       '🚀 ~ file: Board.js ~ line 84 ~ handleOnClickTitle ~ getContent',
       getContent
     );
-    // category: "free"
-    // content: "나다"
-    // createdAt: "2021-04-09T09:18:47.000Z"
-    // numOfViews: 0
-    // postId: 6
-    // title: "나다"
-    // userName: "pmw"
     getContentPostId(getContent.data.postId);
     getContentTitle(getContent.data.title);
     getContentBody(getContent.data.content);
@@ -114,10 +102,7 @@ const Board = ({
       const getBoardData = await axios(
         `https://localhost:3002/board/${category}?page=${query}`
       );
-      console.log(
-        '🚀 ~ file: Board.js ~ line 99 ~ useEffect ~ getBoardData>>>>>',
-        getBoardData.data
-      );
+
       getBoardPostedData([getBoardData.data]);
       const testBoard = [getBoardData.data];
       setNumOfPages(getBoardData.data.numOfPages);

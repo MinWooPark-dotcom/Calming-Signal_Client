@@ -1,12 +1,6 @@
-/* eslint react/prop-types: 0 */
-
 import React from 'react';
 import NavConatiner from '../../container/NavContainer';
-import HamburgerContainer from '../../container/HamburgerContainer';
 import Sidebar from '../../components/Sidebar';
-import AboutContainer from '../../container/AboutContainer';
-import about_img from '../../img/about_img.jpg';
-import '../About.css';
 import './CalmingSignal.css';
 
 const CalmingSignal = () => {
@@ -48,9 +42,6 @@ const CalmingSignal = () => {
           </div>
         </div>
       </div>
-      {/* <div className="about_img_box">
-        <img className="about_img" src={about_img} alt="dog"></img>
-      </div>   */}
     </div>
   );
 };

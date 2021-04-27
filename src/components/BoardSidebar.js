@@ -6,7 +6,10 @@ const BoardSidebar = () => {
   return (
     <div className="board_sidebar_container">
       <Link to="/board/free?page=1">
-        <div className="board_sidebar_container_free">자유게시판</div>
+        <div className="board_sidebar_container_free">자유 게시판</div>
+      </Link>
+      <Link to="/board/request?page=1">
+        <div className="board_sidebar_container_weather">요청 게시판</div>
       </Link>
       <Link to="/board/small?page=1">
         <div className="board_sidebar_container_small">소형견</div>

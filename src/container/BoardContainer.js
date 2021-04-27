@@ -22,9 +22,9 @@ const BoardContainer = ({ match, location }) => {
   }
 
   const isLoggedIn = useSelector((state) => state.signIn.isLoggedIn);
-  const boardData = useSelector(
-    (state) => state.boardPostedTemplate.freeBulletinBoard
-  );
+  // const boardData = useSelector(
+  //   (state) => state.boardPostedTemplate.freeBulletinBoard
+  // );
   const postId = useSelector((state) => state.content.postId);
   const dispatch = useDispatch();
   const getBoardPostedData = useCallback(
@@ -66,7 +66,7 @@ const BoardContainer = ({ match, location }) => {
       postId={postId}
       category={category}
       query={query}
-      boardData={boardData}
+      // boardData={boardData}
       getContentPostId={getContentPostId}
       getBoardPostedData={getBoardPostedData}
       nowCategory={nowCategory}
