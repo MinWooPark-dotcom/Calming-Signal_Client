@@ -4,6 +4,7 @@ import Nav from './Nav';
 import './Mypage.css';
 import NavContainer from '../container/NavContainer';
 import axios from 'axios';
+import SearchLocationContainer from '../container/SearchLocationContainer';
 
 const MyPage = ({
   email,
@@ -18,8 +19,14 @@ const MyPage = ({
   petBreed,
   setPetNameValue,
   setPetBreedValue,
+  locationName,
+  setLocationValue,
   history,
 }) => {
+  console.log('🚀 ~ file: Mypage.js ~ line 25 ~ locationName', locationName);
+
+  const [city, setCity] = useState(null);
+
   useEffect(() => {}, [userName, petName, petBreed]);
 
   //!  공통
@@ -63,6 +70,42 @@ const MyPage = ({
         setPetBreedInputValue(null);
       }
       setPetBreedInputValue(e.target.value);
+    } else if (key === 'city' && e.target.value !== undefined) {
+      if (e.target.value === '서울') {
+        setCity('서울');
+      } else if (e.target.value === '인천') {
+        setCity('인천');
+      } else if (e.target.value === '대전') {
+        setCity('대전');
+      } else if (e.target.value === '대구') {
+        setCity('대구');
+      } else if (e.target.value === '울산') {
+        setCity('울산');
+      } else if (e.target.value === '부산') {
+        setCity('부산');
+      } else if (e.target.value === '광주') {
+        setCity('광주');
+      } else if (e.target.value === '경기도') {
+        setCity('경기도');
+      } else if (e.target.value === '강원도') {
+        setCity('강원도');
+      } else if (e.target.value === '충청남도') {
+        setCity('충청남도');
+      } else if (e.target.value === '충청북도') {
+        setCity('충청북도');
+      } else if (e.target.value === '전라남도') {
+        setCity('전라남도');
+      } else if (e.target.value === '전라북도') {
+        setCity('전라북도');
+      } else if (e.target.value === '경상남도') {
+        setCity('경상남도');
+      } else if (e.target.value === '경상북도') {
+        setCity('경상북도');
+      } else if (e.target.value === '제주도') {
+        setCity('제주도');
+      } else {
+        setCity(null);
+      }
     }
   };
 
@@ -169,36 +212,66 @@ const MyPage = ({
 
   // ! 반려견 이름 변경 관련
   const [isClickedPetNameBtn, setIsClickedPetNameBtn] = useState(false);
-  // 반려견 이름 변경
   const handleOnClickPetNameBtn = () => {
     setIsClickedPetNameBtn(!isClickedPetNameBtn);
   };
   const [petNameInputValue, setPetNameInputValue] = useState('');
+  // 반려견 이름 변경 PATCH
   const handleChangePetName = async () => {
-    console.log('petNameInputValue>>>', petNameInputValue);
-    const changePetName = await axios.patch(
-      'https://localhost:3002/mypage/petname',
-      { newPetName: petNameInputValue },
-      { withCredentials: true }
-    );
+    if (petName || petBreed) {
+      console.log('petNameInputValue>>>', petNameInputValue);
+      const changePetName = await axios.patch(
+        'https://localhost:3002/mypage/petname',
+        { newPetName: petNameInputValue },
+        { withCredentials: true }
+      );
 
-    if (changePetName.data.message === 'OK') {
-      setPetNameValue(petNameInputValue);
-      handleOnClickPetNameBtn();
+      if (changePetName.data.message === 'OK') {
+        setPetNameValue(petNameInputValue);
+        handleOnClickPetNameBtn();
+      }
+    }
+    // 반려견 이름 등록 POST
+    else if (!petName && !petBreed) {
+      console.log('petNameInputValue>>>', petNameInputValue);
+      const changePetName = await axios.post(
+        'https://localhost:3002/mypage/petname',
+        { newPetName: petNameInputValue },
+        { withCredentials: true }
+      );
+
+      if (changePetName.data.message === 'OK') {
+        setPetNameValue(petNameInputValue);
+        handleOnClickPetNameBtn();
+      }
     }
   };
-  // 반려견 이름 등록
-  const handleRegistePetName = async () => {
-    console.log('petNameInputValue>>>', petNameInputValue);
-    const changePetName = await axios.post(
-      'https://localhost:3002/mypage/petname',
-      { newPetName: petNameInputValue },
-      { withCredentials: true }
-    );
 
-    if (changePetName.data.message === 'OK') {
-      setPetNameValue(petNameInputValue);
-      handleOnClickPetNameBtn();
+  // 반려견 이름 삭제
+  const handleDeletePetName = async () => {
+    if (petBreed === null) {
+      const deletePetName = await axios.delete(
+        'https://localhost:3002/mypage/petname',
+        {
+          withCredentials: true,
+        }
+      );
+      if (deletePetName.data.message === 'OK') {
+        setPetNameValue(null);
+        handleOnClickPetNameBtn();
+      }
+    } else {
+      const deletePetName = await axios.patch(
+        'https://localhost:3002/mypage/petname',
+        { newPetName: null },
+        {
+          withCredentials: true,
+        }
+      );
+      if (deletePetName.data.message === 'OK') {
+        setPetNameValue(null);
+        handleOnClickPetNameBtn();
+      }
     }
   };
 
@@ -208,16 +281,94 @@ const MyPage = ({
   const handleOnClickPetBreedBtn = () => {
     setIsClickedPetBreedBtn(!isClickedPetBreedBtn);
   };
+  // 견종 변경 PATCH
   const handleChangePetBreed = async () => {
-    const changePetBreed = await axios.patch(
-      'https://localhost:3002/mypage/petbreed',
-      { newPetBreed: petBreedInputValue },
+    if (petName || petBreed) {
+      const changePetBreed = await axios.patch(
+        'https://localhost:3002/mypage/petbreed',
+        { newPetBreed: petBreedInputValue },
+        { withCredentials: true }
+      );
+
+      if (changePetBreed.data.message === 'OK') {
+        setPetBreedValue(petBreedInputValue);
+        handleOnClickPetBreedBtn();
+      }
+    }
+    // 견종 등록 POST
+    else if (!petName && !petBreed) {
+      const registerPetBreed = await axios.post(
+        'https://localhost:3002/mypage/petbreed',
+        { newPetBreed: petBreedInputValue },
+        { withCredentials: true }
+      );
+
+      if (registerPetBreed.data.message === 'OK') {
+        setPetBreedValue(petBreedInputValue);
+        handleOnClickPetBreedBtn();
+      }
+    }
+  };
+  // 견종 정보 삭제
+  const handleDeletePetBreed = async () => {
+    if (petName === null) {
+      const deletePetBreed = await axios.delete(
+        'https://localhost:3002/mypage/petbreed',
+        { withCredentials: true }
+      );
+
+      if (deletePetBreed.data.message === 'OK') {
+        setPetBreedValue(null);
+        handleOnClickPetBreedBtn();
+      }
+    } else {
+      const deletePetBreed = await axios.patch(
+        'https://localhost:3002/mypage/petbreed',
+        { newPetBreed: null },
+        { withCredentials: true }
+      );
+
+      if (deletePetBreed.data.message === 'OK') {
+        setPetBreedValue(null);
+        handleOnClickPetBreedBtn();
+      }
+    }
+  };
+
+  // ! 지역 변경
+  const [isClickedLocationBtn, setIsClickedLocationBtn] = useState(false);
+  const handleOnClickLocationBtn = () => {
+    setIsClickedLocationBtn(!isClickedLocationBtn);
+  };
+  const handleChangeLocation = async () => {
+    const changeLocation = await axios.patch(
+      'https://localhost:3002/mypage/location',
+      { city },
       { withCredentials: true }
     );
-
-    if (changePetBreed.data.message === 'OK') {
-      setPetBreedValue(petBreedInputValue);
-      handleOnClickPetBreedBtn();
+    console.log(
+      '🚀 ~ file: Mypage.js ~ line 278 ~ handleChangeLocation ~ changeLocation',
+      changeLocation
+    );
+    if (changeLocation.data.message === 'OK') {
+      setLocationValue(city);
+      handleOnClickLocationBtn();
+    }
+  };
+  // 지역 삭제
+  const handleDeleteLocation = async () => {
+    const changeLocation = await axios.patch(
+      'https://localhost:3002/mypage/location',
+      { city: null },
+      { withCredentials: true }
+    );
+    console.log(
+      '🚀 ~ file: Mypage.js ~ line 278 ~ handleChangeLocation ~ changeLocation',
+      changeLocation
+    );
+    if (changeLocation.data.message === 'OK') {
+      setLocationValue(city);
+      handleOnClickLocationBtn();
     }
   };
 
@@ -304,6 +455,32 @@ const MyPage = ({
             </div>
           )}
         </div>
+        {/* 지역 */}
+        <div className="mypage_profile_location_box">
+          <div className="mypage_profile_location_title">지역</div>
+          {locationName ? (
+            <div className="mypage_profile_location_value">{locationName}</div>
+          ) : (
+            <div className="mypage_profile_location_value">
+              지역 정보를 등록해 주세요
+            </div>
+          )}
+          {locationName ? (
+            <div
+              className="mypage_profile_location_change"
+              onClick={handleOnClickLocationBtn}
+            >
+              지역 변경
+            </div>
+          ) : (
+            <div
+              className="mypage_profile_location_change"
+              onClick={handleOnClickLocationBtn}
+            >
+              지역 등록
+            </div>
+          )}
+        </div>
       </div>
       {/*//! 변경 모달 */}
       {/* 비밀번호 */}
@@ -323,7 +500,7 @@ const MyPage = ({
             변경할 비밀번호
           </div>
           <input
-            className="mypage_profile_modal_password_new"
+            className="mypage_profile_modal_password_new_input"
             onChange={handleInputValue('newPassword')}
           ></input>
           {newPasswordErrorMessage}
@@ -332,7 +509,7 @@ const MyPage = ({
             변경할 비밀번호 확인
           </div>
           <input
-            className="mypage_profile_modal_password_confirm"
+            className="mypage_profile_modal_password_confirm_input"
             onChange={handleInputValue('newConfirmPassword')}
           ></input>
           <button
@@ -406,12 +583,22 @@ const MyPage = ({
               </div>
               <button
                 className="mypage_profile_modal_petname_btn"
-                onClick={handleRegistePetName}
+                onClick={handleChangePetName}
               >
                 이름 등록
               </button>
             </div>
           )}
+          {petName ? (
+            <div className="mypage_profile_modal_petname_delete_box">
+              <div
+                className="mypage_profile_modal_petname_delete"
+                onClick={handleDeletePetName}
+              >
+                반려견 이름 삭제
+              </div>
+            </div>
+          ) : null}
         </div>
       ) : null}
       {/* //! 반려견종 */}
@@ -506,6 +693,111 @@ const MyPage = ({
               </button>
             </div>
           )}
+          {petBreed ? (
+            <div className="mypage_profile_modal_pet_breed_delete_box">
+              <div
+                className="mypage_profile_modal_pet_breed_delete"
+                onClick={handleDeletePetBreed}
+              >
+                반려견종 삭제
+              </div>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+      {isClickedLocationBtn ? (
+        <div className="mypage_profile_modal_location">
+          {locationName ? (
+            <div className="mypage_profile_modal_location_now_box">
+              <div className="mypage_profile_modal_location_title">
+                현재 지역명
+              </div>
+              <div className="mypage_profile_modal_location_value">
+                {locationName}
+              </div>
+            </div>
+          ) : null}
+          {locationName ? (
+            <div className="mypage_profile_modal_location_new_box">
+              <div className="mypage_profile_modal_location_new">
+                변경할 지역명
+              </div>
+              <input
+                className="mypage_profile_modal_location_new_input"
+                list="choices"
+                placeholder="시, 도로 조회하세요"
+                onChange={handleInputValue('city')}
+              />
+              <datalist id="choices">
+                <option value="서울">서울</option>
+                <option value="인천">인천</option>
+                <option value="대전">대전</option>
+                <option value="대구">대구</option>
+                <option value="울산">울산</option>
+                <option value="부산">부산</option>
+                <option value="광주">광주</option>
+                <option value="경기도">경기도</option>
+                <option value="강원도">강원도</option>
+                <option value="충청남도">충청남도</option>
+                <option value="충청북도">충청북도</option>
+                <option value="전라남도">전라남도</option>
+                <option value="전라북도">전라북도</option>
+                <option value="경상남도">경상남도</option>
+                <option value="경상북도">경상북도</option>
+                <option value="제주도">제주도</option>
+              </datalist>
+              <button
+                className="mypage_profile_modal_location_btn"
+                onClick={handleChangeLocation}
+              >
+                지역 변경
+              </button>
+            </div>
+          ) : (
+            <div className="mypage_profile_modal_location_new_box">
+              <div className="mypage_profile_modal_location_new">
+                등록할 지역명
+                <input
+                  className="mypage_profile_modal_location_new_input"
+                  list="choices"
+                  placeholder="시, 도로 조회하세요"
+                  onChange={handleInputValue('city')}
+                />
+                <datalist id="choices">
+                  <option value="서울">서울</option>
+                  <option value="인천">인천</option>
+                  <option value="대전">대전</option>
+                  <option value="대구">대구</option>
+                  <option value="울산">울산</option>
+                  <option value="부산">부산</option>
+                  <option value="광주">광주</option>
+                  <option value="경기도">경기도</option>
+                  <option value="강원도">강원도</option>
+                  <option value="충청남도">충청남도</option>
+                  <option value="충청북도">충청북도</option>
+                  <option value="전라남도">전라남도</option>
+                  <option value="전라북도">전라북도</option>
+                  <option value="경상남도">경상남도</option>
+                  <option value="경상북도">경상북도</option>
+                  <option value="제주도">제주도</option>
+                </datalist>
+              </div>
+              <button
+                className="mypage_profile_modal_location_btn"
+                onClick={handleChangeLocation}
+              >
+                지역 등록
+              </button>
+            </div>
+          )}
+          {locationName ? (
+            <div
+              className="mypage_profile_modal_location_delete_box"
+              onClick={handleDeleteLocation}
+            >
+              지역 삭제
+            </div>
+          ) : null}
         </div>
       ) : null}
     </div>
