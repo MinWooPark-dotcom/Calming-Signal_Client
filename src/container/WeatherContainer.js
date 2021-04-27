@@ -2,6 +2,8 @@ import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Weather from '../components/board/Weather';
 
+import { setLocation } from '../modules/signIn';
+
 import {
   getCityName,
   getFeelLikeTemp,
@@ -44,6 +46,7 @@ const WeatherContainer = () => {
   const weatherRightLarge = useSelector(
     (state) => state.weather.weatherRightLarge
   );
+  const locationName = useSelector((state) => state.signIn.locationName);
 
   const dispatch = useDispatch();
   const getCityNameAction = useCallback((name) => dispatch(getCityName(name)), [
@@ -101,6 +104,11 @@ const WeatherContainer = () => {
     [dispatch]
   );
 
+  const setLocationValue = useCallback(
+    (locationName) => dispatch(setLocation(locationName)),
+    [dispatch]
+  );
+
   return (
     <Weather
       cityName={cityName}
@@ -117,6 +125,7 @@ const WeatherContainer = () => {
       weatherRightSmall={weatherRightSmall}
       weatherRightMiddle={weatherRightMiddle}
       weatherRightLarge={weatherRightLarge}
+      locationName={locationName}
       getCityNameAction={getCityNameAction}
       getFeelLikeTempAction={getFeelLikeTempAction}
       getHumidityAction={getHumidityAction}
@@ -131,6 +140,7 @@ const WeatherContainer = () => {
       getWeatherRightSmallAction={getWeatherRightSmallAction}
       getWeatherRightMiddleAction={getWeatherRightMiddleAction}
       getWeatherRightLargeAction={getWeatherRightLargeAction}
+      setLocationValue={setLocationValue}
     />
   );
 };

@@ -36,6 +36,8 @@ const Weather = ({
   getWeatherRightSmallAction,
   getWeatherRightMiddleAction,
   getWeatherRightLargeAction,
+  locationName,
+  setLocationValue,
   history,
 }) => {
   console.log(
@@ -68,41 +70,54 @@ const Weather = ({
 
   useEffect(async () => {
     try {
-      const getWeatherData = await axios('https://localhost:3002/weather');
-      console.log(
-        '🚀 ~ file: Weather.js ~ line 60 ~ useEffect ~ getWeatherData',
-        getWeatherData
-      );
-      //     airQualityIndex: 5
-      //     feelLike: 9.33
-      //     humidity: 53
-      //     temp: 9.33
-      //     tempDifferenceYesterday: 0.7699999999999996
-      //     tempMax: 10
-      //     tempMin: 9
-      //     weatherDescription: "맑음"
-      //     weatherIcon: "01n"
-      //     windDeg: 210
-      //     windSpeed: 0.51
-      getCityNameAction(getWeatherData.data.responseData.cityName);
-      getFeelLikeTempAction(getWeatherData.data.responseData.feelLike);
-      getHumidityAction(getWeatherData.data.responseData.humidity);
-      getTempAction(getWeatherData.data.responseData.temp);
-      getTempMaxAction(getWeatherData.data.responseData.tempMax);
-      getTempMinAction(getWeatherData.data.responseData.tempMin);
-      getWeatherAction(getWeatherData.data.responseData.weatherDescription);
-      getWeatherIconAction(
-        `'http://openweathermap.org/img/wn/${getWeatherData.data.responseData.weatherIcon}@2x.png`
-      );
-      getWindDegAction(getWeatherData.data.responseData.windDeg);
-      getWindSpeedAction(getWeatherData.data.responseData.windSpeed);
-      getTempDifferenceYesterdayAction(
-        getWeatherData.data.responseData.tempDifferenceYesterday
-      );
-      getWeatherRightSmallAction(getWeatherData.data.responseData.small);
-      getWeatherRightMiddleAction(getWeatherData.data.responseData.middle);
-      getWeatherRightLargeAction(getWeatherData.data.responseData.large);
-      setDate(`${getMonth}.${getDayNumber}(${getDay}) ${hour}:${min}`);
+      if (locationName) {
+        const getWeatherData = await axios.post(
+          'https://localhost:3002/weather',
+          {
+            city: locationName,
+          }
+        );
+        getCityNameAction(getWeatherData.data.responseData.cityName);
+        getFeelLikeTempAction(getWeatherData.data.responseData.feelLike);
+        getHumidityAction(getWeatherData.data.responseData.humidity);
+        getTempAction(getWeatherData.data.responseData.temp);
+        getTempMaxAction(getWeatherData.data.responseData.tempMax);
+        getTempMinAction(getWeatherData.data.responseData.tempMin);
+        getWeatherAction(getWeatherData.data.responseData.weatherDescription);
+        getWeatherIconAction(
+          `'http://openweathermap.org/img/wn/${getWeatherData.data.responseData.weatherIcon}@2x.png`
+        );
+        getWindDegAction(getWeatherData.data.responseData.windDeg);
+        getWindSpeedAction(getWeatherData.data.responseData.windSpeed);
+        getTempDifferenceYesterdayAction(
+          getWeatherData.data.responseData.tempDifferenceYesterday
+        );
+        getWeatherRightSmallAction(getWeatherData.data.responseData.small);
+        getWeatherRightMiddleAction(getWeatherData.data.responseData.middle);
+        getWeatherRightLargeAction(getWeatherData.data.responseData.large);
+        setDate(`${getMonth}.${getDayNumber}(${getDay}) ${hour}:${min}`);
+      } else {
+        const getWeatherData = await axios('https://localhost:3002/weather');
+        getCityNameAction(getWeatherData.data.responseData.cityName);
+        getFeelLikeTempAction(getWeatherData.data.responseData.feelLike);
+        getHumidityAction(getWeatherData.data.responseData.humidity);
+        getTempAction(getWeatherData.data.responseData.temp);
+        getTempMaxAction(getWeatherData.data.responseData.tempMax);
+        getTempMinAction(getWeatherData.data.responseData.tempMin);
+        getWeatherAction(getWeatherData.data.responseData.weatherDescription);
+        getWeatherIconAction(
+          `'http://openweathermap.org/img/wn/${getWeatherData.data.responseData.weatherIcon}@2x.png`
+        );
+        getWindDegAction(getWeatherData.data.responseData.windDeg);
+        getWindSpeedAction(getWeatherData.data.responseData.windSpeed);
+        getTempDifferenceYesterdayAction(
+          getWeatherData.data.responseData.tempDifferenceYesterday
+        );
+        getWeatherRightSmallAction(getWeatherData.data.responseData.small);
+        getWeatherRightMiddleAction(getWeatherData.data.responseData.middle);
+        getWeatherRightLargeAction(getWeatherData.data.responseData.large);
+        setDate(`${getMonth}.${getDayNumber}(${getDay}) ${hour}:${min}`);
+      }
     } catch (err) {
       console.error(err);
     }
