@@ -15,6 +15,7 @@ import {
   changeLoggedInState,
   setPetName,
   setPetBreed,
+  setLocation,
 } from '../modules/signIn';
 
 const MypageContainer = () => {
@@ -24,6 +25,7 @@ const MypageContainer = () => {
   const isLoggedIn = useSelector((state) => state.signIn.isLoggedIn);
   const petName = useSelector((state) => state.signIn.petName);
   const petBreed = useSelector((state) => state.signIn.petBreed);
+  const locationName = useSelector((state) => state.signIn.locationName);
 
   const dispatch = useDispatch();
   const handleLogIn = useCallback(() => dispatch(changeLoggedInState()), [
@@ -48,6 +50,10 @@ const MypageContainer = () => {
     (petBreed) => dispatch(setPetBreed(petBreed)),
     [dispatch]
   );
+  const setLocationValue = useCallback(
+    (locationName) => dispatch(setLocation(locationName)),
+    [dispatch]
+  );
 
   return (
     <Mypage
@@ -63,6 +69,8 @@ const MypageContainer = () => {
       petBreed={petBreed}
       setPetNameValue={setPetNameValue}
       setPetBreedValue={setPetBreedValue}
+      locationName={locationName}
+      setLocationValue={setLocationValue}
     />
   );
 };
