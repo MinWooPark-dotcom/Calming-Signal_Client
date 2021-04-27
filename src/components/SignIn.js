@@ -30,10 +30,12 @@ const SignIn = ({
   petBreed,
   setPetNameValue,
   setPetBreedValue,
+  locationName,
+  setLocationValue,
   history,
 }) => {
-  console.log('🚀 ~ file: SignIn.js ~ line 35 ~ petBreed', petBreed);
-  console.log('🚀 ~ file: SignIn.js ~ line 35 ~ petName', petName);
+  console.log('🚀 ~ file: SignIn.js ~ line 37 ~ locationName', locationName);
+
   // console.log("🚀 ~ file: SignIn.js ~ line 29 ~ isLoggedIn", isLoggedIn)
   // console.log("🚀 ~ file: SignIn.js ~ line 110 ~ handleOnClickSignInBtn ~ userName", userName)
   // console.log("🚀 ~ file: SignIn.js ~ line 109 ~ handleOnClickSignInBtn ~ email", email)
@@ -113,6 +115,7 @@ const SignIn = ({
         setPasswordValue(null);
         setPetNameValue(userInfo.data.petName);
         setPetBreedValue(userInfo.data.petBreed);
+        setLocationValue(userInfo.data.location);
         // history.goBack();
         // 임시 방편, 원래는 뒤로 가기 해야 하는데 회원가입에서 로그인 오면 회원가입으로 돌아가버림
         history.push('/calming-signal');

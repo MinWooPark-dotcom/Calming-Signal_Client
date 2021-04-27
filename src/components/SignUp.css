@@ -16,20 +16,22 @@
 
 .sign_up_box {
   position: absolute;
-  top: 15%;
+  top: 11%;
   right: 15%;
   border: 2px solid #ff8627;
   /* border-radius: 10px; */
   border-radius: 1vmax;
   width: 35%;
-  height: 75%;
+  height: 85%;
 }
 
 .sign_up_box_notice {
   font-size: 1vmax;
   position: absolute;
-  top: 11.5%;
-  right: 14.5%;
+  /* top: 11.5%; */
+  top: 7.5%;
+  /* right: 14.5%; */
+  left: 51%;
   width: 35%;
 }
 
@@ -37,7 +39,8 @@
 .sign_up_box_id_sign,
 .sign_up_box_password_sign,
 .sign_up_box_pet_name_sign,
-.sign_up_box_pet_breed_sign {
+.sign_up_box_pet_breed_sign,
+.sign_up_box_location {
   display: inline-block;
   margin-left: 5%;
   font-size: 1vmax;
@@ -57,7 +60,8 @@
 .sign_up_box_id,
 .sign_up_box_password,
 .sign_up_box_pet_name,
-.sign_up_box_pet_breed {
+.sign_up_box_pet_breed,
+.sign_up_box_location_input {
   /* border: 1px solid red; */
   display: inline-block;
   margin-top: 3%;
@@ -70,12 +74,14 @@
 .sign_up_box_input_id,
 .sign_up_box_input_password,
 .sign_up_box_input_pet_name,
-.sign_up_box_select_pet_breed {
+.sign_up_box_select_pet_breed,
+.sign_up_box_location_select_input {
   width: 90%;
   height: 70%;
   padding-left: 3%;
   font-size: 1.1vmax;
   border: 1px solid #ff8627;
+  outline: none;
   border-radius: 0.5vmax;
 }
 
@@ -91,7 +97,8 @@
   /* border: 1px solid red; */
   text-align: center;
   font-size: 1.3vmax;
-  margin-top: 5%;
+  /* margin-top: 5%; */
+  margin-top: 4%;
 }
 
 .sign_up_box_already_have_text {
@@ -110,7 +117,8 @@
 
 .sign_up_box_create_btn_div {
   /* border: 1px solid red; */
-  margin-top: 7%;
+  /* margin-top: 7%; */
+  margin-top: 3%;
   margin-left: 23%;
 
   width: 60%;

@@ -36,6 +36,7 @@
 .sign_in_box_input_id,
 .sign_in_box_input_password {
   border: 1px solid #ff8627;
+  outline: none;
   border-radius: 0.8vmax;
   width: 90%;
   height: 80%;
