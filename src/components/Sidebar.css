@@ -1,13 +1,13 @@
-.sidebar_container{
-    float: left;
-    /* border: 1px solid red; */
-    /* background-color: red; */
-    width: 10%;
-    /* height: 100vh; */
-    position: absolute;
-    top: 15%;
-    /* left: 6% */
-    left: 3.5%
+.sidebar_container {
+  float: left;
+  /* border: 1px solid red; */
+  /* background-color: red; */
+  width: 11%;
+  /* height: 100vh; */
+  position: absolute;
+  top: 15%;
+  /* left: 6% */
+  left: 3.5%;
 }
 
 .sidebar_1,
@@ -20,38 +20,36 @@
 .sidebar_8,
 .sidebar_9,
 .sidebar_10,
-.sidebar_11
-{
-    margin-top: 10%;
-    margin-left: 5%;
-    font-size: 1.1vmax;
+.sidebar_11 {
+  margin-top: 10%;
+  margin-left: 5%;
+  font-size: 1.1vmax;
 }
-
 
 .sidebar_category_comfortable,
 .sidebar_category_nervous,
-.sidebar_category_settle{
-    margin-top: 15%;
+.sidebar_category_settle {
+  margin-top: 15%;
 }
 
 .sidebar_category_happy {
-    font-size: 1.5vmax;
-    font-weight: 550;
-    /* color: #ffd954; */
+  font-size: 1.5vmax;
+  font-weight: 550;
+  /* color: #ffd954; */
 }
-.sidebar_category_comfortable{
-    font-size: 1.5vmax;
-    font-weight: 550;
-    /* color: #E3ECA6; */
+.sidebar_category_comfortable {
+  font-size: 1.5vmax;
+  font-weight: 550;
+  /* color: #E3ECA6; */
 }
-.sidebar_category_nervous{
-    font-size: 1.5vmax;
-    font-weight: 550;
-    /* color: #8B2664; */
+.sidebar_category_nervous {
+  font-size: 1.5vmax;
+  font-weight: 550;
+  /* color: #8B2664; */
 }
 
-.sidebar_category_settle{
-    font-size: 1.5vmax;
-    font-weight: 550;
-    /* color: #26396C; */
+.sidebar_category_settle {
+  font-size: 1.5vmax;
+  font-weight: 550;
+  /* color: #26396C; */
 }
