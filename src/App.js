@@ -27,7 +27,7 @@ import Interrupting from './components/calming-signal pages/settle/Interrupting'
 import TurnHead from './components/calming-signal pages/settle/TurnHead';
 
 //! board
-import WritePage from './components/board/WirtePage';
+// import WritePage from './components/board/WirtePage';
 import BoardContainer from './container/BoardContainer';
 
 import SignInContainer from './container/SignInContainer';
@@ -38,6 +38,8 @@ import ContentPage from './components/board/Content';
 import ContentContainer from './container/ContentContainer';
 import WritePageContainer from './container/WritePageContainer';
 import MypageContainer from './container/MypageContainer';
+// import Weather from './components/board/Weather';
+import WeatherContainer from './container/WeatherContainer';
 
 const App = ({ match }) => {
   return (
@@ -92,6 +94,8 @@ const App = ({ match }) => {
       <Route component={BoardContainer} path="/board/:category" exact />
       <Route component={WritePageContainer} path="/write" exact />
       <Route component={ContentContainer} path="/content/:title" exact />
+
+      <Route component={WeatherContainer} path="/weather" exact />
 
       <Route component={MypageContainer} path="/mypage" exact />
     </>
