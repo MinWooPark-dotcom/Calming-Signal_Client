@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import './Editor.css';
+import './WriteActionButtons.css';
 
 const Editor = ({ getNowCategory, nowCategory, history }) => {
   // console.log("🚀 ~ file: Editor.js ~ line 7 ~ Editor ~ nowCategory", nowCategory)
@@ -113,11 +114,11 @@ const Editor = ({ getNowCategory, nowCategory, history }) => {
           onChange={handleOnChangeContent}
         ></textarea>
       </div>
-      <div className="write_action_btn_container">
-        <button className="post_btn" onClick={handlePost}>
+      <div className="editor_btn_container">
+        <button className="editor_post_btn" onClick={handlePost}>
           포스트 등록
         </button>
-        <button className="cancle_btn" onClick={handleGoBack}>
+        <button className="editor_cancle_btn" onClick={handleGoBack}>
           취소
         </button>
       </div>

@@ -112,7 +112,6 @@
   display: inline-block;
   /* border: 1px solid red; */
   border: 1px solid #ffd954;
-  outline: none;
   width: 85%;
   height: 100%;
   position: absolute;
@@ -124,6 +123,7 @@
   width: 100%;
   height: 100%;
   font-size: 1.3vmax;
+  outline: none;
 }
 
 .content_comment_register_btn {

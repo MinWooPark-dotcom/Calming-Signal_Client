@@ -116,12 +116,17 @@
 
 .board_post_btn {
   display: inline-block;
-  /* border: 1px solid red; */
-  font-size: 1.2vmax;
-  height: 3vh;
+  border: 1px solid black;
+  border-radius: 0.5vmax;
+  background-color: #ffd954;
+  font-size: 1vmax;
+  padding: 0.3%;
   position: absolute;
+  text-align: center;
+  width: 8%;
+  /* height: 5%; */
   bottom: 15%;
-  right: 5%;
+  right: 0%;
 }
 
 /* post template */
