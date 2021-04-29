@@ -90,7 +90,7 @@ const SignIn = ({
       if (emailErrorMsg === null && passwordErrorMsg === null) {
         try {
           const signIn = await axios.post(
-            'https://localhost:3002/signin',
+            'https://server.calming-signal.ml/signin',
             {
               email,
               password,
@@ -109,9 +109,12 @@ const SignIn = ({
           changeLoggedIn();
 
           // get user info
-          const userInfo = await axios('https://localhost:3002/userinfo', {
-            withCredentials: true,
-          });
+          const userInfo = await axios(
+            'https://server.calming-signal.ml/userinfo',
+            {
+              withCredentials: true,
+            }
+          );
           console.log(
             '🚀 ~ file: SignIn.js ~ line 99 ~ handleOnClickSignInBtn ~ userInfo>>>>',
             userInfo

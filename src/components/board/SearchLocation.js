@@ -63,9 +63,12 @@ const SearchLocation = ({
   };
 
   const handleOnClickSearchBtn = async () => {
-    const getWeatherData = await axios.post('https://localhost:3002/weather', {
-      city,
-    });
+    const getWeatherData = await axios.post(
+      'https://server.calming-signal.ml/weather',
+      {
+        city,
+      }
+    );
     console.log(
       '🚀 ~ file: SearchLocation.js ~ line 112 ~ handleOnClickSearchBtn ~ getWeatherData',
       getWeatherData

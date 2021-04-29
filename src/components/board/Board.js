@@ -78,7 +78,7 @@ const Board = ({
     const title = e.target.innerText;
     const pageId = e.target.attributes[1].value;
     const getContent = await axios(
-      `https://localhost:3002/content/${title}?id=${pageId}`
+      `https://server.calming-signal.ml/content/${title}?id=${pageId}`
     );
     console.log(
       '🚀 ~ file: Board.js ~ line 84 ~ handleOnClickTitle ~ getContent',
@@ -100,7 +100,7 @@ const Board = ({
     try {
       nowCategory(category);
       const getBoardData = await axios(
-        `https://localhost:3002/board/${category}?page=${query}`
+        `https://server.calming-signal.ml/board/${category}?page=${query}`
       );
 
       getBoardPostedData([getBoardData.data]);

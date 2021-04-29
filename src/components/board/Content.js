@@ -86,7 +86,7 @@ const Content = ({
   //! 댓글 등록 버튼
   const handleRegisterComment = async () => {
     const postComment = await axios.post(
-      'https://localhost:3002/comment',
+      'https://server.calming-signal.ml/comment',
       {
         postId,
         writer: contentUserName,
@@ -98,7 +98,7 @@ const Content = ({
     );
     setComment('');
     const getContent = await axios(
-      `https://localhost:3002/content/${contentTitle}?id=${postId}`
+      `https://server.calming-signal.ml/content/${contentTitle}?id=${postId}`
     );
     getContentComment(getContent.data.commentData);
     setIsCommentUpdated();

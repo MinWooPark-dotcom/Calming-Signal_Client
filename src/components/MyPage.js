@@ -114,9 +114,13 @@ const MyPage = ({
     window.scrollTo(0, 0);
   };
   const handleLogout = async () => {
-    const logout = await axios.post('https://localhost:3002/logout', null, {
-      withCredentials: true,
-    });
+    const logout = await axios.post(
+      'https://server.calming-signal.ml/logout',
+      null,
+      {
+        withCredentials: true,
+      }
+    );
     console.log('🚀 ~ file: Nav.js ~ line 15 ~ handleLogout ~ logout', logout);
     if (logout.data.message === 'Logout completed') {
       handleLogIn();
@@ -155,7 +159,7 @@ const MyPage = ({
       if (newPassword === newConfirmPassword) {
         setNewPasswordConfirmErrorMessage(null);
         const changePassword = await axios.patch(
-          'https://localhost:3002/mypage/password',
+          'https://server.calming-signal.ml/mypage/password',
           {
             email,
             prevPassword,
@@ -190,7 +194,7 @@ const MyPage = ({
   };
   const handleChangeName = async () => {
     const changeName = await axios.patch(
-      'https://localhost:3002/mypage/username',
+      'https://server.calming-signal.ml/mypage/username',
       {
         newName,
       },
@@ -199,7 +203,7 @@ const MyPage = ({
       }
     );
 
-    const userInfo = await axios('https://localhost:3002/userinfo', {
+    const userInfo = await axios('https://server.calming-signal.ml/userinfo', {
       withCredentials: true,
     });
     console.log(
@@ -221,7 +225,7 @@ const MyPage = ({
     if (petName || petBreed) {
       console.log('petNameInputValue>>>', petNameInputValue);
       const changePetName = await axios.patch(
-        'https://localhost:3002/mypage/petname',
+        'https://server.calming-signal.ml/mypage/petname',
         { newPetName: petNameInputValue },
         { withCredentials: true }
       );
@@ -235,7 +239,7 @@ const MyPage = ({
     else if (!petName && !petBreed) {
       console.log('petNameInputValue>>>', petNameInputValue);
       const changePetName = await axios.post(
-        'https://localhost:3002/mypage/petname',
+        'https://server.calming-signal.ml/mypage/petname',
         { newPetName: petNameInputValue },
         { withCredentials: true }
       );
@@ -251,7 +255,7 @@ const MyPage = ({
   const handleDeletePetName = async () => {
     if (petBreed === null) {
       const deletePetName = await axios.delete(
-        'https://localhost:3002/mypage/petname',
+        'https://server.calming-signal.ml/mypage/petname',
         {
           withCredentials: true,
         }
@@ -262,7 +266,7 @@ const MyPage = ({
       }
     } else {
       const deletePetName = await axios.patch(
-        'https://localhost:3002/mypage/petname',
+        'https://server.calming-signal.ml/mypage/petname',
         { newPetName: null },
         {
           withCredentials: true,
@@ -285,7 +289,7 @@ const MyPage = ({
   const handleChangePetBreed = async () => {
     if (petName || petBreed) {
       const changePetBreed = await axios.patch(
-        'https://localhost:3002/mypage/petbreed',
+        'https://server.calming-signal.ml/mypage/petbreed',
         { newPetBreed: petBreedInputValue },
         { withCredentials: true }
       );
@@ -298,7 +302,7 @@ const MyPage = ({
     // 견종 등록 POST
     else if (!petName && !petBreed) {
       const registerPetBreed = await axios.post(
-        'https://localhost:3002/mypage/petbreed',
+        'https://server.calming-signal.ml/mypage/petbreed',
         { newPetBreed: petBreedInputValue },
         { withCredentials: true }
       );
@@ -313,7 +317,7 @@ const MyPage = ({
   const handleDeletePetBreed = async () => {
     if (petName === null) {
       const deletePetBreed = await axios.delete(
-        'https://localhost:3002/mypage/petbreed',
+        'https://server.calming-signal.ml/mypage/petbreed',
         { withCredentials: true }
       );
 
@@ -323,7 +327,7 @@ const MyPage = ({
       }
     } else {
       const deletePetBreed = await axios.patch(
-        'https://localhost:3002/mypage/petbreed',
+        'https://server.calming-signal.ml/mypage/petbreed',
         { newPetBreed: null },
         { withCredentials: true }
       );
@@ -342,7 +346,7 @@ const MyPage = ({
   };
   const handleChangeLocation = async () => {
     const changeLocation = await axios.patch(
-      'https://localhost:3002/mypage/location',
+      'https://server.calming-signal.ml/mypage/location',
       { city },
       { withCredentials: true }
     );
@@ -358,7 +362,7 @@ const MyPage = ({
   // 지역 삭제
   const handleDeleteLocation = async () => {
     const changeLocation = await axios.patch(
-      'https://localhost:3002/mypage/location',
+      'https://server.calming-signal.ml/mypage/location',
       { city: null },
       { withCredentials: true }
     );

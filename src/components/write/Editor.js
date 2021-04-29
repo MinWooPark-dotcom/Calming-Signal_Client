@@ -29,7 +29,7 @@ const Editor = ({ getNowCategory, nowCategory, history }) => {
     // console.log('content', content)
     // console.log('nowCategory',nowCategory)
     const postBoard = await axios.post(
-      'https://localhost:3002/board',
+      'https://server.calming-signal.ml/board',
       {
         title,
         content,

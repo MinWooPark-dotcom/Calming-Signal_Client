@@ -72,7 +72,7 @@ const Weather = ({
     try {
       if (locationName) {
         const getWeatherData = await axios.post(
-          'https://localhost:3002/weather',
+          'https://server.calming-signal.ml/weather',
           {
             city: locationName,
           }
@@ -97,7 +97,9 @@ const Weather = ({
         getWeatherRightLargeAction(getWeatherData.data.responseData.large);
         setDate(`${getMonth}.${getDayNumber}(${getDay}) ${hour}:${min}`);
       } else {
-        const getWeatherData = await axios('https://localhost:3002/weather');
+        const getWeatherData = await axios(
+          'https://server.calming-signal.ml/weather'
+        );
         getCityNameAction(getWeatherData.data.responseData.cityName);
         getFeelLikeTempAction(getWeatherData.data.responseData.feelLike);
         getHumidityAction(getWeatherData.data.responseData.humidity);

@@ -128,7 +128,7 @@ const SignUp = ({ history }) => {
         city !== null
       ) {
         const signUp = await axios.post(
-          'https://localhost:3002/signup',
+          'https://server.calming-signal.ml/signup',
           {
             name: usernameInputValue,
             email: emailInputValue,
@@ -158,7 +158,7 @@ const SignUp = ({ history }) => {
         petBreedInputValue.length === 0
       ) {
         const signUp = await axios.post(
-          'https://localhost:3002/signup',
+          'https://server.calming-signal.ml/signup',
           {
             name: usernameInputValue,
             email: emailInputValue,
