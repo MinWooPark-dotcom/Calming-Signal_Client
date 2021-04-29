@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Nav from './Nav';
-import './Mypage.css';
+import './MyPage.css';
 import NavContainer from '../container/NavContainer';
 import axios from 'axios';
 import SearchLocationContainer from '../container/SearchLocationContainer';
@@ -23,7 +23,7 @@ const MyPage = ({
   setLocationValue,
   history,
 }) => {
-  console.log('🚀 ~ file: Mypage.js ~ line 25 ~ locationName', locationName);
+  console.log('🚀 ~ file: MyPage.js ~ line 25 ~ locationName', locationName);
 
   const [city, setCity] = useState(null);
 
@@ -128,12 +128,12 @@ const MyPage = ({
   };
   const [isClickedPasswordBtn, setIsClickedPasswordBtn] = useState(false);
   const [prevPassword, setPrevPassword] = useState(null);
-  console.log('🚀 ~ file: Mypage.js ~ line 67 ~ prevPassword', prevPassword);
+  console.log('🚀 ~ file: MyPage.js ~ line 67 ~ prevPassword', prevPassword);
   const [newPassword, setNewPassword] = useState(null);
-  console.log('🚀 ~ file: Mypage.js ~ line 69 ~ newPassword', newPassword);
+  console.log('🚀 ~ file: MyPage.js ~ line 69 ~ newPassword', newPassword);
   const [newConfirmPassword, setNewConfirmPassword] = useState(null);
   console.log(
-    '🚀 ~ file: Mypage.js ~ line 71 ~ newConfirmPassword',
+    '🚀 ~ file: MyPage.js ~ line 71 ~ newConfirmPassword',
     newConfirmPassword
   );
   // error message
@@ -166,7 +166,7 @@ const MyPage = ({
           }
         );
         console.log(
-          '🚀 ~ file: Mypage.js ~ line 49 ~ handleChangePassword ~ changePassword',
+          '🚀 ~ file: MyPage.js ~ line 49 ~ handleChangePassword ~ changePassword',
           changePassword
         );
         if (changePassword.data.message === 'OK') {
@@ -203,7 +203,7 @@ const MyPage = ({
       withCredentials: true,
     });
     console.log(
-      '🚀 ~ file: Mypage.js ~ line 163 ~ handleChangeName ~ userInfo',
+      '🚀 ~ file: MyPage.js ~ line 163 ~ handleChangeName ~ userInfo',
       userInfo
     );
     setUserNameValue(userInfo.data.name);
@@ -347,7 +347,7 @@ const MyPage = ({
       { withCredentials: true }
     );
     console.log(
-      '🚀 ~ file: Mypage.js ~ line 278 ~ handleChangeLocation ~ changeLocation',
+      '🚀 ~ file: MyPage.js ~ line 278 ~ handleChangeLocation ~ changeLocation',
       changeLocation
     );
     if (changeLocation.data.message === 'OK') {
@@ -363,7 +363,7 @@ const MyPage = ({
       { withCredentials: true }
     );
     console.log(
-      '🚀 ~ file: Mypage.js ~ line 278 ~ handleChangeLocation ~ changeLocation',
+      '🚀 ~ file: MyPage.js ~ line 278 ~ handleChangeLocation ~ changeLocation',
       changeLocation
     );
     if (changeLocation.data.message === 'OK') {
