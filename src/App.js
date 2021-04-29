@@ -26,7 +26,7 @@ import SignUp from './components/SignUp';
 import './App.css';
 import ContentContainer from './container/ContentContainer';
 import WritePageContainer from './container/WritePageContainer';
-import MypageContainer from './container/MypageContainer';
+import MyPageContainer from './container/MyPageContainer';
 import WeatherContainer from './container/WeatherContainer';
 import CalmingSignal from './components/calming-signal pages/CalmingSignal';
 import Comfortable from './components/calming-signal pages/comfortable/Comfortable';
@@ -79,7 +79,7 @@ const App = ({ match }) => {
 
       <Route component={WeatherContainer} path="/weather" exact />
 
-      <Route component={MypageContainer} path="/mypage" exact />
+      <Route component={MyPageContainer} path="/mypage" exact />
     </>
   );
 };

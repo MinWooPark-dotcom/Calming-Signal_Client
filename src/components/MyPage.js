@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Nav from './Nav';
-import './Mypage.css';
+import './MyPage.css';
 import NavContainer from '../container/NavContainer';
 import axios from 'axios';
 import SearchLocationContainer from '../container/SearchLocationContainer';

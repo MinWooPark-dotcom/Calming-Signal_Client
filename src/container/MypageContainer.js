@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Mypage from '../components/Mypage';
+import MyPage from '../components/MyPage';
 import {
   clickSignInBtn,
   setEmail,
@@ -18,7 +18,7 @@ import {
   setLocation,
 } from '../modules/signIn';
 
-const MypageContainer = () => {
+const MyPageContainer = () => {
   const email = useSelector((state) => state.signIn.email);
   const password = useSelector((state) => state.signIn.password);
   const userName = useSelector((state) => state.signIn.userName);
@@ -56,7 +56,7 @@ const MypageContainer = () => {
   );
 
   return (
-    <Mypage
+    <MyPage
       email={email}
       password={password}
       userName={userName}
@@ -75,4 +75,4 @@ const MypageContainer = () => {
   );
 };
 
-export default MypageContainer;
+export default MyPageContainer;
