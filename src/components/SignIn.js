@@ -88,40 +88,49 @@ const SignIn = ({
       clickSignIn();
       // if (emailErrorMessage === null && passwordErrorMessage === null) {
       if (emailErrorMsg === null && passwordErrorMsg === null) {
-        const signIn = await axios.post(
-          'https://localhost:3002/signin',
-          {
-            email,
-            password,
-          },
-          {
-            withCredentials: true,
-          }
-        );
-        console.log('signIn.data.message>>>>', signIn.data.message);
-        // setErrorMessage(null)
-        eraseSignInErrorMsg();
-        changeLoggedIn();
+        try {
+          const signIn = await axios.post(
+            'https://localhost:3002/signin',
+            {
+              email,
+              password,
+            },
+            {
+              withCredentials: true,
+            }
+          );
+          console.log(
+            '🚀 ~ file: SignIn.js ~ line 101 ~ handleOnClickSignInBtn ~ signIn',
+            signIn
+          );
+          console.log('signIn.data.message>>>>', signIn.data.message);
+          // setErrorMessage(null)
+          eraseSignInErrorMsg();
+          changeLoggedIn();
 
-        // get user info
-        const userInfo = await axios('https://localhost:3002/userinfo', {
-          withCredentials: true,
-        });
-        console.log(
-          '🚀 ~ file: SignIn.js ~ line 99 ~ handleOnClickSignInBtn ~ userInfo>>>>',
-          userInfo
-        );
-        setUserNameValue(userInfo.data.name);
-        setPasswordValue(null);
-        setPetNameValue(userInfo.data.petName);
-        setPetBreedValue(userInfo.data.petBreed);
-        setLocationValue(userInfo.data.location);
-        // history.goBack();
-        // 임시 방편, 원래는 뒤로 가기 해야 하는데 회원가입에서 로그인 오면 회원가입으로 돌아가버림
-        history.push('/calming-signal');
+          // get user info
+          const userInfo = await axios('https://localhost:3002/userinfo', {
+            withCredentials: true,
+          });
+          console.log(
+            '🚀 ~ file: SignIn.js ~ line 99 ~ handleOnClickSignInBtn ~ userInfo>>>>',
+            userInfo
+          );
+          setUserNameValue(userInfo.data.name);
+          setPasswordValue(null);
+          setPetNameValue(userInfo.data.petName);
+          setPetBreedValue(userInfo.data.petBreed);
+          setLocationValue(userInfo.data.location);
+          // history.goBack();
+          // 임시 방편, 원래는 뒤로 가기 해야 하는데 회원가입에서 로그인 오면 회원가입으로 돌아가버림
+          history.push('/calming-signal');
+        } catch (err) {
+          alert('아이디 또는 비밀번호를 확인해 주세요');
+        }
       } else {
         // setErrorMessage('아이디 또는 비밀번호를 확인해 주세요')
         setSignInErrorMsg('아이디 또는 비밀번호를 확인해 주세요');
+        alert('아이디 또는 비밀번호를 확인해 주세요');
       }
     } catch (err) {
       console.error(err);
