@@ -96,7 +96,7 @@ const Content = ({
         withCredentials: true,
       }
     );
-
+    setComment('');
     const getContent = await axios(
       `https://localhost:3002/content/${contentTitle}?id=${postId}`
     );
@@ -137,6 +137,7 @@ const Content = ({
               className="cotent_textarea"
               onChange={handleChangeComment}
               placeholder="댓글을 입력하세요."
+              value={comment}
             ></textarea>
           ) : (
             <textarea
