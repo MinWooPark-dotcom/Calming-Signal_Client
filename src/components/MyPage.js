@@ -211,6 +211,7 @@ const MyPage = ({
       userInfo
     );
     setUserNameValue(userInfo.data.name);
+    sessionStorage.setItem('name', userInfo.data.name);
     handleOnClickNameBtn();
   };
 
@@ -232,6 +233,7 @@ const MyPage = ({
 
       if (changePetName.data.message === 'OK') {
         setPetNameValue(petNameInputValue);
+        sessionStorage.setItem('petName', petNameInputValue);
         handleOnClickPetNameBtn();
       }
     }
@@ -246,6 +248,7 @@ const MyPage = ({
 
       if (changePetName.data.message === 'OK') {
         setPetNameValue(petNameInputValue);
+        sessionStorage.setItem('petName', petNameInputValue);
         handleOnClickPetNameBtn();
       }
     }
@@ -262,6 +265,7 @@ const MyPage = ({
       );
       if (deletePetName.data.message === 'OK') {
         setPetNameValue(null);
+        sessionStorage.removeItem('petName');
         handleOnClickPetNameBtn();
       }
     } else {
@@ -274,6 +278,7 @@ const MyPage = ({
       );
       if (deletePetName.data.message === 'OK') {
         setPetNameValue(null);
+        sessionStorage.removeItem('petName');
         handleOnClickPetNameBtn();
       }
     }
@@ -296,6 +301,7 @@ const MyPage = ({
 
       if (changePetBreed.data.message === 'OK') {
         setPetBreedValue(petBreedInputValue);
+        sessionStorage.setItem('petBreed', petBreedInputValue);
         handleOnClickPetBreedBtn();
       }
     }
@@ -309,6 +315,7 @@ const MyPage = ({
 
       if (registerPetBreed.data.message === 'OK') {
         setPetBreedValue(petBreedInputValue);
+        sessionStorage.setItem('petBreed', petBreedInputValue);
         handleOnClickPetBreedBtn();
       }
     }
@@ -323,6 +330,7 @@ const MyPage = ({
 
       if (deletePetBreed.data.message === 'OK') {
         setPetBreedValue(null);
+        sessionStorage.removeItem('petBreed');
         handleOnClickPetBreedBtn();
       }
     } else {
@@ -334,6 +342,7 @@ const MyPage = ({
 
       if (deletePetBreed.data.message === 'OK') {
         setPetBreedValue(null);
+        sessionStorage.removeItem('petBreed');
         handleOnClickPetBreedBtn();
       }
     }
@@ -356,6 +365,7 @@ const MyPage = ({
     );
     if (changeLocation.data.message === 'OK') {
       setLocationValue(city);
+      sessionStorage.setItem('location', city);
       handleOnClickLocationBtn();
     }
   };
@@ -372,6 +382,7 @@ const MyPage = ({
     );
     if (changeLocation.data.message === 'OK') {
       setLocationValue(city);
+      sessionStorage.removeItem('location');
       handleOnClickLocationBtn();
     }
   };
