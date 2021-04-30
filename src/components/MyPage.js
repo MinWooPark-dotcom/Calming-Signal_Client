@@ -208,6 +208,7 @@ const MyPage = ({
     );
     setUserNameValue(userInfo.data.name);
     handleOnClickNameBtn();
+    sessionStorage.setItem('name', userInfo.data.name);
   };
 
   // ! 반려견 이름 변경 관련
@@ -229,6 +230,7 @@ const MyPage = ({
       if (changePetName.data.message === 'OK') {
         setPetNameValue(petNameInputValue);
         handleOnClickPetNameBtn();
+        sessionStorage.setItem('petName', petNameInputValue);
       }
     }
     // 반려견 이름 등록 POST
@@ -243,6 +245,7 @@ const MyPage = ({
       if (changePetName.data.message === 'OK') {
         setPetNameValue(petNameInputValue);
         handleOnClickPetNameBtn();
+        sessionStorage.setItem('petName', petNameInputValue);
       }
     }
   };
@@ -259,6 +262,7 @@ const MyPage = ({
       if (deletePetName.data.message === 'OK') {
         setPetNameValue(null);
         handleOnClickPetNameBtn();
+        sessionStorage.removeItem('petName');
       }
     } else {
       const deletePetName = await axios.patch(
@@ -271,6 +275,7 @@ const MyPage = ({
       if (deletePetName.data.message === 'OK') {
         setPetNameValue(null);
         handleOnClickPetNameBtn();
+        sessionStorage.removeItem('petName');
       }
     }
   };
@@ -293,6 +298,7 @@ const MyPage = ({
       if (changePetBreed.data.message === 'OK') {
         setPetBreedValue(petBreedInputValue);
         handleOnClickPetBreedBtn();
+        sessionStorage.setItem('petBreed', petBreedInputValue);
       }
     }
     // 견종 등록 POST
@@ -306,6 +312,7 @@ const MyPage = ({
       if (registerPetBreed.data.message === 'OK') {
         setPetBreedValue(petBreedInputValue);
         handleOnClickPetBreedBtn();
+        sessionStorage.setItem('petBreed', petBreedInputValue);
       }
     }
   };
@@ -320,6 +327,7 @@ const MyPage = ({
       if (deletePetBreed.data.message === 'OK') {
         setPetBreedValue(null);
         handleOnClickPetBreedBtn();
+        sessionStorage.removeItem('petBreed');
       }
     } else {
       const deletePetBreed = await axios.patch(
@@ -331,6 +339,7 @@ const MyPage = ({
       if (deletePetBreed.data.message === 'OK') {
         setPetBreedValue(null);
         handleOnClickPetBreedBtn();
+        sessionStorage.removeItem('petBreed');
       }
     }
   };
@@ -353,6 +362,7 @@ const MyPage = ({
     if (changeLocation.data.message === 'OK') {
       setLocationValue(city);
       handleOnClickLocationBtn();
+      sessionStorage.setItem('location', city);
     }
   };
   // 지역 삭제
@@ -369,6 +379,7 @@ const MyPage = ({
     if (changeLocation.data.message === 'OK') {
       setLocationValue(city);
       handleOnClickLocationBtn();
+      sessionStorage.removeItem('location');
     }
   };
 
