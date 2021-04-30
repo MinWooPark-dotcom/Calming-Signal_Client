@@ -29,6 +29,7 @@ const Nav = ({
       setEmailValue(null);
       setUserNameValue(null);
       handleScroll();
+      sessionStorage.clear();
       history.push('/');
     }
   };
