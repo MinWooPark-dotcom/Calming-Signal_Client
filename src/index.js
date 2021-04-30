@@ -8,15 +8,46 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './modules';
+import {
+  changeLoggedInState,
+  setEmail,
+  setUserName,
+  setPetName,
+  setPetBreed,
+  setLocation,
+} from './modules/signIn';
 
-const store = createStore(rootReducer,  composeWithDevTools());
+const store = createStore(rootReducer, composeWithDevTools());
+const email = window.sessionStorage.getItem('email');
+const name = window.sessionStorage.getItem('name');
+const petName = window.sessionStorage.getItem('petName');
+const petBreed = window.sessionStorage.getItem('petBreed');
+const location = window.sessionStorage.getItem('location');
+
+if (email && name) {
+  store.dispatch(changeLoggedInState());
+  store.dispatch(setEmail(email));
+  store.dispatch(setUserName(name));
+}
+
+if (petName) {
+  store.dispatch(setPetName(petName));
+}
+
+if (petBreed) {
+  store.dispatch(setPetBreed(petBreed));
+}
+
+if (location) {
+  store.dispatch(setLocation(location));
+}
 
 ReactDOM.render(
-    <Provider store={store}>
-      <BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
       <App />
-      </BrowserRouter>
-     </Provider >,
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
