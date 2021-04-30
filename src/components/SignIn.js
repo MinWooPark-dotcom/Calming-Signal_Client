@@ -90,7 +90,7 @@ const SignIn = ({
       if (emailErrorMsg === null && passwordErrorMsg === null) {
         try {
           const signIn = await axios.post(
-            'https://server.calming-signal.ml/signin',
+            'https://localhost:3002/signin',
             {
               email,
               password,
@@ -109,16 +109,24 @@ const SignIn = ({
           changeLoggedIn();
 
           // get user info
-          const userInfo = await axios(
-            'https://server.calming-signal.ml/userinfo',
-            {
-              withCredentials: true,
-            }
-          );
+          const userInfo = await axios('https://localhost:3002/userinfo', {
+            withCredentials: true,
+          });
           console.log(
             '🚀 ~ file: SignIn.js ~ line 99 ~ handleOnClickSignInBtn ~ userInfo>>>>',
             userInfo
           );
+          sessionStorage.setItem('email', email);
+          sessionStorage.setItem('name', userInfo.data.name);
+          if (userInfo.data.petName) {
+            sessionStorage.setItem('petName', userInfo.data.petName);
+          }
+          if (userInfo.data.petBreed) {
+            sessionStorage.setItem('petBreed', userInfo.data.petBreed);
+          }
+          if (userInfo.data.location) {
+            sessionStorage.setItem('location', userInfo.data.location);
+          }
           setUserNameValue(userInfo.data.name);
           setPasswordValue(null);
           setPetNameValue(userInfo.data.petName);
