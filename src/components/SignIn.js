@@ -161,6 +161,7 @@ const SignIn = ({
             className="sign_in_box_input_id"
             placeholder="Email"
             onChange={handleInputValue('email')}
+            autoFocus
             type="email"
           ></input>
         </div>
