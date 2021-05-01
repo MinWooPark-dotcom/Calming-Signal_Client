@@ -198,6 +198,8 @@ const SignUp = ({ history }) => {
             className="sign_up_box_input_name"
             placeholder="User name"
             onChange={handleInputValue('username')}
+            autoFocus
+            required
           ></input>
         </div>
         <div className="sign_up_box_name_error_message">
@@ -210,6 +212,7 @@ const SignUp = ({ history }) => {
             className="sign_up_box_input_id"
             placeholder="Email"
             onChange={handleInputValue('email')}
+            type="email"
           ></input>
         </div>
         <div className="sign_up_box_id_error_message">
@@ -222,6 +225,7 @@ const SignUp = ({ history }) => {
             className="sign_up_box_input_password"
             placeholder="Password"
             onChange={handleInputValue('password')}
+            type="password"
           ></input>
         </div>
         <div className="sign_up_box_password_error_message">

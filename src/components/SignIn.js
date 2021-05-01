@@ -161,6 +161,7 @@ const SignIn = ({
             className="sign_in_box_input_id"
             placeholder="Email"
             onChange={handleInputValue('email')}
+            type="email"
           ></input>
         </div>
         <div className="sign_in_box_id_error_message">
@@ -172,6 +173,7 @@ const SignIn = ({
             className="sign_in_box_input_password"
             placeholder="Password"
             onChange={handleInputValue('password')}
+            type="password"
           ></input>
         </div>
         <div className="sign_in_box_password_error_message">

@@ -508,6 +508,7 @@ const MyPage = ({
           <input
             className="mypage_profile_modal_password_prev_input"
             onChange={handleInputValue('prevPassword')}
+            type="password"
           ></input>
           {/* {prevPasswordErrorMessage} */}
           {/* new */}
@@ -517,6 +518,7 @@ const MyPage = ({
           <input
             className="mypage_profile_modal_password_new_input"
             onChange={handleInputValue('newPassword')}
+            type="password"
           ></input>
           {newPasswordErrorMessage}
           {/* confirm */}
@@ -526,6 +528,7 @@ const MyPage = ({
           <input
             className="mypage_profile_modal_password_confirm_input"
             onChange={handleInputValue('newConfirmPassword')}
+            type="password"
           ></input>
           <button
             className="mypage_profile_modal_password_btn"
