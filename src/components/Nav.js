@@ -1,10 +1,7 @@
-/* eslint react/prop-types: 0 */
-
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import './Nav.css';
-import nav_logo from '../img/landing_logo2.png';
 
 const Nav = ({
   isLoggedIn,
@@ -20,9 +17,13 @@ const Nav = ({
   };
 
   const handleLogout = async () => {
-    const logout = await axios.post('https://localhost:3002/logout', null, {
-      withCredentials: true,
-    });
+    const logout = await axios.post(
+      'https://server.calming-signal.ml/logout',
+      null,
+      {
+        withCredentials: true,
+      }
+    );
     console.log('🚀 ~ file: Nav.js ~ line 15 ~ handleLogout ~ logout', logout);
     if (logout.data.message === 'Logout completed') {
       changeLoggedInStateAction();
@@ -41,7 +42,6 @@ const Nav = ({
         <div className="nav_logo_text" onClick={handleScroll}>
           Calming Signal
         </div>
-        {/* <div className="nav_logo_div_img"><img className="nav_logo_div_img" src={nav_logo}></img></div> */}
       </Link>
       {isLoggedIn ? (
         <>
