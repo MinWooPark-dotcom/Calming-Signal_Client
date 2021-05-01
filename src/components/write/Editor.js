@@ -130,6 +130,7 @@ const Editor = ({ getNowCategory, nowCategory, history }) => {
             <option>{selectDefalutValue[1]}</option>
             <option>{selectDefalutValue[2]}</option>
             <option>{selectDefalutValue[3]}</option>
+            <option>{selectDefalutValue[4]}</option>
           </select>
         </div>
       ) : null}
