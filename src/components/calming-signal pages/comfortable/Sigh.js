@@ -1,6 +1,3 @@
-/* eslint react/prop-types: 0 */
-/* eslint react/no-unescaped-entities: 0 */
-
 import React from 'react';
 import NavContainer from '../../../container/NavContainer';
 import Sidebar from '../../Sidebar';
@@ -35,7 +32,6 @@ const Sigh = () => {
             또는 사람의 얼굴을 보지 않고 어딘가 멍한 눈으로 다른 <br></br>
             장소를 향하고 있습니다.
           </div>
-          {/* <div className="sigh_contents_right_fifth">꼬리가 세워지거나 아래로 쳐지지 않은 사앹로 큰 폭으로 움직인다면 친근감을 표현하는 것입니다.</div> */}
         </div>
       </div>
     </div>
