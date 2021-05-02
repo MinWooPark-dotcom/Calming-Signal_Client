@@ -79,7 +79,6 @@ const Content = ({
 
   //! 댓글 감지
   const handleChangeComment = (e) => {
-    console.log('e.target.value', e.target.value);
     setComment(e.target.value);
   };
 
