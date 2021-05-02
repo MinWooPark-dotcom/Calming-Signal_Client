@@ -2,16 +2,9 @@ import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import MyPage from '../components/MyPage';
 import {
-  clickSignInBtn,
   setEmail,
   setUserName,
   setPassword,
-  setEmailError,
-  setPasswordError,
-  setSignInError,
-  eraseEmailError,
-  erasePasswordError,
-  eraseSignInError,
   changeLoggedInState,
   setPetName,
   setPetBreed,
@@ -75,4 +68,4 @@ const MyPageContainer = () => {
   );
 };
 
-export default MyPageContainer;
+export default React.memo(MyPageContainer);

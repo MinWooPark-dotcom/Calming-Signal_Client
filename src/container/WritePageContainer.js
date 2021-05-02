@@ -8,4 +8,4 @@ const WritePageContainer = () => {
   return <WritePage isLoggedIn={isLoggedIn} />;
 };
 
-export default WritePageContainer;
+export default React.memo(WritePageContainer);
