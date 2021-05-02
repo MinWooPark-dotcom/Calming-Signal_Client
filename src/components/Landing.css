@@ -1,23 +1,19 @@
 .landing_page {
   width: 100%;
   height: 100%;
-  /* background-color: #ffdf3e; */
 }
 
 .landing_contents1 {
   position: absolute;
   width: 100%;
   height: 80%;
-  /* background-color: #ffd954; */
 }
 
 .landing_contents1_title {
   display: inline-block;
   position: absolute;
-  /* border: 1px solid red; */
   top: 30%;
   left: 10%;
-  /* width: 30%; */
   font-size: 2.3vmax;
   font-weight: 530;
 }
@@ -25,8 +21,6 @@
 .landing_contents1_div_img {
   display: inline-block;
   position: absolute;
-  /* border: 1px solid gray; */
-  /* border: 1px solid rgba(0, 0, 0, 0.2); */
   border: 2px solid #ff8627;
   border-radius: 1vmax;
   top: 20%;
@@ -44,20 +38,15 @@
 .landing_contents1_body_1 {
   font-size: 1.5vmax;
   position: absolute;
-  /* border: 1px solid red; */
   top: 40%;
   left: 10%;
-  /* width: 40%; */
-  /* height: 100%; */
 }
 
 .landing_contents1_body_2 {
   font-size: 1.5vmax;
   position: absolute;
-  /* border: 1px solid red; */
   top: 46%;
   left: 10%;
-  /* width: 100%; */
 }
 
 .landing_contents1_div_btn {
@@ -67,8 +56,6 @@
   padding: 1%;
   top: 60%;
   left: 10%;
-  /* width: 13%; */
-  /* height: 6%; */
   border-radius: 9999px;
   cursor: pointer;
 }
@@ -84,22 +71,15 @@
 }
 
 /*! 2칸 */
-
 .landing_contents2 {
   position: absolute;
   top: 80%;
   width: 100%;
   height: 140%;
-  /* border: 1px solid gray; */
-  /* background-color: #ff8627; */
-  /* 아래가 좀 더 진함 */
-  /* background-color: #FFDF3E; */
-  /* eac50e */
 }
 
-/* happy */
+/** happy */
 .landing_contents2_happy_container {
-  /* border: 1px solid red; */
   border-top: 2px solid #ffd954;
   border-bottom: 2px solid #ffd954;
   width: 100%;
@@ -108,21 +88,17 @@
 
 .landing_contents2_happy_text_box {
   display: inline-block;
-  /* border: 1px solid gray; */
   width: 30%;
   height: 100%;
   margin-left: 20%;
 }
 
 .landing_contents2_happy_text_1 {
-  /* border: 1px solid red; */
   width: 20%;
   font-size: 2vmax;
   font-weight: 530;
   position: relative;
   top: 15%;
-  /* left: 10%; */
-  /* color: white; */
 }
 
 .landing_contents2_happy_text_2 {
@@ -145,7 +121,6 @@
 
 .landing_contents2_happy_div_img {
   display: inline-block;
-  /* border: 1px solid gray; */
   float: right;
   width: 25%;
   height: 90%;
@@ -159,10 +134,8 @@
   height: 100%;
 }
 
-/* comfortable */
+/** comfortable */
 .landing_contents2_comfortable_container {
-  /* border: 1px solid gray; */
-  /* border-bottom: 1px solid gray; */
   border-bottom: 2px solid #ffd954;
   width: 100%;
   height: 25%;
@@ -170,7 +143,6 @@
 
 .landing_contents2_comfortable_text_box {
   display: inline-block;
-  /* border: 1px solid gray; */
   float: right;
   width: 30%;
   height: 100%;
@@ -209,8 +181,6 @@
 
 .landing_contents2_comfortable_div_img {
   display: inline-block;
-  /* border: 1px solid gray; */
-  /* width: 30%; */
   width: 25%;
   height: 90%;
   position: relative;
@@ -223,10 +193,8 @@
   height: 100%;
 }
 
-/* nervous */
+/** nervous */
 .landing_contents2_nervous_container {
-  /* border: 1px solid gray; */
-  /* border-bottom: 1px solid gray; */
   border-bottom: 2px solid #ffd954;
   width: 100%;
   height: 25%;
@@ -234,21 +202,17 @@
 
 .landing_contents2_nervous_text_box {
   display: inline-block;
-  /* border: 1px solid gray; */
   width: 30%;
   height: 100%;
   margin-left: 20%;
 }
 
 .landing_contents2_nervous_text_1 {
-  /* border: 1px solid red; */
   width: 20%;
   font-size: 2vmax;
   font-weight: 530;
   position: relative;
   top: 15%;
-  /* left: 10%; */
-  /* color: white; */
 }
 
 .landing_contents2_nervous_text_2 {
@@ -265,9 +229,7 @@
 
 .landing_contents2_nervous_div_img {
   display: inline-block;
-  /* border: 1px solid gray; */
   float: right;
-  /* width: 30%; */
   width: 25%;
   height: 90%;
   position: relative;
@@ -280,9 +242,8 @@
   height: 100%;
 }
 
-/* settle */
+/** settle */
 .landing_contents2_settle_container {
-  /* border: 1px solid gray; */
   border-bottom: 2px solid #ffd954;
   width: 100%;
   height: 25%;
@@ -290,7 +251,6 @@
 
 .landing_contents2_settle_text_box {
   display: inline-block;
-  /* border: 1px solid gray; */
   float: right;
   width: 30%;
   height: 100%;
@@ -320,8 +280,6 @@
 
 .landing_contents2_settle_div_img {
   display: inline-block;
-  /* border: 1px solid gray; */
-  /* width: 30%; */
   width: 25%;
   height: 90%;
   position: relative;
@@ -334,15 +292,13 @@
   height: 100%;
 }
 
-/* 3칸 */
+/*! 3칸 */
 
 .landing_contents3 {
-  /* border: 1px solid red; */
   position: absolute;
   top: 220%;
   width: 100%;
   height: 30%;
-  /* background-color: #ffd954; */
 }
 
 .landing_contents3_btn {

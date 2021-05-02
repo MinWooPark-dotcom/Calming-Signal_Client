@@ -1,11 +1,9 @@
 .sign_in_container {
-  /* border: 1px solid red; */
   width: 100%;
   height: 100vh;
 }
 
 .sign_in_container_title {
-  /* border: 1px solid gray; */
   width: 10%;
   text-align: center;
   position: absolute;
@@ -26,7 +24,6 @@
 
 .sign_in_box_id,
 .sign_in_box_password {
-  /* border: 1px solid red; */
   margin-top: 3%;
   width: 100%;
   height: 13%;
@@ -48,7 +45,6 @@
 .sign_in_box_password_error_message {
   font-size: 1.1vmax;
   margin-left: 7%;
-  /* color: #d12929; */
 }
 .sign_in_box_sign_in_error_message {
   font-size: 1.1vmax;
@@ -57,7 +53,6 @@
 }
 
 .sign_in_box_sign_in_btn_div {
-  /* border: 1px solid red; */
   margin-top: 3%;
   width: 100%;
   height: 15%;
@@ -74,23 +69,18 @@
 }
 
 .sign_in_box_forget {
-  /* border: 1px solid red; */
   text-align: center;
   font-size: 1.3vmax;
 }
 
 .sign_in_box_forget_id {
-  /* border: 1px solid red; */
   display: inline;
   margin: 2%;
-  /* font-size: 1.3vmax */
 }
 
 .sign_in_box_forget_password {
-  /* border: 1px solid red; */
   display: inline;
   margin: 2%;
-  /* font-size: 1.3vmax */
 }
 
 .sign_in_box_hr {
@@ -101,12 +91,10 @@
 }
 
 .sign_in_box_create_btn_div {
-  /* border: 1px solid red; */
   margin-top: 7%;
   margin-left: 25%;
   width: 60%;
   height: 15%;
-  /* text-align: center; */
 }
 
 .sign_in_box_create_btn {
