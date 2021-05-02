@@ -6,10 +6,7 @@ import axios from 'axios';
 
 const SignUp = ({ history }) => {
   const [city, setCity] = useState(null);
-  console.log('🚀 ~ file: SignUp.js ~ line 11 ~ SignUp ~ city', city);
-
   const [isClickSignUpnBtn, setIsClickSignUpBtn] = useState(false);
-
   const [usernameInputValue, setUsernameInputValue] = useState(null);
   const [emailInputValue, setEmailInputValue] = useState(null);
   const [passwordInputValue, setPasswordInputValue] = useState(null);
@@ -33,7 +30,6 @@ const SignUp = ({ history }) => {
     if (key === 'username' && e.target.value !== undefined) {
       setUsernameErrorMessage(null);
       setUsernameInputValue(e.target.value);
-      console.log('usernameInputValue값은?', usernameInputValue);
     } else if (key === 'email') {
       const emailValue = e.target.value.split('@');
       if (emailValue.length !== 2) {
@@ -41,17 +37,13 @@ const SignUp = ({ history }) => {
       } else {
         setEmailErrorMessage(null);
         setEmailInputValue(e.target.value);
-        console.log('emailInputValue값은?', emailInputValue);
       }
     } else if (key === 'password') {
       if (e.target.value.length < 8) {
-        console.log('e.target.value', e.target.value);
         setPasswordErrorMessage('8~15자리 사이로 입력해야 합니다');
       } else {
-        console.log('e.target.value', e.target.value);
         setPasswordErrorMessage(null);
         setPasswordInputValue(e.target.value);
-        console.log('passwordInputValue값은?', passwordInputValue);
       }
     } else if (key === 'petName') {
       if (e.target.value.length === 0) {
@@ -141,11 +133,6 @@ const SignUp = ({ history }) => {
             withCredentials: true,
           }
         );
-        console.log(
-          '🚀 ~ file: SignUp.js ~ line 59 ~ handleOnClickSignUpBtn ~ signUp',
-          signUp
-        );
-
         if (signUp) {
           window.alert('회원가입이 완료 되었습니다.');
           history.push('/sign-in');
@@ -168,11 +155,6 @@ const SignUp = ({ history }) => {
             withCredentials: true,
           }
         );
-        console.log(
-          '🚀 ~ file: SignUp.js ~ line 59 ~ handleOnClickSignUpBtn ~ signUp',
-          signUp
-        );
-
         if (signUp) {
           window.alert('회원가입이 완료 되었습니다.');
           history.push('/sign-in');
@@ -189,9 +171,7 @@ const SignUp = ({ history }) => {
       <NavContainer />
       <div className="sign_up_container_title">Sign up</div>
       <div className="sign_up_box_notice">*표시는 필수입력입니다.</div>
-      {/* 회원가입 박스 */}
       <div className="sign_up_box">
-        {/* 이름 */}
         <div className="sign_up_box_name_sign">이름 *</div>
         <div className="sign_up_box_name">
           <input
@@ -205,7 +185,6 @@ const SignUp = ({ history }) => {
         <div className="sign_up_box_name_error_message">
           {isClickSignUpnBtn ? usernameErrorMessage : null}
         </div>
-        {/* 아이디 */}
         <div className="sign_up_box_id_sign">아이디 *</div>
         <div className="sign_up_box_id">
           <input
@@ -218,7 +197,6 @@ const SignUp = ({ history }) => {
         <div className="sign_up_box_id_error_message">
           {isClickSignUpnBtn ? emailErrorMessage : null}
         </div>
-        {/* 비밀번호 */}
         <div className="sign_up_box_password_sign">비밀번호 *</div>
         <div className="sign_up_box_password">
           <input
@@ -231,7 +209,6 @@ const SignUp = ({ history }) => {
         <div className="sign_up_box_password_error_message">
           {isClickSignUpnBtn ? passwordErrorMessage : null}
         </div>
-        {/* 반려견 이름 */}
         <div className="sign_up_box_pet_name_sign">반려견 이름</div>
         <div className="sign_up_box_pet_name">
           <input
@@ -242,7 +219,6 @@ const SignUp = ({ history }) => {
         </div>
         {/* 임시 띄어씌기 용 */}
         <div></div>
-        {/* 견종 */}
         <div className="sign_up_box_pet_breed_sign">견종</div>
         <div className="sign_up_box_pet_breed">
           <input
@@ -252,6 +228,7 @@ const SignUp = ({ history }) => {
             onChange={handleInputValue('petBreed')}
           />
           <datalist id="choices">
+            {/* 소형견 */}
             <option value="말티즈">말티즈</option>
             <option value="요크셔테리어">요크셔테리어</option>
             <option value="푸들">푸들</option>

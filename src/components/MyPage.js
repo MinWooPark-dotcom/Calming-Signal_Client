@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import Nav from './Nav';
+import { withRouter } from 'react-router-dom';
 import './MyPage.css';
 import NavContainer from '../container/NavContainer';
 import axios from 'axios';
-import SearchLocationContainer from '../container/SearchLocationContainer';
 
 const MyPage = ({
   email,
-  password,
   userName,
   isLoggedIn,
   handleLogIn,
   setEmailValue,
-  setPasswordValue,
   setUserNameValue,
   petName,
   petBreed,
@@ -23,8 +19,6 @@ const MyPage = ({
   setLocationValue,
   history,
 }) => {
-  console.log('🚀 ~ file: Mypage.js ~ line 25 ~ locationName', locationName);
-
   const [city, setCity] = useState(null);
 
   useEffect(() => {}, [userName, petName, petBreed]);
@@ -121,7 +115,6 @@ const MyPage = ({
         withCredentials: true,
       }
     );
-    console.log('🚀 ~ file: Nav.js ~ line 15 ~ handleLogout ~ logout', logout);
     if (logout.data.message === 'Logout completed') {
       handleLogIn();
       setEmailValue(null);
@@ -132,14 +125,9 @@ const MyPage = ({
   };
   const [isClickedPasswordBtn, setIsClickedPasswordBtn] = useState(false);
   const [prevPassword, setPrevPassword] = useState(null);
-  console.log('🚀 ~ file: Mypage.js ~ line 67 ~ prevPassword', prevPassword);
   const [newPassword, setNewPassword] = useState(null);
-  console.log('🚀 ~ file: Mypage.js ~ line 69 ~ newPassword', newPassword);
   const [newConfirmPassword, setNewConfirmPassword] = useState(null);
-  console.log(
-    '🚀 ~ file: Mypage.js ~ line 71 ~ newConfirmPassword',
-    newConfirmPassword
-  );
+
   // error message
   const [prevPasswordErrorMessage, setPrevPasswordErrorMessage] = useState(
     null
@@ -169,10 +157,7 @@ const MyPage = ({
             withCredentials: true,
           }
         );
-        console.log(
-          '🚀 ~ file: Mypage.js ~ line 49 ~ handleChangePassword ~ changePassword',
-          changePassword
-        );
+
         if (changePassword.data.message === 'OK') {
           handleLogout();
         }
@@ -206,10 +191,7 @@ const MyPage = ({
     const userInfo = await axios('https://server.calming-signal.ml/userinfo', {
       withCredentials: true,
     });
-    console.log(
-      '🚀 ~ file: Mypage.js ~ line 163 ~ handleChangeName ~ userInfo',
-      userInfo
-    );
+
     setUserNameValue(userInfo.data.name);
     sessionStorage.setItem('name', userInfo.data.name);
     handleOnClickNameBtn();
@@ -224,7 +206,6 @@ const MyPage = ({
   // 반려견 이름 변경 PATCH
   const handleChangePetName = async () => {
     if (petName || petBreed) {
-      console.log('petNameInputValue>>>', petNameInputValue);
       const changePetName = await axios.patch(
         'https://server.calming-signal.ml/mypage/petname',
         { newPetName: petNameInputValue },
@@ -239,7 +220,6 @@ const MyPage = ({
     }
     // 반려견 이름 등록 POST
     else if (!petName && !petBreed) {
-      console.log('petNameInputValue>>>', petNameInputValue);
       const changePetName = await axios.post(
         'https://server.calming-signal.ml/mypage/petname',
         { newPetName: petNameInputValue },
@@ -359,10 +339,6 @@ const MyPage = ({
       { city },
       { withCredentials: true }
     );
-    console.log(
-      '🚀 ~ file: Mypage.js ~ line 278 ~ handleChangeLocation ~ changeLocation',
-      changeLocation
-    );
     if (changeLocation.data.message === 'OK') {
       setLocationValue(city);
       sessionStorage.setItem('location', city);
@@ -376,10 +352,7 @@ const MyPage = ({
       { city: null },
       { withCredentials: true }
     );
-    console.log(
-      '🚀 ~ file: Mypage.js ~ line 278 ~ handleChangeLocation ~ changeLocation',
-      changeLocation
-    );
+
     if (changeLocation.data.message === 'OK') {
       setLocationValue(city);
       sessionStorage.removeItem('location');
@@ -510,7 +483,6 @@ const MyPage = ({
             onChange={handleInputValue('prevPassword')}
             type="password"
           ></input>
-          {/* {prevPasswordErrorMessage} */}
           {/* new */}
           <div className="mypage_profile_modal_password_new">
             변경할 비밀번호

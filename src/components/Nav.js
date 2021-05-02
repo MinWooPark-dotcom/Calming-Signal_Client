@@ -10,8 +10,6 @@ const Nav = ({
   changeLoggedInStateAction,
   history,
 }) => {
-  console.log('🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ isLoggedIn', isLoggedIn);
-
   const handleScroll = () => {
     window.scrollTo(0, 0);
   };
@@ -24,7 +22,7 @@ const Nav = ({
         withCredentials: true,
       }
     );
-    console.log('🚀 ~ file: Nav.js ~ line 15 ~ handleLogout ~ logout', logout);
+
     if (logout.data.message === 'Logout completed') {
       changeLoggedInStateAction();
       setEmailValue(null);
