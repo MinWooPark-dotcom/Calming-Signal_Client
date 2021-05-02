@@ -1,5 +1,3 @@
-/* eslint react/prop-types: 0 */
-
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavContainer from '../container/NavContainer';
@@ -40,9 +38,7 @@ const Landing = () => {
         </div>
         <Link to="/calming-signal">
           <div className="landing_contents1_div_btn" onClick={handleScroll}>
-            {/* <button className="landing_contents1_btn"> */}
             카밍 시그널 알아보기
-            {/* </button> */}
           </div>
         </Link>
       </div>

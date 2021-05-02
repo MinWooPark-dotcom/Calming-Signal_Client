@@ -4,8 +4,6 @@ import axios from 'axios';
 import './Editor.css';
 
 const Editor = ({ getNowCategory, nowCategory, history }) => {
-  // console.log("🚀 ~ file: Editor.js ~ line 7 ~ Editor ~ nowCategory", nowCategory)
-
   const [title, setTitle] = useState(null);
   const [content, setContent] = useState(null);
   const [selectDefalutValue, setSelectDefaultValue] = useState(null);
@@ -15,19 +13,14 @@ const Editor = ({ getNowCategory, nowCategory, history }) => {
   };
 
   const handleOnChangeTitle = (e) => {
-    // console.log('e',e.target.value)
     setTitle(e.target.value);
   };
 
   const handleOnChangeContent = (e) => {
-    console.log('e', e.target.value);
     setContent(e.target.value);
   };
 
   const handlePost = async () => {
-    // console.log('title', title)
-    // console.log('content', content)
-    // console.log('nowCategory',nowCategory)
     const postBoard = await axios.post(
       'https://server.calming-signal.ml/board',
       {
@@ -39,18 +32,10 @@ const Editor = ({ getNowCategory, nowCategory, history }) => {
         withCredentials: true,
       }
     );
-    console.log(
-      '🚀 ~ file: Editor.js ~ line 42 ~ handlePost ~ postBoard',
-      postBoard
-    );
     history.goBack();
   };
 
   const handleoOnChangeSelectBox = (e) => {
-    console.log(
-      '🚀 ~ file: Editor.js ~ line 36 ~ handleoOnChangeSelectBox ~ e',
-      e.target.value
-    );
     if (e.target.value === '자유 게시판') {
       getNowCategory('free');
     } else if (e.target.value === '소형견') {
@@ -141,7 +126,6 @@ const Editor = ({ getNowCategory, nowCategory, history }) => {
           onChange={handleOnChangeTitle}
         ></input>
       </div>
-      {/* <hr className="editor_hr"></hr> */}
       <div className="editor_content">
         <textarea
           className="editor_content_textarea"
