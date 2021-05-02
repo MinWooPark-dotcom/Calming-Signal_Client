@@ -29,8 +29,6 @@ const Licking = () => {
             이럴때에는 편안할 수 있도록 배려하는 마음을 갖는게 <br></br>
             중요해요.
           </div>
-          {/* <div className="licking_contents_right_forth">반가움과 위협을 구분하지 못하고 개에게 손을 뻗을 경우 위험한 일이 발생할 수 있기에 꼬리 흔들기 시그널에 자세히 알아보는 것이 좋습니다.</div> */}
-          {/* <div className="licking_contents_right_fifth">꼬리가 세워지거나 아래로 쳐지지 않은 사앹로 큰 폭으로 움직인다면 친근감을 표현하는 것입니다.</div> */}
         </div>
       </div>
     </div>

@@ -1,5 +1,3 @@
-/* eslint react/prop-types: 0 */
-
 import React from 'react';
 import NavContainer from '../../../container/NavContainer';
 import Sidebar from '../../Sidebar';
@@ -11,9 +9,6 @@ const Nervous = ({ isToggled }) => {
       <NavContainer />
       <Sidebar />
       <div className="nervous_container">
-        {/* <div className="nervous_img_div">
-                    <img className="nervous_img" src={img} alt="nervous dog"></img>
-                </div>     */}
         <div className="nervous_text">
           <div className="nervous_text_first">
             반려견의 불안함 시그널을 알아보고 <br /> 불안감을 해소 시켜 주세요.
