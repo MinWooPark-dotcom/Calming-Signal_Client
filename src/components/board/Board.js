@@ -7,7 +7,6 @@ import './Board.css';
 
 const Board = ({
   isLoggedIn,
-  // boardData,
   getBoardPostedData,
   category,
   query,
@@ -80,10 +79,6 @@ const Board = ({
     const getContent = await axios(
       `https://server.calming-signal.ml/content/${title}?id=${pageId}`
     );
-    console.log(
-      '🚀 ~ file: Board.js ~ line 84 ~ handleOnClickTitle ~ getContent',
-      getContent
-    );
     getContentPostId(getContent.data.postId);
     getContentTitle(getContent.data.title);
     getContentBody(getContent.data.content);
@@ -133,7 +128,7 @@ const Board = ({
       ));
       setPostedList(getPostedList);
     } catch (err) {
-      console.error('err>>>', err);
+      console.error(err);
       getBoardPostedData(null);
       setPostedList(null);
     }

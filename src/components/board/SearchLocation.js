@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './SearchLocation.css';
 import axios from 'axios';
 
@@ -68,10 +68,6 @@ const SearchLocation = ({
       {
         city,
       }
-    );
-    console.log(
-      '🚀 ~ file: SearchLocation.js ~ line 112 ~ handleOnClickSearchBtn ~ getWeatherData',
-      getWeatherData
     );
     getCityNameAction(getWeatherData.data.responseData.cityName);
     getFeelLikeTempAction(getWeatherData.data.responseData.feelLike);

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import './Weather.css';
 import BoardSidebar from '../BoardSidebar';
 import NavContainer from '../../container/NavContainer';
-import SearchLocation from './SearchLocation';
 import SearchLocationContainer from '../../container/SearchLocationContainer';
 
 const Weather = ({
@@ -15,7 +14,6 @@ const Weather = ({
   tempMax,
   tempMin,
   weatherDescription,
-  weatherIcon,
   windDeg,
   windSpeed,
   tempDifferenceYesterday,
@@ -37,14 +35,8 @@ const Weather = ({
   getWeatherRightMiddleAction,
   getWeatherRightLargeAction,
   locationName,
-  setLocationValue,
   history,
 }) => {
-  console.log(
-    '🚀 ~ file: weather.js ~ line 39 ~ weatherRightSmall',
-    weatherRightSmall
-  );
-
   const [date, setDate] = useState(null);
 
   const getDate = new Date();
@@ -154,7 +146,6 @@ const Weather = ({
         </div>
       </div>
       <div className="Weather_container">
-        {/* <div className="Weather_date">04.10(토) 15:30</div> */}
         <div className="Weather_date">{date}</div>
         <div className="Weather_weather_box">
           <div className="Weather_city">{cityName}</div>
@@ -164,8 +155,6 @@ const Weather = ({
               src="http://openweathermap.org/img/wn/01n@2x.png"
               alt="date"
             />
-            {/* <img className="Weather_weather_icon" src={weatherIcon}
-                    alt="date" /> */}
           </div>
           <div className="Weather_weather_description">
             {weatherDescription}
@@ -175,28 +164,24 @@ const Weather = ({
           <div className="Weather_temp">온도: {temp}</div>
           <div className="Weather_temp_celsius_icon">&#8451;</div>
           <div className="Weather_feel_like">체감({feelLike}&#8451;)</div>
-          {/*  */}
           {/* 어제보다 기온 높을 때 */}
           {parseInt(tempDifferenceYesterday) < 0 ? (
             <div className="Weather_yesterday_temp">
               어제보다 {Math.abs(parseInt(tempDifferenceYesterday))}도 높아요
             </div>
           ) : null}
-
           {/* 어제보다 기온 낮을 때 */}
           {parseInt(tempDifferenceYesterday) > 0 ? (
             <div className="Weather_yesterday_temp">
               어제보다 {parseInt(tempDifferenceYesterday)}도 낮아요
             </div>
           ) : null}
-
           {/* 기온 똑같을 때 */}
           {parseInt(tempDifferenceYesterday) === 0 ? (
             <div className="Weather_yesterday_temp">
               어제와 평균 온도가 같습니다
             </div>
           ) : null}
-          {/*  */}
         </div>
         <hr className="Weather_hr"></hr>
         <div className="Weather_max_min_box">
