@@ -1,5 +1,3 @@
-/* eslint react/prop-types: 0 */
-
 import React from 'react';
 import NavContainer from '../../../container/NavContainer';
 import Sidebar from '../../Sidebar';
@@ -11,9 +9,6 @@ const Happy = ({ isToggled }) => {
       <NavContainer />
       <Sidebar />
       <div className="happy_container">
-        {/* <div className="happy_img_div">
-                    <img className="happy_img" src={img} alt="happy dog"></img>
-                </div>     */}
         <div className="happy_text">
           <div className="happy_text_first">
             반려견의 행복 시그널을 알아보고 <br /> 일상 속에서 행복한 시간을
