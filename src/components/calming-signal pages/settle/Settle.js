@@ -9,9 +9,6 @@ const Settle = ({ isToggled }) => {
       <NavContainer />
       <Sidebar />
       <div className="comfortable_container">
-        {/* <div className="comfortable_img_div">
-                    <img className="comfortable_img" src={img} alt="comfortable dog"></img>
-                </div>     */}
         <div className="comfortable_text">
           <div className="comfortable_text_first">
             반려견이 진정시키는 시그널을 알아보고 <br /> 차분한 마음을 갖도록

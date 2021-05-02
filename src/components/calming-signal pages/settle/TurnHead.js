@@ -36,7 +36,6 @@ const TurnHead = () => {
             별로 좋은 기분은 아니지만 강아지도 노력하고 있는 것이니 절대 꾸짖지
             않아야 합니다.
           </div>
-          {/* <div className="turn_head_contents_right_fifth">꼬리가 세워지거나 아래로 쳐지지 않은 사앹로 큰 폭으로 움직인다면 친근감을 표현하는 것입니다.</div> */}
         </div>
       </div>
     </div>

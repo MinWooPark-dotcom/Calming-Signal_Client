@@ -38,7 +38,6 @@ const Interrupting = () => {
           <div className="interrupting_contents_right_forth">
             긴장한 반려견을 안심시켜 주는 것이 중요해요.
           </div>
-          {/* <div className="interrupting_contents_right_fifth">꼬리가 세워지거나 아래로 쳐지지 않은 사앹로 큰 폭으로 움직인다면 친근감을 표현하는 것입니다.</div> */}
         </div>
       </div>
     </div>
