@@ -1,30 +1,18 @@
 // ! dev branch
 import React from 'react';
 import { Route } from 'react-router-dom';
-// import CalmingSignalContainer from './container/CalmingSignalContainer';
-//! happy
-
 import Smile from './components/calming-signal pages/happy/Smile';
 import Belly from './components/calming-signal pages/happy/Belly';
-//! comfortable
-// import ComfortableContainer from './container/ComfortableContainer';
 import NaturalTail from './components/calming-signal pages/comfortable/NaturalTail';
 import Sigh from './components/calming-signal pages/comfortable/Sigh';
-//! nervous
 import Licking from './components/calming-signal pages/nervous/Licking';
 import RollTail from './components/calming-signal pages/nervous/RollTail';
-//! settle
 import Yawn from './components/calming-signal pages/settle/Yawn';
 import Interrupting from './components/calming-signal pages/settle/Interrupting';
 import TurnHead from './components/calming-signal pages/settle/TurnHead';
-
-//! board
 import BoardContainer from './container/BoardContainer';
-
 import SignInContainer from './container/SignInContainer';
 import SignUp from './components/SignUp';
-
-import './App.css';
 import ContentContainer from './container/ContentContainer';
 import WritePageContainer from './container/WritePageContainer';
 import MyPageContainer from './container/MyPageContainer';
@@ -36,8 +24,9 @@ import Happy from './components/calming-signal pages/happy/Happy';
 import Settle from './components/calming-signal pages/settle/Settle';
 import Wag from './components/calming-signal pages/happy/Wag';
 import Landing from './components/Landing';
+import './App.css';
 
-const App = ({ match }) => {
+const App = () => {
   return (
     <>
       <Route component={Landing} path="/" exact />
