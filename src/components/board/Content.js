@@ -15,7 +15,13 @@ const Content = ({
   getContentComment,
   isLoggedIn,
   userName,
+  email,
 }) => {
+  const [loggedInEmail, setLoggedInEmail] = useState(
+    window.sessionStorage.getItem('email')
+  );
+  console.log('🚀 ~ file: Content.js ~ line 20 ~ email', email);
+  console.log('🚀 ~ file: Content.js ~ line 24 ~ loggedInEmail', loggedInEmail);
   // ! 댓글 동적 셋팅하는 용도
   const [commentTag, setCommentTag] = useState(null);
   const [isCommentUpdated, setIsCommentUpdated] = useState(false);
@@ -109,6 +115,27 @@ const Content = ({
     alert('로그인 후 이용해 주세요.');
   };
 
+  //! 게시글 수정
+  const handlePatch = async () => {
+    const checkWriter = await axios.patch(
+      `https://localhost:3002/content/${contentTitle}?id=${postId}`,
+      // post id를 보내야 함
+      {
+        postId,
+      },
+      {
+        withCredentials: true,
+      }
+    );
+    console.log(
+      '🚀 ~ file: Content.js ~ line 127 ~ handlePatch ~ checkWriter',
+      checkWriter
+    );
+    if (checkWriter.data.message === 'OK') {
+      alert('o');
+    }
+  };
+
   return contentTitle ? (
     <div className="content_container">
       <NavContainer />
@@ -123,6 +150,13 @@ const Content = ({
         <div className="content_header_numOfView">{contentNumOfViews}</div>
         <div className="content_header_createdAt_fix">작성일:</div>
         <div className="content_header_createdAt">{createdAt}</div>
+        {/* 작성자만 수정, 삭제가 보이게 하려면? */}
+        {/* {loggedInEmail === email ? (
+          <div>
+            <div onClick={handlePatch}>수정</div>
+            <div>삭제</div>
+          </div>
+        ) : null} */}
       </div>
       <div className="content_body">{contentBody}</div>
       {/* 유저가 댓글 쓰는 곳 */}
